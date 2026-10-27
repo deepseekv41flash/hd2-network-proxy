@@ -4,12 +4,33 @@
 
 ## 0. 结论
 
-**能。** 客户端把「哪颗星球可以打」完全交给了 Status，服务器**不校验**「这颗星球到底有没有战役」。
+**客户端侧：能。** 客户端把「哪颗星球可以打」完全交给了 Status —— 伪造一条 `campaigns` 条目就能让一颗原本点不进去的星球变成可部署的前线（✓✓ 实机）。
 
-| 门 | 谁在管 | 结果 |
+**服务器侧：接受，但不宜解读为「缺少校验」。** 见 §0.1 的更正。
+
+| 层 | 谁在管 | 结果 |
 |---|---|---|
-| 客户端可点性 / 可部署性 | Status 的 `campaigns` + `planetStatus.owner` | ✓ 被改写绕过 |
-| 服务器校验 | `/api/Operation/Create`、`/api/Operation/Mission/Start` | ✓ **不校验**，照发号 |
+| 客户端可点性 / 可部署性 | Status 的 `campaigns`（`owner` 不是必要条件） | ✓✓ 被改写绕过 |
+| 服务器 | `/api/Operation/Create`、`/api/Operation/Mission/Start` | 全部 200，照发 operation id 与 missionId |
+
+### 0.1 更正（2026-10-27 夜间，用户指出）
+
+我原先把「服务器接受在无战役星球上创建作战」写成 **"服务器不校验战役存在性"** —— 这是**过度解读**，撤回。
+
+游戏本来就允许**未完成的作战在战役结束后继续存在、继续打**。也就是说，
+「在没有活动战役的星球上存在一个 operation」对服务器而言是一条**合法状态**，不是异常输入。
+我们的 `Create` 正好落在这条既有规则里，因此：
+
+| 说法 | 状态 |
+|---|---|
+| 客户端可达性由 Status 决定 | ✓✓ 成立（E8/E9 实机） |
+| 服务器照发了 operation id / missionId | ✓✓ 事实 |
+| **"服务器缺少战役校验"** | **✗ 撤回**：与「作战可以脱离战役继续」的设计一致，不能作为缺陷证据 |
+| 伪造的 `campaignId: 51999` 被接受 | ⚠ **待判定**：只能说明它不构成拒绝条件；该字段是否被用于奖励/归属统计，未知 |
+
+**所以这条链的准确定位是**：
+用客户端侧的状态欺骗，把玩家放进一个「服务器本就允许的『继续未完成作战』状态」——
+而不是绕过了一道服务器校验。
 
 ## 1. 三轮实验
 
@@ -48,7 +69,7 @@ This planet is considered enemy territory. The Hell divers must reclaim it from 
 [SELECT CAMPAIGN]            ← 可点、可进
 ```
 
-## 2. 服务器侧证据（全部 200）
+## 2. 服务器侧记录（全部 200）
 
 ```
 22:18:49  POST /api/Operation/Create
@@ -132,7 +153,7 @@ if rewrite_added:              # ← 0 就发原始 body
 | `planetActiveEffects` | 星图效果芯片 / 作战卡 / `COMBATANT FORCES` / 局内天气 | ✓✓ |
 | `campaigns` | 任意星球变「前线」：可选、可进、可开任务 | ✓✓ |
 | `planetStatus.owner` | 星球卡阵营标题 + **任务敌人阵营** | ✓✓ |
-| 伪造 `campaignId` 发给服务器 | 服务器照发 operation id 与 missionId，无校验 | ✓✓ |
+| 伪造 `campaignId` 发给服务器 | 服务器照发 operation id 与 missionId（⚠ 不构成"缺少校验"证据，见 §0.1） | ✓✓ |
 
 ## 7. 复原
 

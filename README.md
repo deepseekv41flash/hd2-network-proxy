@@ -26,7 +26,7 @@
 | `planetActiveEffects` | 星图效果芯片 / 部署界面**作战卡** / `COMBATANT FORCES` / **局内天气** |
 | `campaigns` | 任意星球变成「前线」：**可选、可进、可开一局** |
 | `planetStatus.owner` | 星球卡阵营标题 **+ 任务里刷哪一族敌人** |
-| 伪造 `campaignId` 发给服务器 | 服务器照发 operation id 与 missionId，**无任何校验** |
+| 伪造 `campaignId` 发给服务器 | 服务器照发 operation id 与 missionId（见 docs/E8 §0.1：与「作战可脱离战役继续」的设计一致，**不**构成"缺少校验"的证据） |
 
 细节与证据：[`docs/EXPERIMENTS-2026-10-27.md`](docs/EXPERIMENTS-2026-10-27.md)。
 
