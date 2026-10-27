@@ -1,21 +1,23 @@
-# HD2 战况接口实验台（Status / GWE 抓包与合成注入）
+# hd2-network-proxy —— HD2 网络代理注入实验台（Status / GWE）
 
 > build `26088801` / warId 801，2026-10-27 实机。
 > 与 [hd2-datamined](https://github.com/deepseekv41flash/hd2-datamined) 的分工：
 > **那边只放离线数据表逆向**（`.dl_bin` 表结构、字段、命名），**这边放网络层**——
 > 抓包、对表、以及对 `Status` 响应的合成改写实验。
 
-## 这是什么
+## 名字里的 network-proxy 就是实现方法
 
-《Helldivers 2》客户端从 `api.live.prod.thehelldiversgame.com` 拉战况。本仓库记录并工具化了一条实验线：
+这条路线的**实现方式**是一个本机 MITM 代理，不是什么数据表 mod：
 
 ```
-本地 hosts + 自签 CA + 443 MITM  →  只改写 /api/WarSeason/801/Status  →  客户端把假战况当真
+本地 hosts 把 api.live.prod.thehelldiversgame.com 指向本机
+  + 自签 CA（客户端信任）  + 443 监听
+  → 只改写 /api/WarSeason/801/Status 这一个响应
+  → 客户端把这份「服务器战况」当真
 ```
 
-它起源于对一个第三方 mod（`variant_mod`）的逆向：那个 mod 的「变种玩法」不是数据表 mod，
-而是一个 MITM 代理，通过给 `planetActiveEffects` 追加条目来改变星球上的敌人变种。
-本仓库把这个机制拆开、量到边界。
+它起源于对一个第三方 mod（`variant_mod`）的逆向：那个 mod 的「变种玩法」正是这么做的——
+代理只往 `planetActiveEffects` 里追加条目，就能改变星球上的敌人变种。本仓库把机制拆开、量到边界。
 
 ## 结论速览（全部实机验证）
 
