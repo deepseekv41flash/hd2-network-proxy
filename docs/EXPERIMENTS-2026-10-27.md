@@ -269,3 +269,62 @@ campaignId                关联战役
 ### 12.4 现场处置
 
 实验后已切回 **Passthrough（纯转发）**，注入全部撤销，游戏恢复正常。
+
+---
+
+## 13. 防守事件：拿到真实样本后仍然失败（2026-10-28 00:20）
+
+### 13.1 真实样本来源
+
+GitHub 代码搜索命中一份真实历史的 `WarStatus` 抓包：
+
+* 仓库：`EdouardCourty/helldivers2-api`，路径 `tests/fixtures/WarStatusResponse.json`
+* 已脱敏存到本仓库：`docs/fixtures/warstatus-sample-planet-events.json`（1.6 KB，仅战况字段）
+
+其中的 `planetEvents`（**真实防守事件，两条**）：
+
+```json
+{"id":4327,"planetIndex":197,"eventType":1,"race":3,"health":249722,"maxHealth":400000,
+ "startTime":3736520,"expireTime":3822920,"campaignId":50031,"jointOperationIds":[4327]}
+{"id":4330,"planetIndex":212,"eventType":1,"race":2,"health":470354,"maxHealth":800000,
+ "startTime":3768960,"expireTime":3855360,"campaignId":50034,"jointOperationIds":[4330]}
+```
+
+配套的 `jointOperations`（**之前完全不知道要写**）：
+
+```json
+{"id":4327,"planetIndex":197,"hqNodeIndex":1}
+{"id":4330,"planetIndex":212,"hqNodeIndex":2}
+```
+
+由此确认的事实：
+
+| 项 | 值 |
+|---|---|
+| `eventType` | `1` = 防守（与社区模型一致） |
+| 时长 | **恰好 86400 秒 = 24 小时**（两条一致） |
+| `startTime`/`expireTime` | **绝对 war time**，与 `Status.time` 同一时钟 |
+| `jointOperationIds` | **非空**，内容就是事件自己的 id |
+| 键名 | `race` / `planetIndex` / `campaignId` 都猜对了 |
+
+### 13.2 补齐三件套后依然失败
+
+按真实形状注入（`campaign` + `planetEvents{jointOperationIds:[9001]}` + `jointOperations{id:9001}` + `owner=1`）：
+
+```
+00:16:58  REWRITE +4 entries   →  RESP 200
+00:17:03  客户端继续发 friends / lobby 请求（说明链路正常）
+00:18:49  客户端重新拉 Status（重试）
+00:18:52  再次注入 → 随后弹 ERROR "trying to communicate with our server"
+```
+
+⇒ **仍缺某个约束**。与真实样本的已知差异只剩：
+
+| 候选 | 我们的值 | 真实值 | 优先级 |
+|---|---|---|---|
+| `health` 与 `maxHealth` 关系 | 两者相等（1000000/1000000） | **health < maxHealth**（249722/400000） | ★★★ 最可能（进度计算可能除零/越界） |
+| `campaigns[].race` 是否需要等于事件 race | campaign race=2、event race=2 ✓ | 样本里 campaign **没有 race 字段**（裁剪或旧版） | ★★ |
+| `planetEvents` 是否要求对应星球在 `planetStatus` 里有非默认值 | owner=1、health/maxHealth 未改 | 未知（样本被裁剪） | ★ |
+| `jointOperations[].hqNodeIndex` 合法范围 | 1 | 1 / 2 | ★ |
+
+**下次开工第一件事**：把 `health` 设成 `maxHealth` 的一半（例如 1100000/2200000，跟真实比例接近），其余不变——一个字段、一次重启就能判。

@@ -1,0 +1,93 @@
+{
+  "warId": 801,
+  "time": 3812880,
+  "impactMultiplier": 0.038069353,
+  "storyBeatId32": 0,
+  "planetStatus": [
+    {
+      "index": 0,
+      "owner": 1,
+      "health": 1000000,
+      "regenPerSecond": 1388.8889,
+      "players": 496
+    },
+    {
+      "index": 1,
+      "owner": 1,
+      "health": 1000000,
+      "regenPerSecond": 1388.8889,
+      "players": 0
+    }
+  ],
+  "planetAttacks": [
+    {
+      "source": 158,
+      "target": 242
+    },
+    {
+      "source": 158,
+      "target": 242
+    }
+  ],
+  "campaigns": [
+    {
+      "id": 50008,
+      "planetIndex": 196,
+      "type": 0,
+      "count": 4
+    },
+    {
+      "id": 50015,
+      "planetIndex": 242,
+      "type": 0,
+      "count": 2
+    }
+  ],
+  "communityTargets": [],
+  "jointOperations": [
+    {
+      "id": 4327,
+      "planetIndex": 197,
+      "hqNodeIndex": 1
+    },
+    {
+      "id": 4330,
+      "planetIndex": 212,
+      "hqNodeIndex": 2
+    }
+  ],
+  "planetEvents": [
+    {
+      "id": 4327,
+      "planetIndex": 197,
+      "eventType": 1,
+      "race": 3,
+      "health": 249722,
+      "maxHealth": 400000,
+      "startTime": 3736520,
+      "expireTime": 3822920,
+      "campaignId": 50031,
+      "jointOperationIds": [
+        4327
+      ]
+    },
+    {
+      "id": 4330,
+      "planetIndex": 212,
+      "eventType": 1,
+      "race": 2,
+      "health": 470354,
+      "maxHealth": 800000,
+      "startTime": 3768960,
+      "expireTime": 3855360,
+      "campaignId": 50034,
+      "jointOperationIds": [
+        4330
+      ]
+    }
+  ],
+  "planetActiveEffects": [],
+  "activeElectionPolicyEffects": [],
+  "globalEvents": [],
+  "superEarthWarResults": []
+}
