@@ -203,3 +203,58 @@ warinfo.settingsHash → 尾部第 N 条 → planet_data 第 N 行 → +0x08 loc
 * 直接指定 `operationSettingsId`（只能通过 effect 集间接影响）；
 * 服务器是否校验 settings id 与星球的匹配（跨星球复用已被接受，非法值未测）；
 * 终结族事件（`hive_world` / `gloom`）—— 当前 GWE 无对应 effect，注入不了。
+
+---
+
+## E12：伪造「被敌人进攻」（限时防守事件）
+
+**目标**：刷出只在防守战役出现的任务池。
+
+### 12.1 `campaigns[].type` 是战役形态枚举（✓✓ 四个值全部实测）
+
+同一条伪造战役，只改 `type`，卡片标题依次变成：
+
+| `type` | 卡片标题 | 语义（来自卡片文案） |
+|---:|---|---|
+| 0 | `LIBERATION` | 常规解放 |
+| 1 | `RECON CAMPAIGN` | “Super Earth will not liberate Recon campaign planets, but they will remain available as long as the sector is active.” |
+| 2 | `HIGH-PRIORITY CAMPAIGN` | “contain unique missions related to the current Major Order” |
+| 3 | `BATTLE FOR SUPER EARTH` | 光照族入侵 Mega City 事件形态 |
+| ≥4 | 无状态（只剩星球名与进度条） | 枚举终点 |
+
+> 附带结论：客户端**完全按枚举渲染**，不看星球是否“配得上”这个形态——
+> `BATTLE FOR SUPER EARTH` 被挂在一颗丛林星球（ALAIRT III）上照样正常显示。
+
+### 12.2 防守不在 `campaigns.type` 里
+
+- `type=4` 已无状态 ⇒ 防御不是第四个之后的取值；
+- `owner=1` + `campaign{race=2}` ⇒ 仍是 `LIBERATION`，只有阵营图标变成 `TERMINID`
+  ⇒ **星球卡阵营取自 `campaigns[].race`，不是 `planetStatus.owner`**；
+- `owner=1` + `campaign{race=4}` + 反向攻击边 `139 → 138` ⇒ 仍是 `LIBERATION`。
+  （线上 63 条攻击边全是「人类星球 → 敌星」，反向边并没有触发防守。）
+
+### 12.3 防守在 `planetEvents[]`（⚠ 未成功，客户端拒绝）
+
+社区 API 模型（Helldivers2API-NET 的 `PlanetEvent`）标注：
+
+```
+eventType      1 = defended, 2 = attack
+startTime / expireTime    与 WarStatus.time 同一时钟
+health / maxHealth        覆盖 PlanetStatus
+campaignId                关联战役
+```
+
+按此伪造一条 `eventType=1` 的事件（开启 30 分钟、1.5 小时后结束）后：
+
+* 代理侧一切正常：`REWRITE +3 entries`，`RESP 200`，客户端后续还成功发了 friends / lobby 请求；
+* 客户端随后弹出 **`ERROR / Something unexpected went wrong while trying to communicate with our server`**，
+  并反复重拉 Status。
+
+⇒ **`planetEvents` 是客户端解析很严格的字段**：不像无法解析的 effect 那样被静默忽略，条目形状不对就直接报通讯错误。
+
+**下一步需要一份真实样本**：等线上真的出现防守战役时（`planetEvents` 非空）抓一次 Status，
+按真实键名/单位复刻，而不是靠猜。
+
+### 12.4 现场处置
+
+实验后已切回 **Passthrough（纯转发）**，注入全部撤销，游戏恢复正常。
