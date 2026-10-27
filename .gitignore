@@ -1,0 +1,10 @@
+# 抓包产物：内含账号 id / 战局快照，不入库
+out/
+rollback/
+logs/
+runtime/
+certs/
+__pycache__/
+*.pyc
+*.log
+*.pid
