@@ -252,6 +252,17 @@ campaignId                关联战役
 
 ⇒ **`planetEvents` 是客户端解析很严格的字段**：不像无法解析的 effect 那样被静默忽略，条目形状不对就直接报通讯错误。
 
+**单变量对照已闭环**：
+
+| 配置 | 结果 |
+|---|---|
+| `owner + campaign`（23:33，不含 planetEvents） | 卡片正常、可进入 |
+| `owner + campaign` **+ `planetEvents`**（23:52） | 弹 "Something unexpected went wrong while trying to communicate with our server"，此后客户端零请求 |
+| 纯转发（撤销全部注入） | 正常进入 |
+
+⇒ 嫌疑锁定在 `planetEvents` 条目本身的形状（键名/单位/必填字段），与网络、证书、端口无关。
+客户端在**本地反序列化**阶段就判定了这份 Status 不可用。
+
 **下一步需要一份真实样本**：等线上真的出现防守战役时（`planetEvents` 非空）抓一次 Status，
 按真实键名/单位复刻，而不是靠猜。
 
