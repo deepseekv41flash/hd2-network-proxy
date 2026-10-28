@@ -328,3 +328,60 @@ GitHub 代码搜索命中一份真实历史的 `WarStatus` 抓包：
 | `jointOperations[].hqNodeIndex` 合法范围 | 1 | 1 / 2 | ★ |
 
 **下次开工第一件事**：把 `health` 设成 `maxHealth` 的一半（例如 1100000/2200000，跟真实比例接近），其余不变——一个字段、一次重启就能判。
+
+---
+
+## 14. 战备发放：type32 = 武器实验（2026-10-28 实机）
+
+### 14.1 机制
+
+`effectType 32` 是**武器实验（WEAPONS EXPERIMENTATION）**：把某个战备临时开放。
+
+* 效果文案统一（GWE 的 `descriptionGamePlayShortHash` 能直接在本地英文语料里解析）：
+
+  ```
+  nameHash 1181673243            -> "WEAPONS EXPERIMENTATION"
+  short    2151089975            -> "The <i=1>#V_ONE</i> stratagem is available to all Helldivers."
+  ```
+
+  `#V_ONE` 由运行时替换成战备名 → **战备名来自 `values[0]` 这个 hash**。
+* 第三方目录（`stratagem_catalog.json`，58 条）的 `effect_hash` 与 GWE `values[0]` **58/58 一致**。
+* 同一战备可以有多个 effect id（hash 相同、`values[1]` 不同）：例如 1127/1128 都是 Eagle 500kg。
+
+### 14.2 两条注入通道
+
+| 通道 | 作用域 | 实机表现 |
+|---|---|---|
+| `planetActiveEffects[] += {index, galacticEffectId}` | **单颗星球** | 该星球装备界面多出战备 |
+| `globalEvents[].effectIds += <id>` | **全局** | `OPERATIONAL VARIATIONS` 面板出现条目，全账号有效 |
+
+线上现在的两条官方武器实验就在全局通道里：
+
+| 事件 | effectId | 战备 |
+|---:|---:|---|
+| 1501081 | 1152 | APW-1 反器材步枪（Anti-Materiel Rifle） |
+| 1501088 | 1178 | FX-12 防护罩生成中继器（Shield Generator Relay） |
+
+### 14.3 30 条"目录外" type32 的真实身份
+
+88 条 type32 中 58 条在目录里；剩下 30 条里 **24 条的 hash 与目录重合**（另一种声明方式），
+只有 6 条 hash 全新。把这 6 条挂到全局事件后实机结果：
+
+| effect id | hash | 实机 |
+|---:|---|---|
+| **1351** | `0x03F00A00`-ish（值 66059712） | **PORTABLE HELLBOMB** ✓（单独注入复验） |
+| **1389** | 1788177336（`values[1]=11`） | **DARK FLUID VESSEL** ✓ |
+| 1175 | 977669797 | 条目出现但**名字空白**（客户端解析不出名） |
+| 1426 / 1427 / 1428 | 2381989410 / 376245393 / 201738752 | **无可见效果**（注入 6 条只显示 3 条） |
+
+顺序规律：**面板显示顺序 = 注入顺序**（一次注入 3 条，显示顺序与 id 顺序一致）。
+
+### 14.4 边界
+
+* Status 路线**能**发放非常规战备（Portable Hellbomb、Dark Fluid Vessel 已实证）；
+* 但**只限有 type32 effect 的战备**。我们要的三个未发布战备
+  （`Eagle Air-to-Air Missiles` / `Orbital Walking Barrage Smoke` / `M-104 Incinerator FRV`）
+  在 88 条 type32 里**没有对应项** → **Status 路线发不了**，仍须走数据表 `+0xC8` 额外战备链
+  （[RECON-SHODAN-EXTRA-STRATAGEM](https://github.com/deepseekv41flash/hd2-datamined/blob/master/docs/cases/RECON-SHODAN-EXTRA-STRATAGEM-26088801.md)，M-104 已实机验证）。
+* 界面 effects 列表**最多 10 条**。
+* 防守 `planetEvents` 暂缓（等真实抓包），本轮全部注入已撤销，游戏恢复纯转发。
