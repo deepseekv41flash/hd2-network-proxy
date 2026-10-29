@@ -131,3 +131,62 @@ python tools/defense_inject.py revert --proxy D:/Downloads/variant_mod/tools/war
 | 卡在、能进、局内仍是**光明族** | 客户端对 `type=3` 硬绑光明族 ⇒ `race` 只是展示 |
 | 有卡**无作战** | 终结者在 super earth 上缺任务池（地区模板不含虫子） |
 | 通讯错误/崩 | 该组合非法，回滚到 7.3 的光明族版 |
+
+### 7.5 SUPER EARTH + 终结者（race 2）—— ✓✓ 成立
+
+同一套注入只把 `race` / 分区 `owner` 换成 **2（终结者）**：卡片头部阵营显示 **TERMINID**、
+**能进任务、局内刷的就是虫子**。
+
+两个细节值得记：
+
+1. **敌人由 `race` 决定，城市战役不绑定光明族** —— 这是本轮最硬的结论；
+2. 卡片**正文**仍写着 *"Illuminate Fleet Strength must be depleted…"*：`type = 3` 的描述文案是**固定文本**，
+   不随 `race` 变。⇒ 判读"敌人是谁"不能看描述，要看头部阵营与局内。
+
+---
+
+## 8. 结项（2026-10-29）
+
+### 8.1 结论总表
+
+| # | 结论 | 状态 | 证据 |
+|---:|---|---|---|
+| 1 | 特殊星球「能点开但没有可选作战」的缺口 = `Status.planetRegions` 缺分区条目；按原生定义补齐即生成作战 | **✓✓ 实机** | CYBERSTAN(260)：八分区卡 + 能进 |
+| 2 | 补齐只需 5 个状态字段（`planetIndex/regionIndex/owner/health/…`），`health = maxHealth//2` 可用 | **✓✓ 实机** | 260 / 0 两次 |
+| 3 | 分区条目可以只用**一条** campaign 通吃（type 0 与 type 3 都成） | **✓✓ 实机** | 260(type0,race3) / 0(type3,race4) |
+| 4 | **`race` 决定敌人阵营**，城市战役不绑定光明族 | **✓✓ 实机** | 0 号星球换 race=2 → 局内终结者 |
+| 5 | 卡片正文文案是 `type` 的固定文本，不随 `race` 变 | **✓✓ 实机** | 终结者版正文仍写 "Illuminate Fleet Strength" |
+| 6 | 只需改 `Status` 响应，不动 WarInfo、不调任何作战/奖励接口 | **✓ 实机** | 全程 passthrough/rewrite 只碰 Status |
+
+### 8.2 标准配方（城市战役）
+
+```json
+{"campaigns":[{"planet":<目标>,"id":<唯一>,"type":<0 常规|3 超级地球>,"count":<20 左右>,"race":<2/3/4>}],
+ "regions":[{"planet":<目标>,"regionIndex":<原生编号>,"owner":<同 race>,"maxHealth":<取自 WarInfo>"} …]}
+```
+
+- 分区条目：**只补缺失**（已有同编号条目一律保留），`health = maxHealth//2`、`players=0`、
+  `regerPerSecond=0`（拼写照抄）、`isAvailable=true`、`availabilityFactor=1`；
+- 分区编号/数量从**本次** `WarInfo` 现算，并校验 `layoutVersion`；
+- 星球归属（`planetStatus[].owner`）**不改**。
+
+### 8.3 未证 / 边界
+
+| 项 | 现状 |
+|---|---|
+| 其它特殊星球（虫巢世界、其它首都）是否同一条路径 | **⚠ 未测**；文档 §9 也明确未证 |
+| 分区进度是否真的会推进 / 结算 | **⚠ 未测**（本机新建状态，服务器不记账） |
+| `settingsHash` / `regionSize` 是否影响任务池 | **⚠ 未测**（这次没写进状态行也能出作战） |
+| 24h 事件与城市战役叠加（防守 + 分区） | **⚠ 未测**（两条线都通了，但没同时开） |
+
+### 8.4 收尾后的盘面（当前）
+
+| 项 | 状态 |
+|---|---|
+| 代理 | rewrite 模式，PID 8768，`HD2_GWE_EXTRA = out/city_spec_se_terminid.json`（**超级地球 + 终结者**） |
+| 已装效果 | SUPER EARTH 上有 BATTLE FOR SUPER EARTH，敌人 = 终结者 |
+| 切回光照族版 | `out/city_spec_se.json` |
+| 切回生化斯坦 | `out/city_spec.json` |
+| 切回伪造防守 | `out/defense_spec.json`（配 [DEFENSE-FORGE-RECIPE](DEFENSE-FORGE-RECIPE.md)） |
+| 正常玩 | 代理用 `-Passthrough` 重启 |
+| 彻底还原 | `stop.ps1` → （管理员）`teardown.ps1` |
