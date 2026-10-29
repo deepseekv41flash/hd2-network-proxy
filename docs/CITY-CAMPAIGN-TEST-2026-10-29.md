@@ -104,3 +104,30 @@ python tools/defense_inject.py revert --proxy D:/Downloads/variant_mod/tools/war
 
 判读：星图应出现 **BATTLE FOR SUPER EARTH**（`type=3` 按枚举渲染，客户端不校验星球类型 —— 与 2026-10-27 的结论一致），
 并且**有可选作战、能进**。若这次"有卡无作战"，就说明超级地球还差别的条件（下一步试 `type` 保持 3 但把 `count` 提高 / 补 `settingsHash`）。
+
+### 7.3 SUPER EARTH（0）—— ✓✓ 成立（光照族版）
+
+`campaigns{planet:0, type:3, count:20, race:4}` + 7 条分区（`owner=4`）：
+游戏内出现 **BATTLE FOR SUPER EARTH**，**有可选作战、能进**。
+
+⇒ `type = 3` 在超级地球上是"超级地球保卫战/Mega City"的正确枚举（与 2026-10-27 那条"客户端只按枚举渲染、不校验星球类型"的结论一致）。
+
+### 7.4 换敌人：Super Earth + 终结者（race 2）—— 已装，待实机
+
+问题：**超级地球的城市战役是否接受 Illuminate 之外的敌人？**
+
+| 项 | 值 |
+|---|---|
+| 战役 | `{id:51993, planetIndex:0, type:3, count:20, **race:2（终结者）**}` |
+| 分区 | 7 条（regionIndex 0–6，**`owner=2`**，`health=300,000`） |
+| 其它 | 与 7.3 完全相同（星球归属不动、layout/战争同一份） |
+| 离线验证 | selftest 7 条门禁 PASS；spec 文件 `out/city_spec_se_terminid.json` |
+
+判读：卡片是否仍为 BATTLE FOR SUPER EARTH、**任务里刷的是不是虫子**、能否进/结算。
+
+| 现象 | 判读 |
+|---|---|
+| 卡在、能进、局内是**终结者** | 城市战役**不绑定光明族**，敌人由 `race` 决定（最强的结论） |
+| 卡在、能进、局内仍是**光明族** | 客户端对 `type=3` 硬绑光明族 ⇒ `race` 只是展示 |
+| 有卡**无作战** | 终结者在 super earth 上缺任务池（地区模板不含虫子） |
+| 通讯错误/崩 | 该组合非法，回滚到 7.3 的光明族版 |
