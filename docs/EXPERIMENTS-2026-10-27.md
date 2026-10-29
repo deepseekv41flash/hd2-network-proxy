@@ -329,6 +329,12 @@ GitHub 代码搜索命中一份真实历史的 `WarStatus` 抓包：
 
 **下次开工第一件事**：把 `health` 设成 `maxHealth` 的一半（例如 1100000/2200000，跟真实比例接近），其余不变——一个字段、一次重启就能判。
 
+> **✅ 2026-10-29 补记（本节已被解决）**：拿到真实抓包样本后，用
+> [DEFENSE-FORGE-RECIPE](DEFENSE-FORGE-RECIPE.md) 的五件套（`owner=1` + 敌方→我方攻击边 +
+> `campaigns{type:4}` + `planetEvents{eventType:1, health<maxHealth}` + `jointOperations` 同 id）
+> **实机伪造成功**：CHARBAL-VII（索引 156）出现 DEFENSE 卡，且点进去能开一局。
+> 那次失败的真正原因是 **`campaigns[].type` 用了 0**（而非 4）——不是 `health/maxHealth`。
+
 ---
 
 ## 14. 战备发放：type32 = 武器实验（2026-10-28 实机）

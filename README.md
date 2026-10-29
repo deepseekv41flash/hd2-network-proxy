@@ -38,6 +38,7 @@
 | `docs/GWECAPTURE.md` | GWE（GalacticWarEffects）抓包与对表方法、effectType 解释器、实测结果 |
 | `docs/EFFECT-MENU-801.md` | 310 条效果目录 × presence 种类/阵营/显示名 × 在线战况 × 证据等级 |
 | `docs/E8-REACHABILITY.md` | 「能不能进入原本打不了的星球」专项实验 |
+| **`docs/DEFENSE-FORGE-RECIPE.md`** | **✓✓ 伪造防守的标准配方（2026-10-29 实机：CHARBAL-VII 出 DEFENSE 卡且能开一局）**：五件套 + 自洽约束 + 界面字段对应 + 与 Oct-27/28 三次失败的差异清单 + 回滚 |
 | **`docs/DEFENSE-SAMPLE-2026-10-29.md`** | **首次抓到真实 DEFENSE 样本**：`type 4 战役 + planetEvents(eventType 1) + jointOperations` 三件套；UI 标签↔字段逐项对应；含 `Operation/Create` 请求体 |
 
 ## 工具
