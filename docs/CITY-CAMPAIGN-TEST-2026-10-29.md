@@ -76,3 +76,31 @@ Copy-Item D:\Downloads\variant_mod\tools\war_proxy.py.cityregions.bak D:\Downloa
 # 撤防守补丁（potentialBuildUp / campaignId 兜底）
 python tools/defense_inject.py revert --proxy D:/Downloads/variant_mod/tools/war_proxy.py
 ```
+
+---
+
+## 7. 实机结果
+
+### 7.1 CYBERSTAN（260）—— ✓✓ 成立
+
+- 注入：`campaigns{planet:260, type:0, race:3}` + **8 条分区**（0–7，`owner=3`，`health=maxHealth//2`）；
+- 游戏内：星图出现 **BATTLE FOR CYBERSTAN** 卡，正文列出 **CYBERSTAN MEGAFACTORIES** 八个分区
+  （TRANSCENDI / URSOOT NIN / STAR KIELD / CAMRAT FOR / LURZA / OMNIPARITL / SOLIDARITE / AUTONOMY），
+  每个分区带进度条；**能点开、能进任务**。
+
+⇒ 社区文档的核心主张成立：**"星球能开但没有可选作战" 的缺口 = `Status.planetRegions` 缺条目**；
+按原生定义补齐后客户端就生成作战。城市/巨型工厂地图也随之出现（分区名由客户端的地区名表渲染）。
+
+### 7.2 SUPER EARTH（0）—— 已装，待实机
+
+按文档 §2.2 给超级地球的组合（`type = 3`、`race = 4` 光明族）另做一份 spec：
+
+| 项 | 值 |
+|---|---|
+| 战役 | `{id:51992, planetIndex:0, type:3, count:20, race:4}` |
+| 分区 | **7 条**（regionIndex 0–6，`owner=4`，`health=maxHealth//2 = 300,000`，`maxHealth` 600,000 取自 WarInfo） |
+| 星球归属 | **保留服务器值**（文档要求；我们不动 `planetStatus[0].owner`） |
+| 离线验证 | selftest：regions 35→42（第二次 0 ⇒ 幂等）；真实代码路径改动 8（1 战役 + 7 分区），其它星球 35 条未动 |
+
+判读：星图应出现 **BATTLE FOR SUPER EARTH**（`type=3` 按枚举渲染，客户端不校验星球类型 —— 与 2026-10-27 的结论一致），
+并且**有可选作战、能进**。若这次"有卡无作战"，就说明超级地球还差别的条件（下一步试 `type` 保持 3 但把 `count` 提高 / 补 `settingsHash`）。
