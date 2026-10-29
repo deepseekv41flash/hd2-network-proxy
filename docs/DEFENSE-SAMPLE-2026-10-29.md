@@ -27,7 +27,7 @@
 |---|---|
 | DEFENSE | `campaigns[].type = 4` **且** `planetEvents` 与 `jointOperations` 同 id 齐备 |
 | AUTOMATON | `campaigns[].race = 3`（不是 attacker 阵营，而是**本战役的敌方种族**） |
-| INVASION LEVEL | `campaigns[].count`（截图 38 → 抓包时已降到 21：玩家在防守中把它打下来了） |
+| **INVASION LEVEL** | **`planetEvents[].maxHealth ÷ 50,000`**（实测两例：真实防守 maxHealth 1,900,000 → **38**；我方伪造 maxHealth 1,000,000 → **20**）。~~`campaigns[].count`~~ 已否证：真实战役 count=21 却显示 38，伪造战役 count=38 却显示 20 |
 | DEFEND 01:22:09:22 | `planetEvents.expireTime − Status.time`（抓包读数 165,650 s = **46.01 h**，与截图 46.16 h 吻合） |
 | 防守进度 | `planetEvents.health / maxHealth`（99.15%；**不是** `planetStatus.health`，后者满值 1.4 M） |
 | 战线位置 | `planetAttacks` 里 `{source: 242, target: 244}` 等（63–64 条恒定，是**adjacency/前线邻接表**，不是"当前被攻击列表"） |
@@ -167,3 +167,32 @@ HD2_GWE_PATHS = /api/
 
 判读：进游戏 → 星图 → **CASTOR(156)** 应出现 DEFENSE 卡（AUTOMATON / INVASION LEVEL 38 / 倒计时 47 h）；
 `logs/proxy.log` 里应出现对应的四行 `REWRITE-EXTRA`。
+
+---
+
+## 5. 首次实机：伪造成功（2026-10-29 22:53）
+
+注入 spec 见 §4.2（目标 planet 156）。游戏内星图读数：
+
+| 界面 | 读数 | 对应我们的字段 |
+|---|---|---|
+| 标题 | **DEFENSE** | `campaigns[].type = 4` + `planetEvents` + `jointOperations` 三件套齐备 |
+| 星球名 | **CHARBAL-VII** | `planet_data` 行 162 / **游戏索引 156**（见 §5.1 的列序更正） |
+| 阵营 | **AUTOMATON** | `race = 3` |
+| **INVASION LEVEL** | **20** | **`maxHealth / 50,000`** = 1,000,000 / 50,000 |
+| 倒计时 | **01:22:59:04** | `expireTime − time`（注入时 47 h，截图时剩 46 h 58 m，吻合） |
+| 底部 | SELECT CAMPAIGN | 可点进战役选择 |
+
+代理日志同时给出四行 `REWRITE-EXTRA`（22:51:25）：追加战役 / 攻击边 157→156 / 星球事件 / 联合作战 id=9101
+⇒ **只改 Status 响应就够，服务器侧没有任何参与。**
+
+### 5.1 两处必须更正的旧判读
+
+| 旧结论 | 实际 |
+|---|---|
+| `PLANET-INDEX` 表的第一列是游戏索引 | **第二列才是游戏索引**：`| 162 | 156 | CHARBAL-VII |` ⇒ 156 = CHARBAL-VII；CASTOR 的索引是 151（第一列 156）。此前按第一列取号会点错星球 |
+| INVASION LEVEL = `campaigns[].count` | **= `planetEvents.maxHealth / 50,000`**（两例互锁：1.9 M→38、1.0 M→20） |
+
+### 5.2 想要别的入侵等级
+
+`maxHealth = 等级 × 50,000`：写 1,900,000 就得 38 级、写 2,500,000 得 50 级；`health` 取 `maxHealth` 的 95–99% 看起来像"正在打"。
