@@ -53,7 +53,11 @@ TYPE_HINT = {
     72: "未解",
     73: "未解",
     76: "未解",
+    87: "DSS 轨道支援（空间站）",
+    88: "DSS 防御加成（空间站）",
+    89: "无参（ORBITAL BLOCKADE）",
     92: "未解",
+    94: "行星实验性战备变体修饰符（values[0] = generated_modifier_settings 行键）✓✓",
 }
 
 
@@ -171,6 +175,8 @@ def main() -> int:
     lines.append("")
     lines.append(f"> 生成自 `{gwe_path.name}`（{len(eff)} 条）、`{status_path.name}`（在线 {len(live_by_id)} 个不同 effect）")
     lines.append(f"> presence 分类依据 `generated_galactic_presence_settings.dl_bin` 的 `+0x14/+0x18/+0x1C`，见 PLANET-TABLES。")
+    lines.append("> **全量 312 条（含所有 effectType、官方名称/描述、在线表）见 "
+                 "[GWE-EFFECTS-FULL-26088801](GWE-EFFECTS-FULL-26088801.md)**；本文档是 presence 视角的菜单。")
     lines.append("")
     lines.append("## 0. 一句话")
     lines.append("")
@@ -264,6 +270,45 @@ def main() -> int:
         hint = TYPE_HINT.get(t) or "⚠ 未证"
         lines.append(f"| {t} | {hint} | {len(grp)} | {sum(1 for r in grp if r['live_count'])} |")
     lines.append("")
+    # ---- §7.5 type94（modifier 激活）----
+    try:
+        import struct as _struct
+        _md = pathlib.Path("D:/mod/refs/dlbin/plaintext-26251122/generated_modifier_settings.dl_bin").read_bytes()
+        _n = _struct.unpack_from("<I", _md, 0)[0]
+        _off, _ids = 4, {}
+        for _i in range(_n):
+            _size = _struct.unpack_from("<I", _md, _off + 12)[0]
+            _payload = _off + 24
+            _ids[_struct.unpack_from("<I", _md, _payload)[0]] = _i
+            _off = _payload + _size
+        _t94 = [r for r in others if r["effect_type"] == 94]
+        if _t94:
+            lines.append("## 7.5 `effectType=94` = 行星「实验性战备变体」修饰符（✓✓ 抓包+本地表+字符串）")
+            lines.append("")
+            lines.append("`values[0]` 是 `generated_modifier_settings.dl_bin` 的行首 u32（3/3 命中）；"
+                         "其余 12 个 modifier id 不在服务器目录里。")
+            lines.append("")
+            lines.append("| effect | values[0] = modifier id | 本表行 | 官方名 | 官方描述 |")
+            lines.append("|---:|---|---:|---|---|")
+            for r in _t94:
+                mid = int(str(r["raw_values"]).split(",")[0])
+                rowno = _ids.get(mid)
+                nid = sid = 0
+                for e in eff:
+                    if int(e["id"]) == r["effect_id"]:
+                        nid = e.get("nameHash") or 0
+                        sid = e.get("descriptionGamePlayShortHash") or 0
+                        break
+                nm = strings.get(str(nid), "")
+                ds = strings.get(str(sid), "")
+                lines.append(f"| {r['effect_id']} | `0x{mid:08X}` | " +
+                             (f"#{rowno}" if rowno is not None else "本地无此行") +
+                             f" | {nm} | {ds[:90]} |")
+            lines.append("")
+    except Exception as exc:  # noqa: BLE001
+        lines.append(f"> ⚠ §7.5 生成失败：{exc}")
+        lines.append("")
+
     lines.append("## 8. 证据等级")
     lines.append("")
     lines.append("| 结论 | 等级 | 依据 |")
@@ -273,6 +318,8 @@ def main() -> int:
     lines.append("| 跨阵营不校验 | ✓✓ 实机 | 同上，终结族 presence 挂在 illuminate 星球 |")
     lines.append("| kind∈{0,3} 的表内其余条目可注入 | ⚠ 未证 | 同一通道、同一解析路径，但未逐条实测 |")
     lines.append("| 本地无对应 presence 的 5 条 | ⚠ 未证 | 预期客户端解析失败、无显示 |")
+    lines.append("| `type94` = modifier 激活（`values[0]` = `generated_modifier_settings` 行键） | ✓✓ 抓包+本地表+字符串 | 3/3 命中：1345→`0xCDD51BC6`、1346→`0x4DD68526`、1350→`0x2A83FD6B`；官方名与 delta 内容逐条吻合 |")
+    lines.append("| type94 三条当前不在线 | ✓ 抓包 | 68 份 801_Status 抓包（最新 2026-11-01 17:25）均无 |")
 
     md = "\n".join(lines) + "\n"
     if a.print:
