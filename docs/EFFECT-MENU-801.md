@@ -192,10 +192,35 @@
 | 90 | ⚠ 未证 | 1 | 0 |
 | 92 | 未解 | 1 | 1 |
 | 93 | ⚠ 未证 | 1 | 0 |
-| 94 | ⚠ 未证 | 3 | 0 |
+| **94** | **行星「实验性战备变体」修饰符（`values[0]` = `generated_modifier_settings` 的 modifier id）** | 3 | 0 |
 | 95 | ⚠ 未证 | 2 | 0 |
 | 96 | ⚠ 未证 | 2 | 0 |
 | 97 | ⚠ 未证 | 1 | 0 |
+
+## 7.5 `effectType=94` = 行星「实验性战备变体」修饰符（2026-11-01 定证 ✓ 抓包+本地表+字符串三方吻合）
+
+三条 `type94` effect 的 `values[0]` 是 **32 位 modifier id**，与本地 `generated_modifier_settings.dl_bin`
+15 行的行键**逐字命中 3/3**；另外 12 个 modifier id 在 310/312 条目录里 **0 命中**。
+
+| GWE effect | `values[0]` = modifier id | 本地 modifier 行 | 官方卡名（`nameHash` → `strings-en-26088801.json`） | 官方描述（短） |
+|---:|---|---|---|---|
+| **1345** | 3453295558 `0xCDD51BC6` | #6 | **ORBITAL 120MM HE/EMS BARRAGE** | The <i>Orbital 120mm HE Barrage</i> is experimentally modified with additional HE rounds, EMS rounds, and a tighter radius. |
+| **1346** | 1305904422 `0x4DD68526` | #2 | **INCENDIARY GATLING BARRAGE** | The <i>Orbital Gatling Barrage</i> is experimentally modified to use incendiary rounds instead of HE rounds. |
+| **1350** | 713293163 `0x2A83FD6B` | #14 | **SMOKE-ENHANCED WALKING BARRAGE** | The <i>Orbital Walking Barrage</i> is experimentally modified to have smoke rounds mixed into its salvos. |
+
+- 机制：与 type71 完全同一条路 —— 在 `Status.planetActiveEffects[]` 里加
+  `{"index": <星球>, "galacticEffectId": 1345}`；引擎按 `effectType=94` 取 `values[0]`，
+  到本地 `generated_modifier_settings` 找该 id 的行，再把行里的 `delta AddPath` 套到目标实体上。
+  即**服务器只给"哪颗星球开哪个变体"，具体改哪些数据全在本地表里**（和 presence → 固化实现同构）。
+- 三条**当前都不在线**：扫描 68 份 `801_Status` 抓包（最新 2026-11-01 17:25）均无 1345/1346/1350。
+- 与 `[effect 1426/1427/1428]` 的区别（常见混淆）：那三条是 **type32 临时配发战备**，
+  `values[0]` = 战备 hash（`0x8DFA4622` / `0x166D0C91` / `0x0C064A00`），本 build 表里 0 命中
+  ⇒ 它们指向的**新战备行不存在**（未发布），卡名是 `WEAPONS EXPERIMENTATION`、描述模板
+  `The #V_ONE stratagem is available to all Helldivers.`；而 type94 是**改现有战备的行为**。
+- 复现：`python tools/gwe_join.py report` → 取 effectType=94；官方名不用猜，
+  `refs/strings-en-26088801.json[nameHash]` 直接给中文/英文文案（本 build 已解出 24,834 条）。
+- 待实机（⚠）：注入 `1346` 到任意星球 → 进图打 Orbital Gatling Barrage 应变成燃烧弹
+  （离线改数据表已 ✓✓ 证过同一 delta 的效果，2026-11-01）。
 
 ## 8. 证据等级
 
@@ -206,3 +231,7 @@
 | 跨阵营不校验 | ✓✓ 实机 | 同上，终结族 presence 挂在 illuminate 星球 |
 | kind∈{0,3} 的表内其余条目可注入 | ⚠ 未证 | 同一通道、同一解析路径，但未逐条实测 |
 | 本地无对应 presence 的 5 条 | ⚠ 未证 | 预期客户端解析失败、无显示 |
+| `type94` = modifier 激活，`values[0]` = `generated_modifier_settings` 行键 | ✓ 抓包+本地表+字符串三方 | 3/3 命中（1345→`0xCDD51BC6`、1346→`0x4DD68526`、1350→`0x2A83FD6B`）；三条的 `nameHash` 能解出「实验性改版」卡名与描述，与各 modifier 的 delta 内容逐条吻合 |
+| `type94` 三条当前不在线 | ✓ 抓包 | 68 份 `801_Status` 全无 1345/1346/1350（最新 2026-11-01 17:25）|
+| 其余 12 个 modifier id 未进服务器目录 | ✓ 抓包 | 310/312 条 effect 的 `values` 全扫，0 命中 |
+| `type32` 的 1426/1427/1428 = 未发布新战备的临时配发 | ✓ 抓包+本地表 | `values[0]` 战备 hash 本地 0 命中；卡名 `WEAPONS EXPERIMENTATION` |
