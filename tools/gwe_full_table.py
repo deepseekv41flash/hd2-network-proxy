@@ -446,7 +446,13 @@ def main() -> int:
                  "官方描述文本里只有 6 个 hash 能直接抽出名字（其余是 `#V_ONE` 占位）。"
                  "1426/1427/1428 三条的 hash 本地明文表 0 命中 ⇒ 对应新战备未发布。")
     lines.append("- type36 的 `values[0]` 与 type32 是**同一战备 hash 空间**（12/16 条能复用 type32 的名字，如 EXO-45/49）。")
-    lines += ["", "## 6. 复现", "", "```bash",
+    lines += ["", "## 6. 实机与进行中的实验（2026-11-01）", "",
+              "- **type94 ✓✓ 实机**：经代理向 38 颗战役星球的 `planetActiveEffects` 注入 `1346` 后，"
+              "客户端「行动变量」出现「燃烧加特林火力网」卡面，Orbital Gatling Barrage 实弹变燃烧弹；"
+              "证据 `audit.log`: `REWRITE +38 entries (planet 100 -> [1346] …)`。",
+              "- **进行中**：`CAUSTIC STRAIN`（effect 1430 tag + 1431 mechanic，presence `bugs_acid`，"
+              "name locid 461034013）注入 100 `TRANDOR`，验证「已发布但从未出现」的变种词条。",
+              "", "## 7. 复现", "", "```bash",
               "python tools/gwe_full_table.py        # 两张 CSV + 本文档",
               "python tools/gwe_join.py report       # presence 对表（旧）",
               "python tools/effect_menu.py           # presence 菜单（旧）", "```", ""]

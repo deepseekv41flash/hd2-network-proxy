@@ -305,6 +305,11 @@ def main() -> int:
                              (f"#{rowno}" if rowno is not None else "本地无此行") +
                              f" | {nm} | {ds[:90]} |")
             lines.append("")
+            lines.append("**✓✓ 实机（2026-11-01 20:03）**：注入 `1346` 后，客户端「行动变量」面板出现卡名与描述"
+                         "（「燃烧加特林火力网 / 轨道加特林火力网 经实验性调整，改用燃烧弹替代高爆弹」），"
+                         "实弹 Orbital Gatling Barrage 变为燃烧弹。证据 = `audit.log` "
+                         "`REWRITE +38 entries … planet 100 -> [1346]` + 实机回执。")
+            lines.append("")
     except Exception as exc:  # noqa: BLE001
         lines.append(f"> ⚠ §7.5 生成失败：{exc}")
         lines.append("")
@@ -320,6 +325,7 @@ def main() -> int:
     lines.append("| 本地无对应 presence 的 5 条 | ⚠ 未证 | 预期客户端解析失败、无显示 |")
     lines.append("| `type94` = modifier 激活（`values[0]` = `generated_modifier_settings` 行键） | ✓✓ 抓包+本地表+字符串 | 3/3 命中：1345→`0xCDD51BC6`、1346→`0x4DD68526`、1350→`0x2A83FD6B`；官方名与 delta 内容逐条吻合 |")
     lines.append("| type94 三条当前不在线 | ✓ 抓包 | 68 份 801_Status 抓包（最新 2026-11-01 17:25）均无 |")
+    lines.append("| type94 全链（GWE 参数→本地 modifier→局内行为）| **✓✓ 实机** | 2026-11-01 20:03 注入 1346（38 颗战役星球）：卡面「燃烧加特林火力网」+ 加特林弹幕变燃烧弹 |")
 
     md = "\n".join(lines) + "\n"
     if a.print:

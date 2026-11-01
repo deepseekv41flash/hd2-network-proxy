@@ -1,6 +1,6 @@
 # 可注入效果菜单（warId 801）
 
-> 生成自 `71efaac9_api_WarSeason_GalacticWarEffects.json`（312 条）、`9b68624d_api_WarSeason_801_Status.json`（在线 65 个不同 effect）
+> 生成自 `71efaac9_api_WarSeason_GalacticWarEffects.json`（312 条）、`013ec696_api_WarSeason_801_Status.json`（在线 65 个不同 effect）
 > presence 分类依据 `generated_galactic_presence_settings.dl_bin` 的 `+0x14/+0x18/+0x1C`，见 PLANET-TABLES。
 > **全量 312 条（含所有 effectType、官方名称/描述、在线表）见 [GWE-EFFECTS-FULL-26088801](GWE-EFFECTS-FULL-26088801.md)**；本文档是 presence 视角的菜单。
 
@@ -209,6 +209,8 @@
 | 1346 | `0x4DD68526` | #2 | INCENDIARY GATLING BARRAGE | The <i=1>Orbital Gatling Barrage</i> is experimentally modified to use incendiary rounds i |
 | 1350 | `0x2A83FD6B` | #14 | SMOKE-ENHANCED WALKING BARRAGE  | The <i=1>Orbital Walking Barrage</i> is experimentally modified to have smoke rounds mixed |
 
+**✓✓ 实机（2026-11-01 20:03）**：注入 `1346` 后，客户端「行动变量」面板出现卡名与描述（「燃烧加特林火力网 / 轨道加特林火力网 经实验性调整，改用燃烧弹替代高爆弹」），实弹 Orbital Gatling Barrage 变为燃烧弹。证据 = `audit.log` `REWRITE +38 entries … planet 100 -> [1346]` + 实机回执。
+
 ## 8. 证据等级
 
 | 结论 | 等级 | 依据 |
@@ -220,3 +222,4 @@
 | 本地无对应 presence 的 5 条 | ⚠ 未证 | 预期客户端解析失败、无显示 |
 | `type94` = modifier 激活（`values[0]` = `generated_modifier_settings` 行键） | ✓✓ 抓包+本地表+字符串 | 3/3 命中：1345→`0xCDD51BC6`、1346→`0x4DD68526`、1350→`0x2A83FD6B`；官方名与 delta 内容逐条吻合 |
 | type94 三条当前不在线 | ✓ 抓包 | 68 份 801_Status 抓包（最新 2026-11-01 17:25）均无 |
+| type94 全链（GWE 参数→本地 modifier→局内行为）| **✓✓ 实机** | 2026-11-01 20:03 注入 1346（38 颗战役星球）：卡面「燃烧加特林火力网」+ 加特林弹幕变燃烧弹 |
