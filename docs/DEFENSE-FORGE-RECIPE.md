@@ -40,7 +40,16 @@
 
 > 想要几级就写 `maxHealth = 等级 × 50,000`：38 级 = 1,900,000，50 级 = 2,500,000。
 
-## 3. 怎么打进去（工具已就绪）
+## 3. 怎么打进去（工具已就绪，2026-11-01 起有一键脚本）
+
+> 2026-11-01 新增 `tools/start_defense_proxy.ps1`：一条命令完成"停旧代理 → 备份 config/selection/status →
+> 写干净 config-defense.json → 带 spec 与抓包环境变量启动"。完整实测见 `MISSION-CAPTURES-2026-11-01.md`。
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File tools\start_defense_proxy.ps1 `
+    -SpecFile D:\mod\work\variant-net\out\defense_spec_20261101.json
+```
+
 
 ```bash
 # ① 给第三方代理的 HD2_GWE_EXTRA 钩子补 potentialBuildUp / campaignId 兜底（幂等，留 .bak）
@@ -74,11 +83,16 @@ python tools/defense_inject.py selftest --spec-text "$(cat out/defense_spec.json
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File D:\Downloads\variant_mod\stop.ps1     # 停代理
 python tools/defense_inject.py revert --proxy D:/Downloads/variant_mod/tools/war_proxy.py # 撤补丁
+# 用 start_defense_proxy.ps1 启过的话，还要还原它做的三份备份：
+copy /Y D:\Downloads\variant_mod\config.json.bak-defense-<stamp>             D:\Downloads\variant_mod\config.json
+copy /Y D:\Downloads\variant_mod\runtime\selection.json.bak-defense-<stamp>  D:\Downloads\variant_mod\runtime\selection.json
+copy /Y D:\Downloads\variant_mod\runtime\status.json.bak-defense-<stamp>     D:\Downloads\variant_mod\runtime\status.json
 # 正常联机前还要（管理员）：
 powershell -NoProfile -ExecutionPolicy Bypass -File D:\Downloads\variant_mod\teardown.ps1 # 撤 hosts + 证书
 ```
 
 > 想"继续正常玩但保留工具"：代理以 `-Passthrough` 重启即可（不注入、纯转发）。
+> ⚠ hosts 在重定向期间必须保持代理运行，否则游戏连不上服务器。
 
 ## 6. 边界
 
@@ -86,3 +100,27 @@ powershell -NoProfile -ExecutionPolicy Bypass -File D:\Downloads\variant_mod\tea
   进任务能开是因为"作战创建"走的是客户端自己选的战役参数（见 §2 的 `Operation/Create` 请求体）。
 - 伪造战役的防守进度不会真的推进（没有服务器 tick），倒计时走本地时钟。
 - 只建议单人/受控环境试，别扩散到多人对局。
+
+## 7. 2026-11-01 复跑：能完整打完并结算，但有两个坑（✓✓ 实机）
+
+配方原样复用（目标 156 CHARBAL-VII、进攻方 157、等级 38、事件 id 9101），这次**把一局打完了**：
+
+| 环节 | 结果 |
+|---|---|
+| Status 注入 | 日志 `REWRITE +4 entries`（战役/攻击边/事件/联合作战）✓ |
+| `Operation/Create` | 服务器接受，op **1237**；请求体 `type=4 / jointOperationId=9101 / operationSettingsId=538077316 / 3×任务 type=3` ✓ |
+| `Mission/Start` | 返回 missionId ✓ |
+| `Mission/end` | 成功撤离，XP 258 / 影响力 86 / 货币 1,002 ✓（真实发放）|
+
+两个必须知道的坑：
+
+1. **任务内容不是真防守任务**：本局目标是 `ERADICATE AUTOMATON FORCES`（普通清剿）；
+   真防守（244/207）是 `EVACUATE HIGH-VALUE ASSETS` / `EVACUATE PRIORITY CITIZENS` 一类撤离任务。
+   ⇒ 伪造 campaign/event 不足以让客户端选到"防守任务池"。
+2. **结算里的战役字段是残值**：`campaignWon=true`、`othersImpactPlanetEvent=1,880,999`
+   （= 注入事件血量 −1），但战后 Status 里 156 号星球毫无变化 ⇒ 服务器把"不存在的事件"按 0 血处理。
+   ⇒ 做防守语义研究必须用**真实事件**样本（见 `MISSION-CAPTURES-2026-11-01.md` 第三局）。
+
+配套结论：`operationSettingsId=538077316` 在真实防守（244/207）与伪造防守（156）三个星球、难度 5/8 下完全一致，
+它是"防守类作战"的固定设置 id。
+

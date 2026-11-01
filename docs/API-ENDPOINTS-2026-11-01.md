@@ -108,6 +108,11 @@
 ⇒ **任务级 modifier（wiki 的 Operation Modifiers）不由 API 下发**；客户端把它硬编码在 `data/game/game.dll`（偏移 `0x2CA0168`，13 条 × 0x50 B，可用 `repo-datamined/tools/opmod_scan.py` 提取）。
 详见 `repo-datamined/docs/tables/OPERATION-MODIFIERS-26088801.md`。
 
+> 2026-11-01 深夜续：三条任务线（解放/事件防守/城市分区）共 6 局已抓全，字段语义、`impact` 落点、
+> `othersImpactPlanetEvent`、`multipliers`（按难度）、`objectives[].id` 解码都已完成 —— 见
+> `repo-datamined/docs/tables/OPERATION-MISSION-API-26088801.md`、
+> `repo-datamined/docs/tables/MISSION-OBJECTIVES-26251122.md`、本仓库 `MISSION-CAPTURES-2026-11-01.md`。
+
 ## 4. 已抓到的请求体样本（`D:/mod/out/gwe/req_*.json`）
 
 ```jsonc
