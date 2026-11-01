@@ -1,7 +1,7 @@
 # GWE 全量效果表 + planetActiveEffects（warId 801）
 
 > 目录：`fb1b64f6_api_WarSeason_GalacticWarEffects.json` + `71efaac9_api_WarSeason_GalacticWarEffects.json`（并集 **312** 条）
-> 在线快照：`013ec696_api_WarSeason_801_Status.json`（**139** 条 planetActiveEffects，273 颗星球）；历史快照 69 份
+> 在线快照：`b761cdc3_api_WarSeason_801_Status.json`（**139** 条 planetActiveEffects，273 颗星球）；历史快照 70 份
 > 名称/描述：`refs/strings-en-26088801.json`（24,834 条 locid）；presence 行与 modifier 行均为本地明文表。
 > 机读版：`out/gwe/effects-full.csv`、`out/gwe/planet-active-effects.csv`（`out/` 含账号 id，本地生成不入库）；生成器 `tools/gwe_full_table.py`（可重跑）。
 > presence 视角的可注入菜单见 [EFFECT-MENU-801](EFFECT-MENU-801.md)；本文档是全类型总表。
@@ -412,7 +412,7 @@
 
 ## 4. 当前在线：planetActiveEffects 快照
 
-`013ec696_api_WarSeason_801_Status.json`：139 条，逐星球展开（同星球多效果合并一行）。
+`b761cdc3_api_WarSeason_801_Status.json`：139 条，逐星球展开（同星球多效果合并一行）。
 
 | 星球 | owner | 效果（id=名称） |
 |---:|---|---|
@@ -563,7 +563,7 @@
 ## 6. 实机与进行中的实验（2026-11-01）
 
 - **type94 ✓✓ 实机**：经代理向 38 颗战役星球的 `planetActiveEffects` 注入 `1346` 后，客户端「行动变量」出现「燃烧加特林火力网」卡面，Orbital Gatling Barrage 实弹变燃烧弹；证据 `audit.log`: `REWRITE +38 entries (planet 100 -> [1346] …)`。
-- **进行中**：`CAUSTIC STRAIN`（effect 1430 tag + 1431 mechanic，presence `bugs_acid`，name locid 461034013）注入 100 `TRANDOR`，验证「已发布但从未出现」的变种词条。
+- **CAUSTIC STRAIN ✓✓ 实机（2026-11-01 20:07）**：tag 1430 + mechanic 1431（presence `bugs_acid`，name locid 461034013）注入 100 `TRANDOR` 后，客户端出现「腐蚀变种 / CAUSTIC STRAIN」词条与描述，局内刷新腐蚀变体（喷吐腐蚀体液、死亡爆裂）。证据 `audit.log`: `REWRITE +2 entries (planet 100 -> [1430, 1431]) 变种=caustic_strain`。⇒ 「已发布但从未出现过」的变种词条可以本地激活，tag 1430 就是 1431 的配对词条（邻接推断被证实）。
 
 ## 7. 复现
 

@@ -450,8 +450,11 @@ def main() -> int:
               "- **type94 ✓✓ 实机**：经代理向 38 颗战役星球的 `planetActiveEffects` 注入 `1346` 后，"
               "客户端「行动变量」出现「燃烧加特林火力网」卡面，Orbital Gatling Barrage 实弹变燃烧弹；"
               "证据 `audit.log`: `REWRITE +38 entries (planet 100 -> [1346] …)`。",
-              "- **进行中**：`CAUSTIC STRAIN`（effect 1430 tag + 1431 mechanic，presence `bugs_acid`，"
-              "name locid 461034013）注入 100 `TRANDOR`，验证「已发布但从未出现」的变种词条。",
+              "- **CAUSTIC STRAIN ✓✓ 实机（2026-11-01 20:07）**：tag 1430 + mechanic 1431"
+              "（presence `bugs_acid`，name locid 461034013）注入 100 `TRANDOR` 后，客户端出现"
+              "「腐蚀变种 / CAUSTIC STRAIN」词条与描述，局内刷新腐蚀变体（喷吐腐蚀体液、死亡爆裂）。"
+              "证据 `audit.log`: `REWRITE +2 entries (planet 100 -> [1430, 1431]) 变种=caustic_strain`。"
+              "⇒ 「已发布但从未出现过」的变种词条可以本地激活，tag 1430 就是 1431 的配对词条（邻接推断被证实）。",
               "", "## 7. 复现", "", "```bash",
               "python tools/gwe_full_table.py        # 两张 CSV + 本文档",
               "python tools/gwe_join.py report       # presence 对表（旧）",

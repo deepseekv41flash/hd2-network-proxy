@@ -140,7 +140,7 @@ def main() -> int:
 
     # 实机验证过的条目（见 §8）：只有这两条走完了"注入→客户端渲染"全链
     for r in rows:
-        if r["effect_id"] in (1373, 1386):
+        if r["effect_id"] in (1373, 1386, 1431):
             r["evidence"] = "✓✓ 实机"
 
     # ---- 文件产物 ----

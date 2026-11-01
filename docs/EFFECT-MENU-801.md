@@ -1,6 +1,6 @@
 # 可注入效果菜单（warId 801）
 
-> 生成自 `71efaac9_api_WarSeason_GalacticWarEffects.json`（312 条）、`013ec696_api_WarSeason_801_Status.json`（在线 65 个不同 effect）
+> 生成自 `71efaac9_api_WarSeason_GalacticWarEffects.json`（312 条）、`b761cdc3_api_WarSeason_801_Status.json`（在线 65 个不同 effect）
 > presence 分类依据 `generated_galactic_presence_settings.dl_bin` 的 `+0x14/+0x18/+0x1C`，见 PLANET-TABLES。
 > **全量 312 条（含所有 effectType、官方名称/描述、在线表）见 [GWE-EFFECTS-FULL-26088801](GWE-EFFECTS-FULL-26088801.md)**；本文档是 presence 视角的菜单。
 
@@ -121,7 +121,7 @@
 | 1310 | bugs_burrower | terminid | RUPTURE STRAIN | 1 | 2 | ⚠ 未证 |
 | 1386 | bugs_gloom | terminid | SPORE BURST STRAIN | 1 | 1 | ✓✓ 实机 |
 | 1396 | bug_tcs_towers | terminid | — | 0 | 0 | ⚠ 未证 |
-| 1431 | bugs_acid | terminid | CAUSTIC STRAIN | 1 | 0 | ⚠ 未证 |
+| 1431 | bugs_acid | terminid | CAUSTIC STRAIN | 1 | 0 | ✓✓ 实机 |
 
 ## 5. 地图标记（kind=0）
 
