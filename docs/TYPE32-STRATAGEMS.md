@@ -95,3 +95,16 @@
 | 1428 | `0x0c064a00` | 0 | （未解析） | — | — |
 
 **可解析 84 / 88**；未解析 4 条。
+
+## 发放史（服务器什么时候真的用过某条 type32）
+
+| effect | 战备 | 通道 | 时段 | 证据 |
+|---:|---|---|---|---|
+| 1279 | M-102 Fast Recon Vehicle | `planetActiveEffects`（单星球） | 在线 | 11-06 Status `19f0386e` |
+| **1393** | **M-104 Incinerator FRV** | **`globalEvents[].effectIds`（全局）** | **11-03 21:08 起，至 11-06 12:01 仍在线** | 事件 1501108「ASSURANCE」，文案 "fleetwide availability of the INCINERATOR FRV Stratagem" |
+
+⇒ **M-104 是官方正在全服发放的临时战备，不需要我们自己注入。**
+⇒ `globalEvents[].effectIds` 通道由官方实证（此前只有 §14.3 的 6 条陌生 hash 实验）。
+⇒ type32 集合在三份 GWE 抓包（10-27 / 10-29 / 11-03，310→312→315 条）中**恒为 88 条、id 完全一致**
+  —— 这条线没有新的 effect 可挖。
+

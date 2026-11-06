@@ -385,9 +385,21 @@ GitHub 代码搜索命中一份真实历史的 `WarStatus` 抓包：
 ### 14.4 边界
 
 * Status 路线**能**发放非常规战备（Portable Hellbomb、Dark Fluid Vessel 已实证）；
-* 但**只限有 type32 effect 的战备**。我们要的三个未发布战备
-  （`Eagle Air-to-Air Missiles` / `Orbital Walking Barrage Smoke` / `M-104 Incinerator FRV`）
-  在 88 条 type32 里**没有对应项** → **Status 路线发不了**，仍须走数据表 `+0xC8` 额外战备链
-  （[RECON-SHODAN-EXTRA-STRATAGEM](https://github.com/deepseekv41flash/hd2-datamined/blob/master/docs/cases/RECON-SHODAN-EXTRA-STRATAGEM-26088801.md)，M-104 已实机验证）。
+* 但**只限有 type32 effect 的战备**。当时记的三个目标战备"在 88 条里没有对应项"，
+  **2026-11-06 复核发现只有 Eagle ATM 成立**，另外两个各自有不同的答案：
+
+  | 目标 | 实际载体 | 现状 |
+  |---|---|---|
+  | `Eagle Air-to-Air Missiles` | 无 | 本地内部名就是 `EAGLE. (NOT USED) AIR-TO-AIR MISSLES`（占位未实装），type32 里也没有 → 只能走 `+0xC8` |
+  | `Orbital Walking Barrage Smoke` | **type94 effect 1350**（不是 type32） | 「行星战备变体」通道，机制已 ✓✓ 实机（1346 燃烧加特林），1350 本机尚未验 |
+  | `M-104 Incinerator FRV` | **type32 effect 1393**（`0xDA0600D7`，在 58 条目录里） | **2026-11-03 21:08 起服务器自己全局发放了**，见下 |
+
+* **服务器自己发了 M-104**：`globalEvents` 1501108「ASSURANCE」的 `effectIds = [1393]`，
+  文案原文 *"...High Command has authorized and subsidized fleetwide availability of the INCINERATOR FRV Stratagem."*
+  该条目自 2026-11-03 21:08 起出现在 Status 里，118 份快照中 12 份命中、直到 11-06 12:01 仍在线
+  ⇒ **M-104 现在是官方全服临时战备，不需要我们做任何注入**。这也顺带实证了 `globalEvents[].effectIds`
+  就是"全局发放"通道（此前只在 §14.2 推断、§14.3 用 6 条陌生 hash 试过）。
+* 仍需 `+0xC8` 数据表路线的只剩 `Eagle Air-to-Air Missiles`
+  （[RECON-SHODAN-EXTRA-STRATAGEM](https://github.com/deepseekv41flash/hd2-datamined/blob/master/docs/cases/RECON-SHODAN-EXTRA-STRATAGEM-26088801.md)）。
 * 界面 effects 列表**最多 10 条**。
 * 防守 `planetEvents` 暂缓（等真实抓包），本轮全部注入已撤销，游戏恢复纯转发。
