@@ -37,12 +37,22 @@ powershell -File run.ps1 -Passthrough
 ## 2. 抓包要同时设两个环境变量
 
 ```bash
-HD2_GWE_DUMP=D:/mod/out/gwe       # 输出目录（必需）
-HD2_GWE_PATHS="api/"              # 抓哪些路径（必需，注意写法见 §3）
+HD2_GWE_DUMP=D:/mod/out/gwe                          # 输出目录（必需）
+HD2_GWE_PATHS="api/"                                 # 抓哪些响应（必需，注意写法见 §3）
+HD2_GWE_REQ_PATHS="api/Operation,api/lobby,api/Progression"   # 抓哪些请求体（可选）
 ```
 
 只设 `HD2_GWE_DUMP` 时，默认只抓 `/api/WarSeason/GalacticWarEffects` —— 游戏照常跑、代理照常转发，
 但目录里只有 GWE 那一种，看起来像"什么都没抓到"。2026-11-05 因此白等了一轮。
+
+**第二个同类坑（2026-11-06）**：请求体白名单默认只有 `/api/Operation`。
+结果是明明在日志里看到了 `POST /api/Progression/ProgressionPackage/AcquireUnlockableItem`（配件解锁）
+和 `PUT /api/Progression/Items/Customize/v2`（改装保存），**body 却一个都没落盘**，只有路径和字节数。
+现已把默认改为 `/api/Operation,/api/lobby,/api/Progression/Items/Customize`，并给请求体文件名加上方法标签
+（`req_PUT_<hash>_<path>.json`），便于区分"读"和"写"。
+
+> 判断"抓全了没"的最快方法：看 `logs/proxy.log` 里出现过的路径，去 `out/gwe/index.txt` 里对一遍。
+> 只有 REQ 没有对应 dump，就是白名单漏了。
 
 ## 3. gitbash 会把 `/api/` 转换成 Windows 路径
 

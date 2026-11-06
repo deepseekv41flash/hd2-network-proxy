@@ -178,3 +178,33 @@ type32 全表 88 条、84/88 能解出战备名、官方发放实例见 `docs/TY
 - 要真正"永久解锁 + 配装面板可选"，现有唯一可行路线是数据表 `generated_stratagem_settings +0xC8`
   的额外战备（[RECON-SHODAN-EXTRA-STRATAGEM](https://github.com/deepseekv41flash/hd2-datamined/blob/master/docs/cases/RECON-SHODAN-EXTRA-STRATAGEM-26088801.md)，7 条实机）；
 - 若要走代理，下一步得先抓**改装/战令页按需请求**，确认 `claimedLevels` 是否真是载体。
+
+## 8. 配件解锁的真实端点：`AcquireUnlockableItem`（2026-11-06 发现）
+
+此前（`repo-datamined` WEAPON-CUSTOMIZATION §15）判定"配件没有拥有层、解锁状态在客户端本地"。
+**2026-11-06 17:12 的实机日志否掉了后一半** —— 在游戏里花 Requisition 解锁 CB-9 Exploding Crossbow
+的 REFLEX SIGHT 时，代理完整记到了这两笔：
+
+```
+17:12:12  POST /api/Progression/ProgressionPackage/AcquireUnlockableItem   136B → 200 (119B)
+17:12:34  PUT  /api/Progression/Items/Customize/v2                        160B → 200 (1705B)
+```
+
+| 端点 | 判读 |
+|---|---|
+| `POST /api/Progression/ProgressionPackage/AcquireUnlockableItem` | **解锁购买动作**：把"某个可解锁项"花货币买下来。附件解锁走的就是它 |
+| `PUT /api/Progression/Items/Customize/v2` | 随后把选中的配件写进该武器的改装槽（我们此前已知的保存路径）|
+
+⇒ **附件解锁是服务端动作，不是纯本地**。之前"没有拥有层"只说明它**不在**
+`/api/Progression/inventory` 的 `items[]` 与 `/api/Progression/items` 目录里（那两个清单查不到任何 optionId），
+并不等于服务端没有记录 —— 记录应该在"可解锁项"这套结构里，由 `AcquireUnlockableItem` 写入。
+
+**仍缺的一环：请求体。** 当时请求白名单只有 `/api/Operation`，136 B 的 body 没落盘。已修复：
+
+- `_gwe_capture_req` 默认白名单改为 `/api/Operation,/api/lobby,/api/Progression/Items/Customize`
+  （运行时可用 `HD2_GWE_REQ_PATHS` 覆盖）；
+- 请求体文件名带上方法：`req_<METHOD>_<hash>_<path>.json`，`index.txt` 记 `REQ <METHOD>\t<path>`；
+- 代理于 2026-11-06 17:15:27 以 `HD2_GWE_PATHS="api/"` + `HD2_GWE_REQ_PATHS="api/Operation,api/lobby,api/Progression"` 重启。
+
+下次再解锁任意一个配件，就能拿到 body 与 119 B 响应，从而确认：
+① 解锁项用什么 id 空间（是不是 optionId `0xB7303DA1`）；② 响应里是否回传剩余货币/已解锁集合。
