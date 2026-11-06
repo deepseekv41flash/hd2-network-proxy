@@ -1,0 +1,714 @@
+{
+  "_note": "附件库存注入：B 实验 140 条（5 把已证可编辑）",
+  "enabled": true,
+  "experiment": "B-injected-weapons-attachments",
+  "weapons": [
+    "0x202ABB40",
+    "0x80DD6F30",
+    "0x850C35D4",
+    "0xAB1B4972",
+    "0xE288C742"
+  ],
+  "items": [
+    {
+      "mixId": 1506458483,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 1788032262,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 410879336,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 3453867500,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 3308789356,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 4041656513,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 1123726853,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 691900508,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 2527666581,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 281774615,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 1451532060,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 3965402341,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 1070230216,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 56655924,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 2791304367,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 611013260,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 3857319119,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 1730855398,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 1506985288,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 3361717039,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 2207945170,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 3351776543,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 2325544500,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 342687509,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 3135976644,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 3137238930,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 389705587,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 3412163365,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 1962265324,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 1799237662,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 2583713711,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 523431093,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 4102654096,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 450548710,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 928739254,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 1235527077,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 1735865322,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 1169547224,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 67297731,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 4221023775,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 3708787264,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 2537483730,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 43771865,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 3059202679,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 2987710897,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 2961369560,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 2172330436,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 2091888118,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 2273912558,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 2147390009,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 966243783,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 3428766580,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 68853752,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 1257387459,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 2979227221,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 3612648580,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 1292095655,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 189580716,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 1644310648,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 1588124292,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 3089260159,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 987929430,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 2417332060,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 3877858932,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 2565883100,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 2509758879,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 3729967970,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 3879087394,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 834372401,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 2267942247,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 4292669772,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 712810952,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 580479560,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 2368880930,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 1896371633,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 4150984243,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 2972052280,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 2774254113,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 4036696919,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 3630898924,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 3837916176,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 3466388600,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 2794623843,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 3195253100,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 38498539,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 2156639682,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 1832749584,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 200952001,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 805228299,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 543783227,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 1101532632,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 1620023167,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 1565147360,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 4090334001,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 3194736471,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 1651062241,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 336859439,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 2375186514,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 1776139007,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 3224125967,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 1122606223,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 941326847,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 2507364957,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 1917437158,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 3201533980,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 3426564210,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 3297457933,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 2193891846,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 3951744978,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 3609214254,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 833272277,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 3010100476,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 429746422,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 1856735710,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 293118838,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 471795253,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 1473916104,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 1857997448,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 1436466493,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 332507190,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 369237559,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 635063913,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 4020138315,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 2290672326,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 2154637638,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 3556513471,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 1818797942,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 2057264610,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 1177925406,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 3955575132,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 2696885221,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 578811596,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 3262895217,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 2366278661,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 3335497464,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 1362741311,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 2191342133,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 4290642926,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 4289413304,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 2583946007,
+      "amount": 1,
+      "isDiscovered": false
+    }
+  ]
+}
