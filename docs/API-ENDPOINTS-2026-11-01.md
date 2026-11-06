@@ -400,4 +400,46 @@ python tools/dlbin_seal.py open-key --key refs/dlbin/keys/recipient.sk \
 ⇒ 经验：**护甲行与头盔行共用同一套名称 locid**（同套装同名），披风/横幅各自单独一行；
 名字永远在本地表里，抓包只给 id，写文档/回答问题时不要凭 id 猜名字。
 
+## 10. 战备解锁：`POST /api/SeasonPass/item/buy`（2026-11-06 20:30 真实解锁抓包）
+
+用户 20:30:02 从 **ENTRENCHED DIVISION** 战团解锁 **GAS MORTAR SENTRY**，全量抓包完整记下。
+
+### 10.1 端点族
+
+| 端点 | 作用 |
+|---|---|
+| `GET /api/SeasonPass/<warbondId32>` | 战团详情：`seasonPassPages[].seasonPassItems[] = {seasonPassItemId, itemMixId, medalCost, gridSize, gridPosition, isPremium, isRepeatable}` ← **页内每一项 → 实际物品 id 的映射就在这里** |
+| **`POST /api/SeasonPass/item/buy`** | **买单个战团项** |
+| `GET /api/SeasonPass` | 26 个战团概览（`itemIds` = `seasonPassItemId` 集合，不是页号）|
+
+### 10.2 报文
+
+```jsonc
+// 请求（102 B）—— 战团 id 3978214801，项 919，85 奖章
+{"expectedCost": [{"mixId": 1276729503, "amount": 85}],
+ "seasonPassItemId": 919, "warId": 801}
+
+// 响应（130 B）
+{"items": [{"mixId": 1276729503, "amount": -85},    // 奖章（medalsConsumableMixId）
+           {"mixId": 3859732805, "amount": 1},      // ← 解锁的物品（+1 = 进 inventory）
+           {"mixId": 905852432, "amount": 85}],     // 该战团的 medalsSpentMixId
+ "packageProgress": []}
+```
+
+### 10.3 结论：**战备拥有权 = inventory 里的一行（`progressionCategory: 11`）**
+
+| 检查 | 结果 |
+|---|---|
+| `seasonPassItemId 919` → `itemMixId` | **3859732805**（`medalCost 85`，与请求金额一致）|
+| 该 id 在 `Progression/items` 里 | **有**：`{itemId: 3859732805, mixId: 3859732805, progressionCategory: 11, isConsumable: false}` |
+| 购买前 inventory（968 条） | **不含** 3859732805 |
+| 购买后 | 响应 `items[]` 给它 **+1** ⇒ inventory 加一行 |
+
+⇒ **和武器 / 附件 / 商店外观同一条机制**：拥有权就是 inventory 行；`cat 11` 是"战备解锁物品"这一类。
+⇒ 2026-11-05 那次"951 条里只有 2 个 id 与 `stratagem_settings` 相交"之所以得出"无载体"，
+是因为**拿战备 hash 去比 inventory**；战备的解锁物品是另一套 mixId（`cat 11`），战备 hash 与它无关。
+⇒ 目录里 `cat 11` 共 **108** 条，本次登录时已拥有 **77**、未拥有 **31** ⇒ 都是"只加一行 inventory 即可"的候选
+（目录行本来就存在，因此不与"伪造目录行不被客户端接受"那条边界冲突）。
+
+
 
