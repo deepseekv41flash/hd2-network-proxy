@@ -1,5 +1,7 @@
 # 用代理把「未拥有物品」塞进账号（inventory 注入）— 2026-11-05
 
+> 统一入口：[UNLOCK-MAP](UNLOCK-MAP-2026-11-06.md)（武器上架 · 配件解锁 · CANNOT EDIT 三分类）。本篇是**拥有层注入的实现与首轮实验记录**。
+>
 > 起因：`repo-datamined` 那边查明 **军械库的成员资格 = 服务端 `/api/Progression/inventory` 里拥有的 `mixId`**
 > （见 `docs/tables/WEAPON-CUSTOMIZATION-26251122.md` §13）。于是自然想到：**用 GWE 代理改写这个响应**，
 > 就能让游戏以为某件物品已拥有/已解锁 —— 不需要加载器、不需要 dl_bin。
