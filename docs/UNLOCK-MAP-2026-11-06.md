@@ -462,7 +462,8 @@ SC-30 Trailblazer Scout、FS-05 Marksman、KDM-73 Dragoon、Beacon of Mercy、Dr
 `cat 9` 横幅 · `cat 11` 战备许可 · `cat 13` 语音包 · `cat 17` 内衬 · `cat 18` 货币 · `cat 23` 称号；
 `cat 10` 已实测**不产生可见 UI 变化**（108 条全量注入无反应）。
 > 更正：此前据 `avatarCustomization.victory_pose_index` 把姿势记在 `cat 7`，R3 证明**可解锁的胜利姿势在 `cat 8`**；
-> `cat 7`（32 条、24 已拥有）语义待复核（可能是姿势的另一种形态或非姿势类）。
+> **`cat 7`（32 条 / 24 已拥有 / 8 未拥有）的假设 = EMOTE（另一个动作项目）** —— 用户 2026-11-06 提出；
+> 与 `cat 8` 数量级相近，符合「姿势 + Emote 各一类」的结构；待 R5 用全量注入验证。
 
 ### 10.2 轮次结果
 
