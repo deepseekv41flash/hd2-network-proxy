@@ -1,0 +1,6775 @@
+[
+ {
+  "off": "0x4",
+  "type": "0xd9a55aa0",
+  "size": 2936,
+  "id": 530315896,
+  "id_hex": "0x1F9BFA78",
+  "names": [
+   [
+    1623263170,
+    "FS-37 RAVAGER"
+   ],
+   [
+    2721885102,
+    "FS-37 Ravager"
+   ]
+  ]
+ },
+ {
+  "off": "0xb94",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2033511819,
+  "id_hex": "0x7934ED8B",
+  "names": [
+   [
+    1623263170,
+    "FS-37 RAVAGER"
+   ],
+   [
+    2721885102,
+    "FS-37 Ravager"
+   ]
+  ]
+ },
+ {
+  "off": "0xc74",
+  "type": "0xd9a55aa0",
+  "size": 2936,
+  "id": 3544585106,
+  "id_hex": "0xD3461392",
+  "names": [
+   [
+    3229667878,
+    "FS-55 DEVASTATOR"
+   ],
+   [
+    941001616,
+    "FS-55 Devastator"
+   ]
+  ]
+ },
+ {
+  "off": "0x1804",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 90720489,
+  "id_hex": "0x056848E9",
+  "names": [
+   [
+    3229667878,
+    "FS-55 DEVASTATOR"
+   ],
+   [
+    941001616,
+    "FS-55 Devastator"
+   ]
+  ]
+ },
+ {
+  "off": "0x18e4",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 3106805633,
+  "id_hex": "0xB92E1781",
+  "names": [
+   [
+    3227013992,
+    "CW-4 ARCTIC RANGER"
+   ],
+   [
+    356014921,
+    "CW-4 Arctic Ranger"
+   ]
+  ]
+ },
+ {
+  "off": "0x2394",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1672102597,
+  "id_hex": "0x63AA42C5",
+  "names": [
+   [
+    3227013992,
+    "CW-4 ARCTIC RANGER"
+   ],
+   [
+    356014921,
+    "CW-4 Arctic Ranger"
+   ]
+  ]
+ },
+ {
+  "off": "0x2474",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 1773940042,
+  "id_hex": "0x69BC2D4A",
+  "names": [
+   [
+    2859881014,
+    "CW-22 KODIAK"
+   ],
+   [
+    3516021318,
+    "CW-22 Kodiak"
+   ]
+  ]
+ },
+ {
+  "off": "0x2f24",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2446816200,
+  "id_hex": "0x91D773C8",
+  "names": [
+   [
+    2859881014,
+    "CW-22 KODIAK"
+   ]
+  ]
+ },
+ {
+  "off": "0x3004",
+  "type": "0xd9a55aa0",
+  "size": 2936,
+  "id": 3672418116,
+  "id_hex": "0xDAE4A744",
+  "names": [
+   [
+    1737597269,
+    "SA-25 STEEL TROOPER"
+   ],
+   [
+    504081326,
+    "SA-25 Steel Trooper"
+   ]
+  ]
+ },
+ {
+  "off": "0x3b94",
+  "type": "0xd9a55aa0",
+  "size": 312,
+  "id": 2745690429,
+  "id_hex": "0xA3A7E93D",
+  "names": [
+   [
+    1737597269,
+    "SA-25 STEEL TROOPER"
+   ],
+   [
+    504081326,
+    "SA-25 Steel Trooper"
+   ]
+  ]
+ },
+ {
+  "off": "0x3ce4",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 4072133621,
+  "id_hex": "0xF2B7D3F5",
+  "names": [
+   [
+    2501206090,
+    "SA-12 SERVO ASSISTED"
+   ],
+   [
+    1458358876,
+    "SA-12 Servo-Assisted"
+   ]
+  ]
+ },
+ {
+  "off": "0x4794",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2362677051,
+  "id_hex": "0x8CD3973B",
+  "names": [
+   [
+    2501206090,
+    "SA-12 SERVO ASSISTED"
+   ],
+   [
+    1458358876,
+    "SA-12 Servo-Assisted"
+   ]
+  ]
+ },
+ {
+  "off": "0x4874",
+  "type": "0xd9a55aa0",
+  "size": 2824,
+  "id": 1010744048,
+  "id_hex": "0x3C3EBAF0",
+  "names": [
+   [
+    2245482128,
+    "SA-32 DYNAMO"
+   ],
+   [
+    282273878,
+    "SA-32 Dynamo"
+   ]
+  ]
+ },
+ {
+  "off": "0x5394",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 4089246094,
+  "id_hex": "0xF3BCF18E",
+  "names": [
+   [
+    2245482128,
+    "SA-32 DYNAMO"
+   ],
+   [
+    282273878,
+    "SA-32 Dynamo"
+   ]
+  ]
+ },
+ {
+  "off": "0x5474",
+  "type": "0xd9a55aa0",
+  "size": 2936,
+  "id": 650064382,
+  "id_hex": "0x26BF31FE",
+  "names": [
+   [
+    3030317504,
+    "CE-74 BREAKER"
+   ],
+   [
+    1410048178,
+    "CE-74 Breaker"
+   ]
+  ]
+ },
+ {
+  "off": "0x6004",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3996028128,
+  "id_hex": "0xEE2E8CE0",
+  "names": [
+   [
+    3030317504,
+    "CE-74 BREAKER"
+   ],
+   [
+    1410048178,
+    "CE-74 Breaker"
+   ]
+  ]
+ },
+ {
+  "off": "0x60e4",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 324813428,
+  "id_hex": "0x135C4274",
+  "names": []
+ },
+ {
+  "off": "0x6b94",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 1801556340,
+  "id_hex": "0x6B619174",
+  "names": []
+ },
+ {
+  "off": "0x7644",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 1931908001,
+  "id_hex": "0x732693A1",
+  "names": []
+ },
+ {
+  "off": "0x80f4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2355853539,
+  "id_hex": "0x8C6B78E3",
+  "names": []
+ },
+ {
+  "off": "0x81d4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 263608846,
+  "id_hex": "0x0FB65A0E",
+  "names": []
+ },
+ {
+  "off": "0x82b4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 4138636345,
+  "id_hex": "0xF6AE9439",
+  "names": []
+ },
+ {
+  "off": "0x8394",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 4264835049,
+  "id_hex": "0xFE3437E9",
+  "names": []
+ },
+ {
+  "off": "0x8474",
+  "type": "0xd9a55aa0",
+  "size": 2488,
+  "id": 1058794522,
+  "id_hex": "0x3F1BEC1A",
+  "names": [
+   [
+    1038815510,
+    "DP-00 TACTICAL"
+   ],
+   [
+    2211494876,
+    "DP-00 Tactical"
+   ]
+  ]
+ },
+ {
+  "off": "0x8e44",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1481290619,
+  "id_hex": "0x584AB37B",
+  "names": [
+   [
+    1038815510,
+    "DP-00 TACTICAL"
+   ],
+   [
+    2211494876,
+    "DP-00 Tactical"
+   ]
+  ]
+ },
+ {
+  "off": "0x8f24",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 4216001108,
+  "id_hex": "0xFB4B1254",
+  "names": [
+   [
+    2501843501,
+    "CE-35 TRENCH ENGINEER"
+   ],
+   [
+    1265620134,
+    "CE-35 Trench Engineer"
+   ]
+  ]
+ },
+ {
+  "off": "0x99d4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2952500571,
+  "id_hex": "0xAFFB955B",
+  "names": [
+   [
+    2501843501,
+    "CE-35 TRENCH ENGINEER"
+   ],
+   [
+    1265620134,
+    "CE-35 Trench Engineer"
+   ]
+  ]
+ },
+ {
+  "off": "0x9ab4",
+  "type": "0xd9a55aa0",
+  "size": 2824,
+  "id": 4081083564,
+  "id_hex": "0xF34064AC",
+  "names": [
+   [
+    3112422815,
+    "CE-67 TITAN"
+   ],
+   [
+    2014104199,
+    "CE-67 Titan"
+   ]
+  ]
+ },
+ {
+  "off": "0xa5d4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2547476111,
+  "id_hex": "0x97D7668F",
+  "names": [
+   [
+    3112422815,
+    "CE-67 TITAN"
+   ],
+   [
+    2014104199,
+    "CE-67 Titan"
+   ]
+  ]
+ },
+ {
+  "off": "0xa6b4",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 2128569605,
+  "id_hex": "0x7EDF6505",
+  "names": [
+   [
+    3268303935,
+    "CE-27 GROUND BREAKER"
+   ],
+   [
+    614297745,
+    "CE-27 Ground Breaker"
+   ]
+  ]
+ },
+ {
+  "off": "0xb164",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2891794937,
+  "id_hex": "0xAC5D49F9",
+  "names": [
+   [
+    3268303935,
+    "CE-27 GROUND BREAKER"
+   ],
+   [
+    614297745,
+    "CE-27 Ground Breaker"
+   ]
+  ]
+ },
+ {
+  "off": "0xb244",
+  "type": "0xd9a55aa0",
+  "size": 2936,
+  "id": 476841466,
+  "id_hex": "0x1C6C05FA",
+  "names": [
+   [
+    2343099532,
+    "CM-09 BONESNAPPER"
+   ],
+   [
+    526077306,
+    "CM-09 Bonesnapper"
+   ]
+  ]
+ },
+ {
+  "off": "0xbdd4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3260726132,
+  "id_hex": "0xC25ABB74",
+  "names": [
+   [
+    2343099532,
+    "CM-09 BONESNAPPER"
+   ],
+   [
+    526077306,
+    "CM-09 Bonesnapper"
+   ]
+  ]
+ },
+ {
+  "off": "0xbeb4",
+  "type": "0xd9a55aa0",
+  "size": 3384,
+  "id": 3576411155,
+  "id_hex": "0xD52BB413",
+  "names": [
+   [
+    3650336257,
+    "CM-21 TRENCH PARAMEDIC"
+   ],
+   [
+    81991626,
+    "CM-21 Trench Paramedic"
+   ]
+  ]
+ },
+ {
+  "off": "0xcc04",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3172884100,
+  "id_hex": "0xBD1E5E84",
+  "names": [
+   [
+    3650336257,
+    "CM-21 TRENCH PARAMEDIC"
+   ],
+   [
+    81991626,
+    "CM-21 Trench Paramedic"
+   ]
+  ]
+ },
+ {
+  "off": "0xcce4",
+  "type": "0xd9a55aa0",
+  "size": 3160,
+  "id": 2509257439,
+  "id_hex": "0x95903ADF",
+  "names": [
+   [
+    2177493405,
+    "CM-17 BUTCHER"
+   ],
+   [
+    260795141,
+    "CM-17 Butcher"
+   ]
+  ]
+ },
+ {
+  "off": "0xd954",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2792362215,
+  "id_hex": "0xA67010E7",
+  "names": [
+   [
+    2177493405,
+    "CM-17 BUTCHER"
+   ],
+   [
+    260795141,
+    "CM-17 Butcher"
+   ]
+  ]
+ },
+ {
+  "off": "0xda34",
+  "type": "0xd9a55aa0",
+  "size": 3160,
+  "id": 2047279903,
+  "id_hex": "0x7A07031F",
+  "names": [
+   [
+    1763602207,
+    "CM-10 CLINICIAN"
+   ],
+   [
+    2778148389,
+    "CM-10 Clinician"
+   ]
+  ]
+ },
+ {
+  "off": "0xe6a4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2978704486,
+  "id_hex": "0xB18B6C66",
+  "names": [
+   [
+    1763602207,
+    "CM-10 CLINICIAN"
+   ],
+   [
+    2778148389,
+    "CM-10 Clinician"
+   ]
+  ]
+ },
+ {
+  "off": "0xe784",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 3414071094,
+  "id_hex": "0xCB7E9736",
+  "names": [
+   [
+    8334221,
+    "B-22 MODEL CITIZEN"
+   ],
+   [
+    91112513,
+    "B-22 Model Citizen"
+   ]
+  ]
+ },
+ {
+  "off": "0xf234",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3964228207,
+  "id_hex": "0xEC49526F",
+  "names": [
+   [
+    8334221,
+    "B-22 MODEL CITIZEN"
+   ],
+   [
+    91112513,
+    "B-22 Model Citizen"
+   ]
+  ]
+ },
+ {
+  "off": "0xf314",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 2962098489,
+  "id_hex": "0xB08E0939",
+  "names": [
+   [
+    3475932864,
+    "B-16 BATTLE-SCARRED VETERAN"
+   ],
+   [
+    1339661327,
+    "B-16 Battle-Scarred Veteran"
+   ]
+  ]
+ },
+ {
+  "off": "0xfdc4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2511084797,
+  "id_hex": "0x95AC1CFD",
+  "names": [
+   [
+    3475932864,
+    "B-16 BATTLE-SCARRED VETERAN"
+   ],
+   [
+    1339661327,
+    "B-16 Battle-Scarred Veteran"
+   ]
+  ]
+ },
+ {
+  "off": "0xfea4",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 2775896893,
+  "id_hex": "0xA574D33D",
+  "names": []
+ },
+ {
+  "off": "0x10954",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 310587030,
+  "id_hex": "0x12832E96",
+  "names": []
+ },
+ {
+  "off": "0x10a34",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 1400802885,
+  "id_hex": "0x537E8E45",
+  "names": [
+   [
+    4104147901,
+    "FS-61 DREADNOUGHT"
+   ],
+   [
+    1892629368,
+    "FS-61 Dreadnought"
+   ]
+  ]
+ },
+ {
+  "off": "0x114e4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 773157227,
+  "id_hex": "0x2E15716B",
+  "names": [
+   [
+    4104147901,
+    "FS-61 DREADNOUGHT"
+   ],
+   [
+    1892629368,
+    "FS-61 Dreadnought"
+   ]
+  ]
+ },
+ {
+  "off": "0x115c4",
+  "type": "0xd9a55aa0",
+  "size": 2936,
+  "id": 1511511766,
+  "id_hex": "0x5A17D6D6",
+  "names": [
+   [
+    3016669355,
+    "CE-07 DEMOLITION SPECIALIST"
+   ],
+   [
+    2909424452,
+    "CE-07 Demolition Specialist"
+   ]
+  ]
+ },
+ {
+  "off": "0x12154",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1707113970,
+  "id_hex": "0x65C07DF2",
+  "names": [
+   [
+    3016669355,
+    "CE-07 DEMOLITION SPECIALIST"
+   ],
+   [
+    2909424452,
+    "CE-07 Demolition Specialist"
+   ]
+  ]
+ },
+ {
+  "off": "0x12234",
+  "type": "0xd9a55aa0",
+  "size": 2264,
+  "id": 4118634958,
+  "id_hex": "0xF57D61CE",
+  "names": [
+   [
+    525109127,
+    "SC-15 DRONE MASTER"
+   ],
+   [
+    2317508651,
+    "SC-15 Drone Master"
+   ]
+  ]
+ },
+ {
+  "off": "0x12b24",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2170995148,
+  "id_hex": "0x8166C1CC",
+  "names": [
+   [
+    525109127,
+    "SC-15 DRONE MASTER"
+   ],
+   [
+    2317508651,
+    "SC-15 Drone Master"
+   ]
+  ]
+ },
+ {
+  "off": "0x12c04",
+  "type": "0xd9a55aa0",
+  "size": 2936,
+  "id": 547904705,
+  "id_hex": "0x20A85CC1",
+  "names": [
+   [
+    2696078557,
+    "FS-38 ERADICATOR"
+   ],
+   [
+    4037789759,
+    "FS-38 Eradicator"
+   ]
+  ]
+ },
+ {
+  "off": "0x13794",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3664047629,
+  "id_hex": "0xDA64EE0D",
+  "names": [
+   [
+    2696078557,
+    "FS-38 ERADICATOR"
+   ],
+   [
+    4037789759,
+    "FS-38 Eradicator"
+   ]
+  ]
+ },
+ {
+  "off": "0x13874",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 618911418,
+  "id_hex": "0x24E3D6BA",
+  "names": [
+   [
+    3129812228,
+    "EX-03 PROTOTYPE 3"
+   ],
+   [
+    300356390,
+    "EX-03 Prototype 3"
+   ]
+  ]
+ },
+ {
+  "off": "0x14324",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2327628884,
+  "id_hex": "0x8ABCCC54",
+  "names": [
+   [
+    3129812228,
+    "EX-03 PROTOTYPE 3"
+   ],
+   [
+    300356390,
+    "EX-03 Prototype 3"
+   ]
+  ]
+ },
+ {
+  "off": "0x14404",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 2855449476,
+  "id_hex": "0xAA32B384",
+  "names": [
+   [
+    3342293369,
+    "EX-16 PROTOTYPE 16"
+   ],
+   [
+    1226988442,
+    "EX-16 Prototype 16"
+   ]
+  ]
+ },
+ {
+  "off": "0x14eb4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 556660324,
+  "id_hex": "0x212DF664",
+  "names": [
+   [
+    3342293369,
+    "EX-16 PROTOTYPE 16"
+   ],
+   [
+    1226988442,
+    "EX-16 Prototype 16"
+   ]
+  ]
+ },
+ {
+  "off": "0x14f94",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 2346212818,
+  "id_hex": "0x8BD85DD2",
+  "names": [
+   [
+    3097522254,
+    "FS-34 EXTERMINATOR"
+   ],
+   [
+    4267611838,
+    "FS-34 Exterminator"
+   ]
+  ]
+ },
+ {
+  "off": "0x15a44",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 951081859,
+  "id_hex": "0x38B05B83",
+  "names": [
+   [
+    3097522254,
+    "FS-34 EXTERMINATOR"
+   ],
+   [
+    4267611838,
+    "FS-34 Exterminator"
+   ]
+  ]
+ },
+ {
+  "off": "0x15b24",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 3037986132,
+  "id_hex": "0xB513FD54",
+  "names": [
+   [
+    3495182510,
+    "DP-40 HERO OF THE FEDERATION"
+   ],
+   [
+    3554596946,
+    "DP-40 Hero of the Federation"
+   ]
+  ]
+ },
+ {
+  "off": "0x165d4",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 2483492566,
+  "id_hex": "0x940716D6",
+  "names": [
+   [
+    3591901479,
+    "TR-9 CAVALIER OF DEMOCRACY"
+   ],
+   [
+    2146393453,
+    "TR-9 Cavalier of Democracy"
+   ]
+  ]
+ },
+ {
+  "off": "0x17084",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1546684370,
+  "id_hex": "0x5C3087D2",
+  "names": [
+   [
+    3495182510,
+    "DP-40 HERO OF THE FEDERATION"
+   ],
+   [
+    3554596946,
+    "DP-40 Hero of the Federation"
+   ]
+  ]
+ },
+ {
+  "off": "0x17164",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 4004823774,
+  "id_hex": "0xEEB4C2DE",
+  "names": [
+   [
+    3591901479,
+    "TR-9 CAVALIER OF DEMOCRACY"
+   ],
+   [
+    2146393453,
+    "TR-9 Cavalier of Democracy"
+   ]
+  ]
+ },
+ {
+  "off": "0x17244",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 3819612061,
+  "id_hex": "0xE3AAA79D",
+  "names": [
+   [
+    3555499414,
+    "DP-11 CHAMPION OF THE PEOPLE"
+   ],
+   [
+    2740153811,
+    "DP-11 Champion of the People"
+   ]
+  ]
+ },
+ {
+  "off": "0x17cf4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 4016909011,
+  "id_hex": "0xEF6D2AD3",
+  "names": [
+   [
+    3555499414,
+    "DP-11 CHAMPION OF THE PEOPLE"
+   ],
+   [
+    2740153811,
+    "DP-11 Champion of the People"
+   ]
+  ]
+ },
+ {
+  "off": "0x17dd4",
+  "type": "0xd9a55aa0",
+  "size": 3160,
+  "id": 950673533,
+  "id_hex": "0x38AA207D",
+  "names": [
+   [
+    3046584487,
+    "CM-14 PHYSICIAN"
+   ],
+   [
+    2402119974,
+    "CM-14 Physician"
+   ]
+  ]
+ },
+ {
+  "off": "0x18a44",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 541028876,
+  "id_hex": "0x203F720C",
+  "names": [
+   [
+    3046584487,
+    "CM-14 PHYSICIAN"
+   ],
+   [
+    2402119974,
+    "CM-14 Physician"
+   ]
+  ]
+ },
+ {
+  "off": "0x18b24",
+  "type": "0xd9a55aa0",
+  "size": 3160,
+  "id": 2675118910,
+  "id_hex": "0x9F73133E",
+  "names": [
+   [
+    415996760,
+    "TR-117 ALPHA COMMANDER"
+   ],
+   [
+    2301784568,
+    "TR-117 Alpha Commander"
+   ]
+  ]
+ },
+ {
+  "off": "0x19794",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 793893084,
+  "id_hex": "0x2F51D8DC",
+  "names": [
+   [
+    415996760,
+    "TR-117 ALPHA COMMANDER"
+   ],
+   [
+    2301784568,
+    "TR-117 Alpha Commander"
+   ]
+  ]
+ },
+ {
+  "off": "0x19874",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1685612430,
+  "id_hex": "0x6478678E",
+  "names": [
+   [
+    833021144,
+    "IX-VOIDWALKER"
+   ]
+  ]
+ },
+ {
+  "off": "0x19954",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1951513251,
+  "id_hex": "0x7451BAA3",
+  "names": [
+   [
+    1554678688,
+    "B-02 GLOOM WARDEN"
+   ],
+   [
+    4165878208,
+    "B-02 Gloom Warden"
+   ]
+  ]
+ },
+ {
+  "off": "0x19a34",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 3536156897,
+  "id_hex": "0xD2C578E1",
+  "names": [
+   [
+    1185066006,
+    "B-27 FORTIFIED COMMANDO"
+   ],
+   [
+    2574245188,
+    "B-27 Fortified Commando"
+   ]
+  ]
+ },
+ {
+  "off": "0x1a4e4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3508381787,
+  "id_hex": "0xD11DA85B",
+  "names": [
+   [
+    1185066006,
+    "B-27 FORTIFIED COMMANDO"
+   ],
+   [
+    2574245188,
+    "B-27 Fortified Commando"
+   ]
+  ]
+ },
+ {
+  "off": "0x1a5c4",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 2669749508,
+  "id_hex": "0x9F212504",
+  "names": []
+ },
+ {
+  "off": "0x1b074",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2776529082,
+  "id_hex": "0xA57E78BA",
+  "names": []
+ },
+ {
+  "off": "0x1b154",
+  "type": "0xd9a55aa0",
+  "size": 3384,
+  "id": 3618831709,
+  "id_hex": "0xD7B2FD5D",
+  "names": [
+   [
+    3753841326,
+    "EX-00 PROTOTYPE X"
+   ],
+   [
+    72563834,
+    "EX-00 Prototype X"
+   ]
+  ]
+ },
+ {
+  "off": "0x1bea4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3517336259,
+  "id_hex": "0xD1A64AC3",
+  "names": [
+   [
+    3753841326,
+    "EX-00 PROTOTYPE X"
+   ],
+   [
+    72563834,
+    "EX-00 Prototype X"
+   ]
+  ]
+ },
+ {
+  "off": "0x1bf84",
+  "type": "0xd9a55aa0",
+  "size": 3384,
+  "id": 2546928266,
+  "id_hex": "0x97CF0A8A",
+  "names": [
+   [
+    3946533903,
+    "CE-81 JUGGERNAUT"
+   ],
+   [
+    2907005557,
+    "CE-81 Juggernaut"
+   ]
+  ]
+ },
+ {
+  "off": "0x1ccd4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 4242416506,
+  "id_hex": "0xFCDE237A",
+  "names": [
+   [
+    3946533903,
+    "CE-81 JUGGERNAUT"
+   ],
+   [
+    2907005557,
+    "CE-81 Juggernaut"
+   ]
+  ]
+ },
+ {
+  "off": "0x1cdb4",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 2846302183,
+  "id_hex": "0xA9A71FE7",
+  "names": [
+   [
+    4124027049,
+    "DP-8 MOUNTAIN-SCALED"
+   ],
+   [
+    2036077300,
+    "DP-8 Mountain-Scaled"
+   ]
+  ]
+ },
+ {
+  "off": "0x1d864",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2979884042,
+  "id_hex": "0xB19D6C0A",
+  "names": [
+   [
+    4124027049,
+    "DP-8 MOUNTAIN-SCALED"
+   ],
+   [
+    2036077300,
+    "DP-8 Mountain-Scaled"
+   ]
+  ]
+ },
+ {
+  "off": "0x1d944",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 3265410911,
+  "id_hex": "0xC2A2375F",
+  "names": []
+ },
+ {
+  "off": "0x1e3f4",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 337681978,
+  "id_hex": "0x14209E3A",
+  "names": [
+   [
+    3675650842,
+    "SC-37 LEGIONNAIRE"
+   ],
+   [
+    3707804375,
+    "SC-37 Legionnaire"
+   ]
+  ]
+ },
+ {
+  "off": "0x1eea4",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 2613138368,
+  "id_hex": "0x9BC153C0",
+  "names": []
+ },
+ {
+  "off": "0x1f954",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3825651408,
+  "id_hex": "0xE406CED0",
+  "names": []
+ },
+ {
+  "off": "0x1fa34",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1605151673,
+  "id_hex": "0x5FACABB9",
+  "names": [
+   [
+    3675650842,
+    "SC-37 LEGIONNAIRE"
+   ],
+   [
+    3707804375,
+    "SC-37 Legionnaire"
+   ]
+  ]
+ },
+ {
+  "off": "0x1fb14",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1155085856,
+  "id_hex": "0x44D93620",
+  "names": []
+ },
+ {
+  "off": "0x1fbf4",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 2107035846,
+  "id_hex": "0x7D96D0C6",
+  "names": [
+   [
+    2343099532,
+    "CM-09 BONESNAPPER"
+   ],
+   [
+    526077306,
+    "CM-09 Bonesnapper"
+   ]
+  ]
+ },
+ {
+  "off": "0x206a4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1303420068,
+  "id_hex": "0x4DB09CA4",
+  "names": [
+   [
+    2343099532,
+    "CM-09 BONESNAPPER"
+   ],
+   [
+    526077306,
+    "CM-09 Bonesnapper"
+   ]
+  ]
+ },
+ {
+  "off": "0x20784",
+  "type": "0xd9a55aa0",
+  "size": 2264,
+  "id": 488691438,
+  "id_hex": "0x1D20D6EE",
+  "names": [
+   [
+    2202159575,
+    "B-08 LIGHT GUNNER"
+   ],
+   [
+    2129711499,
+    "B-08 Light Gunner"
+   ]
+  ]
+ },
+ {
+  "off": "0x21074",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1210216079,
+  "id_hex": "0x48226E8F",
+  "names": [
+   [
+    2202159575,
+    "B-08 LIGHT GUNNER"
+   ],
+   [
+    2129711499,
+    "B-08 Light Gunner"
+   ]
+  ]
+ },
+ {
+  "off": "0x21154",
+  "type": "0xd9a55aa0",
+  "size": 3272,
+  "id": 383891923,
+  "id_hex": "0x16E1B9D3",
+  "names": [
+   [
+    373320745,
+    "A-9 HELLJUMPER"
+   ],
+   [
+    1456963500,
+    "A-9 Helljumper"
+   ]
+  ]
+ },
+ {
+  "off": "0x21e34",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2671741463,
+  "id_hex": "0x9F3F8A17",
+  "names": [
+   [
+    373320745,
+    "A-9 HELLJUMPER"
+   ],
+   [
+    1456963500,
+    "A-9 Helljumper"
+   ]
+  ]
+ },
+ {
+  "off": "0x21f14",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 3631847226,
+  "id_hex": "0xD879973A",
+  "names": [
+   [
+    3953487134,
+    "A-35 RECON"
+   ],
+   [
+    3036570949,
+    "A-35 Recon"
+   ]
+  ]
+ },
+ {
+  "off": "0x229c4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3020362878,
+  "id_hex": "0xB407147E",
+  "names": [
+   [
+    3953487134,
+    "A-35 RECON"
+   ],
+   [
+    3036570949,
+    "A-35 Recon"
+   ]
+  ]
+ },
+ {
+  "off": "0x22aa4",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 4249185760,
+  "id_hex": "0xFD456DE0",
+  "names": [
+   [
+    3838621097,
+    "DP-53 SAVIOR OF THE FREE"
+   ],
+   [
+    4002297555,
+    "DP-53 Savior of the Free"
+   ]
+  ]
+ },
+ {
+  "off": "0x23554",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 139999425,
+  "id_hex": "0x085838C1",
+  "names": [
+   [
+    3838621097,
+    "DP-53 SAVIOR OF THE FREE"
+   ],
+   [
+    4002297555,
+    "DP-53 Savior of the Free"
+   ]
+  ]
+ },
+ {
+  "off": "0x23634",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 1969314276,
+  "id_hex": "0x756159E4",
+  "names": [
+   [
+    3046397365,
+    "SC-30 TRAILBLAZER SCOUT"
+   ],
+   [
+    3161943025,
+    "SC-30 Trailblazer Scout"
+   ]
+  ]
+ },
+ {
+  "off": "0x240e4",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 492895376,
+  "id_hex": "0x1D60FC90",
+  "names": [
+   [
+    3046397365,
+    "SC-30 TRAILBLAZER SCOUT"
+   ],
+   [
+    3161943025,
+    "SC-30 Trailblazer Scout"
+   ]
+  ]
+ },
+ {
+  "off": "0x24b94",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2141363041,
+  "id_hex": "0x7FA29B61",
+  "names": [
+   [
+    3046397365,
+    "SC-30 TRAILBLAZER SCOUT"
+   ],
+   [
+    3161943025,
+    "SC-30 Trailblazer Scout"
+   ]
+  ]
+ },
+ {
+  "off": "0x24c74",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2606482720,
+  "id_hex": "0x9B5BC520",
+  "names": []
+ },
+ {
+  "off": "0x24d54",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3682449066,
+  "id_hex": "0xDB7DB6AA",
+  "names": []
+ },
+ {
+  "off": "0x24e34",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1521442150,
+  "id_hex": "0x5AAF5D66",
+  "names": [
+   [
+    3046397365,
+    "SC-30 TRAILBLAZER SCOUT"
+   ],
+   [
+    3161943025,
+    "SC-30 Trailblazer Scout"
+   ]
+  ]
+ },
+ {
+  "off": "0x24f14",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2231876405,
+  "id_hex": "0x8507BB35",
+  "names": []
+ },
+ {
+  "off": "0x24ff4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 34232232,
+  "id_hex": "0x020A57A8",
+  "names": []
+ },
+ {
+  "off": "0x250d4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1376017051,
+  "id_hex": "0x52045A9B",
+  "names": []
+ },
+ {
+  "off": "0x251b4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2015397810,
+  "id_hex": "0x782087B2",
+  "names": []
+ },
+ {
+  "off": "0x25294",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 2342442877,
+  "id_hex": "0x8B9ED77D",
+  "names": [
+   [
+    1079235484,
+    "B-24 ENFORCER"
+   ],
+   [
+    1050431518,
+    "B-24 Enforcer"
+   ]
+  ]
+ },
+ {
+  "off": "0x25d44",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 2150790862,
+  "id_hex": "0x803276CE",
+  "names": [
+   [
+    1079235484,
+    "B-24 ENFORCER"
+   ],
+   [
+    1050431518,
+    "B-24 Enforcer"
+   ]
+  ]
+ },
+ {
+  "off": "0x267f4",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 2886393549,
+  "id_hex": "0xAC0ADECD",
+  "names": [
+   [
+    1079235484,
+    "B-24 ENFORCER"
+   ],
+   [
+    1050431518,
+    "B-24 Enforcer"
+   ]
+  ]
+ },
+ {
+  "off": "0x272a4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1092689023,
+  "id_hex": "0x41211C7F",
+  "names": [
+   [
+    1079235484,
+    "B-24 ENFORCER"
+   ],
+   [
+    1050431518,
+    "B-24 Enforcer"
+   ]
+  ]
+ },
+ {
+  "off": "0x27384",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 124623533,
+  "id_hex": "0x076D9AAD",
+  "names": [
+   [
+    2232103875,
+    "FS-05 MARKSMAN"
+   ],
+   [
+    3070458044,
+    "FS-05 Marksman"
+   ]
+  ]
+ },
+ {
+  "off": "0x27e34",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 1490803405,
+  "id_hex": "0x58DBDACD",
+  "names": [
+   [
+    2232103875,
+    "FS-05 MARKSMAN"
+   ],
+   [
+    3070458044,
+    "FS-05 Marksman"
+   ]
+  ]
+ },
+ {
+  "off": "0x288e4",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 3970674111,
+  "id_hex": "0xECABADBF",
+  "names": [
+   [
+    2232103875,
+    "FS-05 MARKSMAN"
+   ],
+   [
+    3070458044,
+    "FS-05 Marksman"
+   ]
+  ]
+ },
+ {
+  "off": "0x29394",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 255960702,
+  "id_hex": "0x0F41A67E",
+  "names": [
+   [
+    2232103875,
+    "FS-05 MARKSMAN"
+   ],
+   [
+    3070458044,
+    "FS-05 Marksman"
+   ]
+  ]
+ },
+ {
+  "off": "0x29474",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2070152922,
+  "id_hex": "0x7B6406DA",
+  "names": [
+   [
+    2232103875,
+    "FS-05 MARKSMAN"
+   ],
+   [
+    3070458044,
+    "FS-05 Marksman"
+   ]
+  ]
+ },
+ {
+  "off": "0x29554",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 910516311,
+  "id_hex": "0x36456057",
+  "names": [
+   [
+    2232103875,
+    "FS-05 MARKSMAN"
+   ],
+   [
+    3070458044,
+    "FS-05 Marksman"
+   ]
+  ]
+ },
+ {
+  "off": "0x29634",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1386151525,
+  "id_hex": "0x529EFE65",
+  "names": [
+   [
+    2232103875,
+    "FS-05 MARKSMAN"
+   ],
+   [
+    3070458044,
+    "FS-05 Marksman"
+   ]
+  ]
+ },
+ {
+  "off": "0x29714",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3642074737,
+  "id_hex": "0xD915A671",
+  "names": [
+   [
+    2232103875,
+    "FS-05 MARKSMAN"
+   ],
+   [
+    3070458044,
+    "FS-05 Marksman"
+   ]
+  ]
+ },
+ {
+  "off": "0x297f4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3826757243,
+  "id_hex": "0xE417AE7B",
+  "names": [
+   [
+    2232103875,
+    "FS-05 MARKSMAN"
+   ],
+   [
+    3070458044,
+    "FS-05 Marksman"
+   ]
+  ]
+ },
+ {
+  "off": "0x298d4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1146282869,
+  "id_hex": "0x4452E375",
+  "names": [
+   [
+    2232103875,
+    "FS-05 MARKSMAN"
+   ],
+   [
+    3070458044,
+    "FS-05 Marksman"
+   ]
+  ]
+ },
+ {
+  "off": "0x299b4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 202045192,
+  "id_hex": "0x0C0AF708",
+  "names": [
+   [
+    2232103875,
+    "FS-05 MARKSMAN"
+   ],
+   [
+    3070458044,
+    "FS-05 Marksman"
+   ]
+  ]
+ },
+ {
+  "off": "0x29a94",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 2006219485,
+  "id_hex": "0x77947ADD",
+  "names": [
+   [
+    3058249690,
+    "FS-11 EXECUTIONER"
+   ],
+   [
+    2902624853,
+    "FS-11 Executioner"
+   ]
+  ]
+ },
+ {
+  "off": "0x2a544",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1447229978,
+  "id_hex": "0x5642FA1A",
+  "names": [
+   [
+    3058249690,
+    "FS-11 EXECUTIONER"
+   ],
+   [
+    2902624853,
+    "FS-11 Executioner"
+   ]
+  ]
+ },
+ {
+  "off": "0x2a624",
+  "type": "0xd9a55aa0",
+  "size": 2264,
+  "id": 1538571184,
+  "id_hex": "0x5BB4BBB0",
+  "names": [
+   [
+    1374581174,
+    "SC-34 INFILTRATOR"
+   ],
+   [
+    1155286393,
+    "SC-34 Infiltrator"
+   ]
+  ]
+ },
+ {
+  "off": "0x2af14",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1545242578,
+  "id_hex": "0x5C1A87D2",
+  "names": []
+ },
+ {
+  "off": "0x2aff4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1755983237,
+  "id_hex": "0x68AA2D85",
+  "names": []
+ },
+ {
+  "off": "0x2b0d4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3666591402,
+  "id_hex": "0xDA8BBEAA",
+  "names": [
+   [
+    1374581174,
+    "SC-34 INFILTRATOR"
+   ],
+   [
+    1155286393,
+    "SC-34 Infiltrator"
+   ]
+  ]
+ },
+ {
+  "off": "0x2b1b4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 309304502,
+  "id_hex": "0x126F9CB6",
+  "names": []
+ },
+ {
+  "off": "0x2b294",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 88270577,
+  "id_hex": "0x0542E6F1",
+  "names": []
+ },
+ {
+  "off": "0x2b374",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3064132714,
+  "id_hex": "0xB6A2F46A",
+  "names": []
+ },
+ {
+  "off": "0x2b454",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2733962024,
+  "id_hex": "0xA2F4F328",
+  "names": []
+ },
+ {
+  "off": "0x2b534",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 621795009,
+  "id_hex": "0x250FD6C1",
+  "names": [
+   [
+    1306153500,
+    "B-01 TACTICAL"
+   ],
+   [
+    2020958113,
+    "B-01 Tactical"
+   ]
+  ]
+ },
+ {
+  "off": "0x2bfe4",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 2325051543,
+  "id_hex": "0x8A957897",
+  "names": [
+   [
+    2827223430,
+    "TR-7 AMBASSADOR OF THE BRAND"
+   ],
+   [
+    3713235989,
+    "TR-7 Ambassador of the Brand"
+   ]
+  ]
+ },
+ {
+  "off": "0x2ca94",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 487470129,
+  "id_hex": "0x1D0E3431",
+  "names": [
+   [
+    1306153500,
+    "B-01 TACTICAL"
+   ],
+   [
+    2020958113,
+    "B-01 Tactical"
+   ]
+  ]
+ },
+ {
+  "off": "0x2d544",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 1887719913,
+  "id_hex": "0x708451E9",
+  "names": [
+   [
+    1306153500,
+    "B-01 TACTICAL"
+   ],
+   [
+    2020958113,
+    "B-01 Tactical"
+   ]
+  ]
+ },
+ {
+  "off": "0x2dff4",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 1639126819,
+  "id_hex": "0x61B31723",
+  "names": [
+   [
+    1306153500,
+    "B-01 TACTICAL"
+   ],
+   [
+    2020958113,
+    "B-01 Tactical"
+   ]
+  ]
+ },
+ {
+  "off": "0x2eaa4",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 1333768893,
+  "id_hex": "0x4F7FB2BD",
+  "names": [
+   [
+    1306153500,
+    "B-01 TACTICAL"
+   ],
+   [
+    2020958113,
+    "B-01 Tactical"
+   ]
+  ]
+ },
+ {
+  "off": "0x2f554",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 1666296234,
+  "id_hex": "0x6351A9AA",
+  "names": [
+   [
+    1306153500,
+    "B-01 TACTICAL"
+   ],
+   [
+    2020958113,
+    "B-01 Tactical"
+   ]
+  ]
+ },
+ {
+  "off": "0x30004",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 1831924614,
+  "id_hex": "0x6D30F386",
+  "names": [
+   [
+    1306153500,
+    "B-01 TACTICAL"
+   ],
+   [
+    2020958113,
+    "B-01 Tactical"
+   ]
+  ]
+ },
+ {
+  "off": "0x30ab4",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 3583338197,
+  "id_hex": "0xD59566D5",
+  "names": [
+   [
+    1306153500,
+    "B-01 TACTICAL"
+   ],
+   [
+    2020958113,
+    "B-01 Tactical"
+   ]
+  ]
+ },
+ {
+  "off": "0x31564",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 325695835,
+  "id_hex": "0x1369B95B",
+  "names": [
+   [
+    1306153500,
+    "B-01 TACTICAL"
+   ],
+   [
+    2020958113,
+    "B-01 Tactical"
+   ]
+  ]
+ },
+ {
+  "off": "0x32014",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 470325800,
+  "id_hex": "0x1C089A28",
+  "names": [
+   [
+    4045553464,
+    "TR-40 GOLD EAGLE"
+   ],
+   [
+    662852761,
+    "TR-40 Gold Eagle"
+   ]
+  ]
+ },
+ {
+  "off": "0x32ac4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 562097037,
+  "id_hex": "0x2180EB8D",
+  "names": [
+   [
+    1306153500,
+    "B-01 TACTICAL"
+   ],
+   [
+    2020958113,
+    "B-01 Tactical"
+   ]
+  ]
+ },
+ {
+  "off": "0x32ba4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 904434511,
+  "id_hex": "0x35E8934F",
+  "names": [
+   [
+    2827223430,
+    "TR-7 AMBASSADOR OF THE BRAND"
+   ],
+   [
+    3713235989,
+    "TR-7 Ambassador of the Brand"
+   ]
+  ]
+ },
+ {
+  "off": "0x32c84",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1332530540,
+  "id_hex": "0x4F6CCD6C",
+  "names": [
+   [
+    1306153500,
+    "B-01 TACTICAL"
+   ],
+   [
+    2020958113,
+    "B-01 Tactical"
+   ]
+  ]
+ },
+ {
+  "off": "0x32d64",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1084741268,
+  "id_hex": "0x40A7D694",
+  "names": [
+   [
+    1306153500,
+    "B-01 TACTICAL"
+   ],
+   [
+    2020958113,
+    "B-01 Tactical"
+   ]
+  ]
+ },
+ {
+  "off": "0x32e44",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2363964846,
+  "id_hex": "0x8CE73DAE",
+  "names": [
+   [
+    1306153500,
+    "B-01 TACTICAL"
+   ],
+   [
+    2020958113,
+    "B-01 Tactical"
+   ]
+  ]
+ },
+ {
+  "off": "0x32f24",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1773333561,
+  "id_hex": "0x69B2EC39",
+  "names": [
+   [
+    1306153500,
+    "B-01 TACTICAL"
+   ],
+   [
+    2020958113,
+    "B-01 Tactical"
+   ]
+  ]
+ },
+ {
+  "off": "0x33004",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 639388242,
+  "id_hex": "0x261C4A52",
+  "names": [
+   [
+    1306153500,
+    "B-01 TACTICAL"
+   ],
+   [
+    2020958113,
+    "B-01 Tactical"
+   ]
+  ]
+ },
+ {
+  "off": "0x330e4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1171786296,
+  "id_hex": "0x45D80A38",
+  "names": [
+   [
+    1306153500,
+    "B-01 TACTICAL"
+   ],
+   [
+    2020958113,
+    "B-01 Tactical"
+   ]
+  ]
+ },
+ {
+  "off": "0x331c4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3020061552,
+  "id_hex": "0xB4027B70",
+  "names": [
+   [
+    1306153500,
+    "B-01 TACTICAL"
+   ],
+   [
+    2020958113,
+    "B-01 Tactical"
+   ]
+  ]
+ },
+ {
+  "off": "0x332a4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3750644442,
+  "id_hex": "0xDF8E4ADA",
+  "names": [
+   [
+    1306153500,
+    "B-01 TACTICAL"
+   ],
+   [
+    2020958113,
+    "B-01 Tactical"
+   ]
+  ]
+ },
+ {
+  "off": "0x33384",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 4000324077,
+  "id_hex": "0xEE7019ED",
+  "names": [
+   [
+    1306153500,
+    "B-01 TACTICAL"
+   ],
+   [
+    2020958113,
+    "B-01 Tactical"
+   ]
+  ]
+ },
+ {
+  "off": "0x33464",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3792160842,
+  "id_hex": "0xE207C84A",
+  "names": [
+   [
+    1306153500,
+    "B-01 TACTICAL"
+   ],
+   [
+    2020958113,
+    "B-01 Tactical"
+   ]
+  ]
+ },
+ {
+  "off": "0x33544",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 275807529,
+  "id_hex": "0x10707D29",
+  "names": [
+   [
+    1306153500,
+    "B-01 TACTICAL"
+   ],
+   [
+    2020958113,
+    "B-01 Tactical"
+   ]
+  ]
+ },
+ {
+  "off": "0x33624",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 4257171265,
+  "id_hex": "0xFDBF4741",
+  "names": [
+   [
+    1306153500,
+    "B-01 TACTICAL"
+   ],
+   [
+    2020958113,
+    "B-01 Tactical"
+   ]
+  ]
+ },
+ {
+  "off": "0x33704",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3057185732,
+  "id_hex": "0xB638F3C4",
+  "names": [
+   [
+    1306153500,
+    "B-01 TACTICAL"
+   ],
+   [
+    2020958113,
+    "B-01 Tactical"
+   ]
+  ]
+ },
+ {
+  "off": "0x337e4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2218652020,
+  "id_hex": "0x843DF174",
+  "names": [
+   [
+    1306153500,
+    "B-01 TACTICAL"
+   ],
+   [
+    2020958113,
+    "B-01 Tactical"
+   ]
+  ]
+ },
+ {
+  "off": "0x338c4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 4191752871,
+  "id_hex": "0xF9D912A7",
+  "names": [
+   [
+    4045553464,
+    "TR-40 GOLD EAGLE"
+   ],
+   [
+    662852761,
+    "TR-40 Gold Eagle"
+   ]
+  ]
+ },
+ {
+  "off": "0x339a4",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 4130354432,
+  "id_hex": "0xF6303500",
+  "names": [
+   [
+    1721179076,
+    "AF-52 LOCKDOWN"
+   ],
+   [
+    291785917,
+    "AF-52 Lockdown"
+   ]
+  ]
+ },
+ {
+  "off": "0x34454",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2597729678,
+  "id_hex": "0x9AD6358E",
+  "names": [
+   [
+    1721179076,
+    "AF-52 LOCKDOWN"
+   ],
+   [
+    291785917,
+    "AF-52 Lockdown"
+   ]
+  ]
+ },
+ {
+  "off": "0x34534",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 269114829,
+  "id_hex": "0x100A5DCD",
+  "names": [
+   [
+    3973583853,
+    "AF-91 FIELD CHEMIST"
+   ],
+   [
+    1471503938,
+    "AF-91 Field Chemist"
+   ]
+  ]
+ },
+ {
+  "off": "0x34fe4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3747577035,
+  "id_hex": "0xDF5F7CCB",
+  "names": [
+   [
+    3973583853,
+    "AF-91 FIELD CHEMIST"
+   ],
+   [
+    1471503938,
+    "AF-91 Field Chemist"
+   ]
+  ]
+ },
+ {
+  "off": "0x350c4",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 622973953,
+  "id_hex": "0x2521D401",
+  "names": [
+   [
+    3619549886,
+    "UF-84 DOUBT KILLER"
+   ],
+   [
+    1750576249,
+    "UF-84 Doubt Killer"
+   ]
+  ]
+ },
+ {
+  "off": "0x35b74",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 91360070,
+  "id_hex": "0x05720B46",
+  "names": [
+   [
+    3619549886,
+    "UF-84 DOUBT KILLER"
+   ],
+   [
+    1750576249,
+    "UF-84 Doubt Killer"
+   ]
+  ]
+ },
+ {
+  "off": "0x35c54",
+  "type": "0xd9a55aa0",
+  "size": 3160,
+  "id": 1352056041,
+  "id_hex": "0x5096BCE9",
+  "names": [
+   [
+    1606981338,
+    "SR-64 CINDERBLOCK"
+   ],
+   [
+    1512362192,
+    "SR-64 Cinderblock"
+   ]
+  ]
+ },
+ {
+  "off": "0x368c4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1935281163,
+  "id_hex": "0x735A0C0B",
+  "names": [
+   [
+    1606981338,
+    "SR-64 CINDERBLOCK"
+   ],
+   [
+    1512362192,
+    "SR-64 Cinderblock"
+   ]
+  ]
+ },
+ {
+  "off": "0x369a4",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 3788846739,
+  "id_hex": "0xE1D53693",
+  "names": [
+   [
+    1377985733,
+    "IE-57 HELL-BENT"
+   ],
+   [
+    2429942127,
+    "IE-57 Hell-Bent"
+   ]
+  ]
+ },
+ {
+  "off": "0x37454",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2467151919,
+  "id_hex": "0x930DC02F",
+  "names": [
+   [
+    1377985733,
+    "IE-57 HELL-BENT"
+   ],
+   [
+    2429942127,
+    "IE-57 Hell-Bent"
+   ]
+  ]
+ },
+ {
+  "off": "0x37534",
+  "type": "0xd9a55aa0",
+  "size": 2488,
+  "id": 1081784714,
+  "id_hex": "0x407AB98A",
+  "names": [
+   [
+    2226140047,
+    "GS-11 DEMOCRACY'S DEPUTY"
+   ],
+   [
+    598279086,
+    "GS-11 Democracy's Deputy"
+   ]
+  ]
+ },
+ {
+  "off": "0x37f04",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1490406789,
+  "id_hex": "0x58D5CD85",
+  "names": [
+   [
+    2226140047,
+    "GS-11 DEMOCRACY'S DEPUTY"
+   ],
+   [
+    598279086,
+    "GS-11 Democracy's Deputy"
+   ]
+  ]
+ },
+ {
+  "off": "0x37fe4",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 4259903063,
+  "id_hex": "0xFDE8F657",
+  "names": [
+   [
+    1853943253,
+    "RE-824 BEARER OF THE STANDARD"
+   ],
+   [
+    3970181663,
+    "RE-824 Bearer of the Standard"
+   ]
+  ]
+ },
+ {
+  "off": "0x38a94",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2831092939,
+  "id_hex": "0xA8BF0CCB",
+  "names": [
+   [
+    1853943253,
+    "RE-824 BEARER OF THE STANDARD"
+   ],
+   [
+    3970181663,
+    "RE-824 Bearer of the Standard"
+   ]
+  ]
+ },
+ {
+  "off": "0x38b74",
+  "type": "0xd9a55aa0",
+  "size": 3384,
+  "id": 4177189740,
+  "id_hex": "0xF8FADB6C",
+  "names": [
+   [
+    1833365456,
+    "AD-11 LIVEWIRE"
+   ],
+   [
+    3352749549,
+    "AD-11 Livewire"
+   ]
+  ]
+ },
+ {
+  "off": "0x398c4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 619144634,
+  "id_hex": "0x24E765BA",
+  "names": [
+   [
+    1833365456,
+    "AD-11 LIVEWIRE"
+   ],
+   [
+    3352749549,
+    "AD-11 Livewire"
+   ]
+  ]
+ },
+ {
+  "off": "0x399a4",
+  "type": "0xd9a55aa0",
+  "size": 3160,
+  "id": 4099506837,
+  "id_hex": "0xF4598295",
+  "names": [
+   [
+    751476668,
+    "BP-77 GRAND JUROR"
+   ],
+   [
+    1401822931,
+    "BP-77 Grand Juror"
+   ]
+  ]
+ },
+ {
+  "off": "0x3a614",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 403022405,
+  "id_hex": "0x1805A245",
+  "names": [
+   [
+    751476668,
+    "BP-77 GRAND JUROR"
+   ],
+   [
+    1401822931,
+    "BP-77 Grand Juror"
+   ]
+  ]
+ },
+ {
+  "off": "0x3a6f4",
+  "type": "0xd9a55aa0",
+  "size": 2824,
+  "id": 3322703981,
+  "id_hex": "0xC60C706D",
+  "names": [
+   [
+    392980386,
+    "DS-10 BIG GAME HUNTER"
+   ],
+   [
+    2281091641,
+    "DS-10 Big Game Hunter"
+   ]
+  ]
+ },
+ {
+  "off": "0x3b214",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1383669348,
+  "id_hex": "0x52791E64",
+  "names": [
+   [
+    392980386,
+    "DS-10 BIG GAME HUNTER"
+   ],
+   [
+    2281091641,
+    "DS-10 Big Game Hunter"
+   ]
+  ]
+ },
+ {
+  "off": "0x3b2f4",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 3017717209,
+  "id_hex": "0xB3DEB5D9",
+  "names": [
+   [
+    2266600090,
+    "CW-9 WHITE WOLF"
+   ],
+   [
+    3260894616,
+    "CW-9 White Wolf"
+   ]
+  ]
+ },
+ {
+  "off": "0x3bda4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2086225563,
+  "id_hex": "0x7C59469B",
+  "names": [
+   [
+    2266600090,
+    "CW-9 WHITE WOLF"
+   ],
+   [
+    3260894616,
+    "CW-9 White Wolf"
+   ]
+  ]
+ },
+ {
+  "off": "0x3be84",
+  "type": "0xd9a55aa0",
+  "size": 2936,
+  "id": 1732669856,
+  "id_hex": "0x674671A0",
+  "names": [
+   [
+    1477109933,
+    "CE-64 GRENADIER"
+   ],
+   [
+    3662120282,
+    "CE-64 Grenadier"
+   ]
+  ]
+ },
+ {
+  "off": "0x3ca14",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1309115822,
+  "id_hex": "0x4E0785AE",
+  "names": [
+   [
+    1477109933,
+    "CE-64 GRENADIER"
+   ],
+   [
+    3662120282,
+    "CE-64 Grenadier"
+   ]
+  ]
+ },
+ {
+  "off": "0x3caf4",
+  "type": "0xd9a55aa0",
+  "size": 2824,
+  "id": 600891740,
+  "id_hex": "0x23D0E15C",
+  "names": [
+   [
+    3904401451,
+    "PH-56 JAGUAR"
+   ],
+   [
+    3839210593,
+    "PH-56 Jaguar"
+   ]
+  ]
+ },
+ {
+  "off": "0x3d614",
+  "type": "0xd9a55aa0",
+  "size": 312,
+  "id": 4033534167,
+  "id_hex": "0xF06AD8D7",
+  "names": [
+   [
+    3904401451,
+    "PH-56 JAGUAR"
+   ],
+   [
+    3839210593,
+    "PH-56 Jaguar"
+   ]
+  ]
+ },
+ {
+  "off": "0x3d764",
+  "type": "0xd9a55aa0",
+  "size": 3048,
+  "id": 3739746472,
+  "id_hex": "0xDEE800A8",
+  "names": [
+   [
+    808894733,
+    "CE-101 GUERILLA GORILLA "
+   ],
+   [
+    2854330936,
+    "CE-101 Guerilla Gorilla "
+   ]
+  ]
+ },
+ {
+  "off": "0x3e364",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2310126051,
+  "id_hex": "0x89B1B9E3",
+  "names": [
+   [
+    808894733,
+    "CE-101 GUERILLA GORILLA "
+   ],
+   [
+    2854330936,
+    "CE-101 Guerilla Gorilla "
+   ]
+  ]
+ },
+ {
+  "off": "0x3e444",
+  "type": "0xd9a55aa0",
+  "size": 3160,
+  "id": 574241611,
+  "id_hex": "0x223A3B4B",
+  "names": [
+   [
+    766068817,
+    "I-44 SALAMANDER"
+   ],
+   [
+    2663165311,
+    "I-44 Salamander"
+   ]
+  ]
+ },
+ {
+  "off": "0x3f0b4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3503184839,
+  "id_hex": "0xD0CE5BC7",
+  "names": [
+   [
+    766068817,
+    "I-44 SALAMANDER"
+   ],
+   [
+    2663165311,
+    "I-44 Salamander"
+   ]
+  ]
+ },
+ {
+  "off": "0x3f194",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 2357446537,
+  "id_hex": "0x8C83C789",
+  "names": [
+   [
+    3014989336,
+    "I-92 FIRE FIGHTER"
+   ],
+   [
+    674183024,
+    "I-92 Fire Fighter"
+   ]
+  ]
+ },
+ {
+  "off": "0x3fc44",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 4248996228,
+  "id_hex": "0xFD428984",
+  "names": [
+   [
+    3014989336,
+    "I-92 FIRE FIGHTER"
+   ],
+   [
+    674183024,
+    "I-92 Fire Fighter"
+   ]
+  ]
+ },
+ {
+  "off": "0x3fd24",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 2925099185,
+  "id_hex": "0xAE5978B1",
+  "names": [
+   [
+    4201560668,
+    "KDM-500 OUTRIDER"
+   ]
+  ]
+ },
+ {
+  "off": "0x407d4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3534240935,
+  "id_hex": "0xD2A83CA7",
+  "names": [
+   [
+    4201560668,
+    "KDM-500 OUTRIDER"
+   ],
+   [
+    335550317,
+    "KDM-500 Outrider"
+   ]
+  ]
+ },
+ {
+  "off": "0x408b4",
+  "type": "0xd9a55aa0",
+  "size": 3160,
+  "id": 2565365890,
+  "id_hex": "0x98E86082",
+  "names": [
+   [
+    533278085,
+    "RS-6 FIEND DESTROYER"
+   ],
+   [
+    942247207,
+    "RS-6 Fiend Destroyer"
+   ]
+  ]
+ },
+ {
+  "off": "0x41524",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3172433783,
+  "id_hex": "0xBD177F77",
+  "names": [
+   [
+    533278085,
+    "RS-6 FIEND DESTROYER"
+   ],
+   [
+    942247207,
+    "RS-6 Fiend Destroyer"
+   ]
+  ]
+ },
+ {
+  "off": "0x41604",
+  "type": "0xd9a55aa0",
+  "size": 2936,
+  "id": 3160209462,
+  "id_hex": "0xBC5CF836",
+  "names": [
+   [
+    588663789,
+    "O-44 BONDED PILOT"
+   ]
+  ]
+ },
+ {
+  "off": "0x42194",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1105008717,
+  "id_hex": "0x41DD184D",
+  "names": [
+   [
+    588663789,
+    "O-44 BONDED PILOT"
+   ],
+   [
+    1005051052,
+    "O-44 Bonded Pilot"
+   ]
+  ]
+ },
+ {
+  "off": "0x42274",
+  "type": "0xd9a55aa0",
+  "size": 2888,
+  "id": 186664391,
+  "id_hex": "0x0B2045C7",
+  "names": [
+   [
+    171885009,
+    "SS-500 PALE PROSECUTOR"
+   ],
+   [
+    287973358,
+    "SS-500 Pale Prosecutor"
+   ]
+  ]
+ },
+ {
+  "off": "0x42dd4",
+  "type": "0xd9a55aa0",
+  "size": 264,
+  "id": 1952614298,
+  "id_hex": "0x7462879A",
+  "names": [
+   [
+    171885009,
+    "SS-500 PALE PROSECUTOR"
+   ],
+   [
+    287973358,
+    "SS-500 Pale Prosecutor"
+   ]
+  ]
+ },
+ {
+  "off": "0x42ef4",
+  "type": "0xd9a55aa0",
+  "size": 2488,
+  "id": 1305954758,
+  "id_hex": "0x4DD749C6",
+  "names": [
+   [
+    849272024,
+    "RS-100 SANCTIONER"
+   ]
+  ]
+ },
+ {
+  "off": "0x438c4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1203563552,
+  "id_hex": "0x47BCEC20",
+  "names": [
+   [
+    849272024,
+    "RS-100 SANCTIONER"
+   ],
+   [
+    2769135006,
+    "RS-100 Sanctioner"
+   ]
+  ]
+ },
+ {
+  "off": "0x439a4",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 873657828,
+  "id_hex": "0x3412F5E4",
+  "names": [
+   [
+    3900081651,
+    "BFM-77 REFORMER"
+   ],
+   [
+    1574299520,
+    "BFM-77 Reformer"
+   ]
+  ]
+ },
+ {
+  "off": "0x44454",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3991525047,
+  "id_hex": "0xEDE9D6B7",
+  "names": [
+   [
+    3900081651,
+    "BFM-77 REFORMER"
+   ],
+   [
+    1574299520,
+    "BFM-77 Reformer"
+   ]
+  ]
+ },
+ {
+  "off": "0x44534",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 2618015377,
+  "id_hex": "0x9C0BBE91",
+  "names": [
+   [
+    85526284,
+    "CPR-80 BULWARK"
+   ],
+   [
+    3899068957,
+    "CPR-80 Bulwark"
+   ]
+  ]
+ },
+ {
+  "off": "0x44fe4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2773961410,
+  "id_hex": "0xA5574AC2",
+  "names": [
+   [
+    85526284,
+    "CPR-80 BULWARK"
+   ],
+   [
+    3899068957,
+    "CPR-80 Bulwark"
+   ]
+  ]
+ },
+ {
+  "off": "0x450c4",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 3386027321,
+  "id_hex": "0xC9D2AD39",
+  "names": [
+   [
+    1152717697,
+    "SA-04 COMBAT TECHNICIAN"
+   ],
+   [
+    1825331623,
+    "SA-04 Combat Technician"
+   ]
+  ]
+ },
+ {
+  "off": "0x45b74",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1318035279,
+  "id_hex": "0x4E8F9F4F",
+  "names": [
+   [
+    1152717697,
+    "SA-04 COMBAT TECHNICIAN"
+   ],
+   [
+    1825331623,
+    "SA-04 Combat Technician"
+   ]
+  ]
+ },
+ {
+  "off": "0x45c54",
+  "type": "0xd9a55aa0",
+  "size": 3048,
+  "id": 323545031,
+  "id_hex": "0x1348E7C7",
+  "names": []
+ },
+ {
+  "off": "0x46854",
+  "type": "0xd9a55aa0",
+  "size": 2264,
+  "id": 1556124245,
+  "id_hex": "0x5CC09255",
+  "names": [
+   [
+    2788848665,
+    "AF-50 NOXIOUS RANGER"
+   ],
+   [
+    2210667779,
+    "AF-50 Noxious Ranger"
+   ]
+  ]
+ },
+ {
+  "off": "0x47144",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3730267817,
+  "id_hex": "0xDE575EA9",
+  "names": [
+   [
+    2788848665,
+    "AF-50 NOXIOUS RANGER"
+   ],
+   [
+    2210667779,
+    "AF-50 Noxious Ranger"
+   ]
+  ]
+ },
+ {
+  "off": "0x47224",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 3920482375,
+  "id_hex": "0xE9ADD047",
+  "names": [
+   [
+    3192024450,
+    "AF-02 HAZ-MASTER"
+   ],
+   [
+    3199795572,
+    "AF-02 Haz-Master"
+   ]
+  ]
+ },
+ {
+  "off": "0x47cd4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 796167044,
+  "id_hex": "0x2F748B84",
+  "names": [
+   [
+    3192024450,
+    "AF-02 HAZ-MASTER"
+   ],
+   [
+    3199795572,
+    "AF-02 Haz-Master"
+   ]
+  ]
+ },
+ {
+  "off": "0x47db4",
+  "type": "0xd9a55aa0",
+  "size": 3160,
+  "id": 3008695584,
+  "id_hex": "0xB3550D20",
+  "names": [
+   [
+    1322492062,
+    "UF-50 BLOODHOUND"
+   ],
+   [
+    2766414075,
+    "UF-50 Bloodhound"
+   ]
+  ]
+ },
+ {
+  "off": "0x48a24",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 238751935,
+  "id_hex": "0x0E3B10BF",
+  "names": [
+   [
+    1322492062,
+    "UF-50 BLOODHOUND"
+   ],
+   [
+    2766414075,
+    "UF-50 Bloodhound"
+   ]
+  ]
+ },
+ {
+  "off": "0x48b04",
+  "type": "0xd9a55aa0",
+  "size": 2264,
+  "id": 3059832618,
+  "id_hex": "0xB661572A",
+  "names": [
+   [
+    1290747180,
+    "UF-16 INSPECTOR"
+   ],
+   [
+    454883555,
+    "UF-16 Inspector"
+   ]
+  ]
+ },
+ {
+  "off": "0x493f4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3530620108,
+  "id_hex": "0xD270FCCC",
+  "names": [
+   [
+    1290747180,
+    "UF-16 INSPECTOR"
+   ],
+   [
+    454883555,
+    "UF-16 Inspector"
+   ]
+  ]
+ },
+ {
+  "off": "0x494d4",
+  "type": "0xd9a55aa0",
+  "size": 2600,
+  "id": 98922213,
+  "id_hex": "0x05E56EE5",
+  "names": [
+   [
+    973409261,
+    "SR-24 STREET SCOUT"
+   ],
+   [
+    3708144977,
+    "SR-24 Street Scout"
+   ]
+  ]
+ },
+ {
+  "off": "0x49f14",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2477602867,
+  "id_hex": "0x93AD3833",
+  "names": [
+   [
+    973409261,
+    "SR-24 STREET SCOUT"
+   ],
+   [
+    3708144977,
+    "SR-24 Street Scout"
+   ]
+  ]
+ },
+ {
+  "off": "0x49ff4",
+  "type": "0xd9a55aa0",
+  "size": 2936,
+  "id": 3594517971,
+  "id_hex": "0xD63FFDD3",
+  "names": [
+   [
+    992229319,
+    "SR-18 ROADBLOCK"
+   ],
+   [
+    2016694799,
+    "SR-18 Roadblock"
+   ]
+  ]
+ },
+ {
+  "off": "0x4ab84",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3698525369,
+  "id_hex": "0xDC7304B9",
+  "names": [
+   [
+    992229319,
+    "SR-18 ROADBLOCK"
+   ],
+   [
+    2016694799,
+    "SR-18 Roadblock"
+   ]
+  ]
+ },
+ {
+  "off": "0x4ac64",
+  "type": "0xd9a55aa0",
+  "size": 2376,
+  "id": 2955458928,
+  "id_hex": "0xB028B970",
+  "names": [
+   [
+    3817297073,
+    "IE-3 MARTYR"
+   ],
+   [
+    4118311236,
+    "IE-3 Martyr"
+   ]
+  ]
+ },
+ {
+  "off": "0x4b5c4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1412199726,
+  "id_hex": "0x542C752E",
+  "names": [
+   [
+    3817297073,
+    "IE-3 MARTYR"
+   ],
+   [
+    4118311236,
+    "IE-3 Martyr"
+   ]
+  ]
+ },
+ {
+  "off": "0x4b6a4",
+  "type": "0xd9a55aa0",
+  "size": 2264,
+  "id": 2678678672,
+  "id_hex": "0x9FA96490",
+  "names": [
+   [
+    2647844829,
+    "IE-12 RIGHTEOUS"
+   ],
+   [
+    1659520367,
+    "IE-12 Righteous"
+   ]
+  ]
+ },
+ {
+  "off": "0x4bf94",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2331067702,
+  "id_hex": "0x8AF14536",
+  "names": [
+   [
+    2647844829,
+    "IE-12 RIGHTEOUS"
+   ],
+   [
+    1659520367,
+    "IE-12 Righteous"
+   ]
+  ]
+ },
+ {
+  "off": "0x4c074",
+  "type": "0xd9a55aa0",
+  "size": 3048,
+  "id": 384743520,
+  "id_hex": "0x16EEB860",
+  "names": [
+   [
+    83359279,
+    "GS-17 FRONTIER MARSHAL"
+   ],
+   [
+    3911487404,
+    "GS-17 Frontier Marshal"
+   ]
+  ]
+ },
+ {
+  "off": "0x4cc74",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 4131844227,
+  "id_hex": "0xF646F083",
+  "names": [
+   [
+    83359279,
+    "GS-17 FRONTIER MARSHAL"
+   ],
+   [
+    3911487404,
+    "GS-17 Frontier Marshal"
+   ]
+  ]
+ },
+ {
+  "off": "0x4cd54",
+  "type": "0xd9a55aa0",
+  "size": 3160,
+  "id": 3028464736,
+  "id_hex": "0xB482B460",
+  "names": [
+   [
+    2289519828,
+    "GS-66 LAWMAKER"
+   ],
+   [
+    1507566596,
+    "GS-66 Lawmaker"
+   ]
+  ]
+ },
+ {
+  "off": "0x4d9c4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 620606144,
+  "id_hex": "0x24FDB2C0",
+  "names": [
+   [
+    2289519828,
+    "GS-66 LAWMAKER"
+   ],
+   [
+    1507566596,
+    "GS-66 Lawmaker"
+   ]
+  ]
+ },
+ {
+  "off": "0x4daa4",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 820333399,
+  "id_hex": "0x30E54B57",
+  "names": [
+   [
+    4082436246,
+    "RE-2310 HONORARY GUARD"
+   ],
+   [
+    2852294319,
+    "RE-2310 Honorary Guard"
+   ]
+  ]
+ },
+ {
+  "off": "0x4e554",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1745464610,
+  "id_hex": "0x6809AD22",
+  "names": [
+   [
+    4082436246,
+    "RE-2310 HONORARY GUARD"
+   ],
+   [
+    2852294319,
+    "RE-2310 Honorary Guard"
+   ]
+  ]
+ },
+ {
+  "off": "0x4e634",
+  "type": "0xd9a55aa0",
+  "size": 1816,
+  "id": 3340614564,
+  "id_hex": "0xC71DBBA4",
+  "names": [
+   [
+    1574114144,
+    "RE-1861 PARADE COMMANDER"
+   ],
+   [
+    2725300846,
+    "RE-1861 Parade Commander"
+   ],
+   [
+    581132784,
+    "Awarded to those promoted to their point of greatest competency, and beyond."
+   ]
+  ]
+ },
+ {
+  "off": "0x4ed64",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1736175106,
+  "id_hex": "0x677BEE02",
+  "names": [
+   [
+    1574114144,
+    "RE-1861 PARADE COMMANDER"
+   ],
+   [
+    2725300846,
+    "RE-1861 Parade Commander"
+   ],
+   [
+    581132784,
+    "Awarded to those promoted to their point of greatest competency, and beyond."
+   ]
+  ]
+ },
+ {
+  "off": "0x4ee44",
+  "type": "0xd9a55aa0",
+  "size": 2824,
+  "id": 29533812,
+  "id_hex": "0x01C2A674",
+  "names": [
+   [
+    2698867856,
+    "AD-26 BLEEDING EDGE"
+   ],
+   [
+    1114234159,
+    "AD-26 Bleeding Edge"
+   ]
+  ]
+ },
+ {
+  "off": "0x4f964",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3704509247,
+  "id_hex": "0xDCCE533F",
+  "names": [
+   [
+    2698867856,
+    "AD-26 BLEEDING EDGE"
+   ],
+   [
+    1114234159,
+    "AD-26 Bleeding Edge"
+   ]
+  ]
+ },
+ {
+  "off": "0x4fa44",
+  "type": "0xd9a55aa0",
+  "size": 2936,
+  "id": 169394743,
+  "id_hex": "0x0A18C237",
+  "names": [
+   [
+    949548653,
+    "AD-49 APOLLONIAN"
+   ],
+   [
+    3764445519,
+    "AD-49 Apollonian"
+   ]
+  ]
+ },
+ {
+  "off": "0x505d4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 4173742975,
+  "id_hex": "0xF8C6437F",
+  "names": [
+   [
+    949548653,
+    "AD-49 APOLLONIAN"
+   ],
+   [
+    3764445519,
+    "AD-49 Apollonian"
+   ]
+  ]
+ },
+ {
+  "off": "0x506b4",
+  "type": "0xd9a55aa0",
+  "size": 3160,
+  "id": 1086743388,
+  "id_hex": "0x40C6635C",
+  "names": [
+   [
+    1732453131,
+    "BP-20 CORRECT OFFICER"
+   ],
+   [
+    759723416,
+    "BP-20 Correct Officer"
+   ]
+  ]
+ },
+ {
+  "off": "0x51324",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 995817415,
+  "id_hex": "0x3B5AF7C7",
+  "names": [
+   [
+    1732453131,
+    "BP-20 CORRECT OFFICER"
+   ],
+   [
+    759723416,
+    "BP-20 Correct Officer"
+   ]
+  ]
+ },
+ {
+  "off": "0x51404",
+  "type": "0xd9a55aa0",
+  "size": 3160,
+  "id": 162565828,
+  "id_hex": "0x09B08EC4",
+  "names": [
+   [
+    747912226,
+    "BP-32 JACKBOOT"
+   ],
+   [
+    1850940314,
+    "BP-32 Jackboot"
+   ]
+  ]
+ },
+ {
+  "off": "0x52074",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2141814630,
+  "id_hex": "0x7FA97F66",
+  "names": [
+   [
+    747912226,
+    "BP-32 JACKBOOT"
+   ],
+   [
+    1850940314,
+    "BP-32 Jackboot"
+   ]
+  ]
+ },
+ {
+  "off": "0x52154",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 1247043334,
+  "id_hex": "0x4A545F06",
+  "names": [
+   [
+    2029003593,
+    "DS-42 FEDERATION'S BLADE"
+   ],
+   [
+    3811816814,
+    "DS-42 Federation's Blade"
+   ]
+  ]
+ },
+ {
+  "off": "0x52c04",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3996008186,
+  "id_hex": "0xEE2E3EFA",
+  "names": [
+   [
+    2029003593,
+    "DS-42 FEDERATION'S BLADE"
+   ],
+   [
+    3811816814,
+    "DS-42 Federation's Blade"
+   ]
+  ]
+ },
+ {
+  "off": "0x52ce4",
+  "type": "0xd9a55aa0",
+  "size": 2936,
+  "id": 182347545,
+  "id_hex": "0x0ADE6719",
+  "names": [
+   [
+    1734352303,
+    "DS-191 SCORPION"
+   ],
+   [
+    2736926040,
+    "DS-191 Scorpion"
+   ]
+  ]
+ },
+ {
+  "off": "0x53874",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 4074553940,
+  "id_hex": "0xF2DCC254",
+  "names": [
+   [
+    1734352303,
+    "DS-191 SCORPION"
+   ],
+   [
+    2736926040,
+    "DS-191 Scorpion"
+   ]
+  ]
+ },
+ {
+  "off": "0x53954",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 3964025007,
+  "id_hex": "0xEC4638AF",
+  "names": [
+   [
+    3799869640,
+    "RS-20 CONSTRICTOR"
+   ],
+   [
+    543446303,
+    "RS-20 Constrictor"
+   ]
+  ]
+ },
+ {
+  "off": "0x54404",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3840063003,
+  "id_hex": "0xE4E2B61B",
+  "names": [
+   [
+    3799869640,
+    "RS-20 CONSTRICTOR"
+   ],
+   [
+    543446303,
+    "RS-20 Constrictor"
+   ]
+  ]
+ },
+ {
+  "off": "0x544e4",
+  "type": "0xd9a55aa0",
+  "size": 3272,
+  "id": 3686931097,
+  "id_hex": "0xDBC21A99",
+  "names": [
+   [
+    3258246494,
+    "RS-40 BEAST OF PREY"
+   ],
+   [
+    913017115,
+    "RS-40 Beast of Prey"
+   ]
+  ]
+ },
+ {
+  "off": "0x551c4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3978514634,
+  "id_hex": "0xED2350CA",
+  "names": [
+   [
+    3258246494,
+    "RS-40 BEAST OF PREY"
+   ],
+   [
+    913017115,
+    "RS-40 Beast of Prey"
+   ]
+  ]
+ },
+ {
+  "off": "0x552a4",
+  "type": "0xd9a55aa0",
+  "size": 2936,
+  "id": 3349510191,
+  "id_hex": "0xC7A5782F",
+  "names": [
+   [
+    1998980000,
+    "SA-7 HEADFIRST"
+   ],
+   [
+    787710913,
+    "SA-7 Headfirst"
+   ]
+  ]
+ },
+ {
+  "off": "0x55e34",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2660793694,
+  "id_hex": "0x9E987D5E",
+  "names": [
+   [
+    1998980000,
+    "SA-7 HEADFIRST"
+   ],
+   [
+    787710913,
+    "SA-7 Headfirst"
+   ]
+  ]
+ },
+ {
+  "off": "0x55f14",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 3063804173,
+  "id_hex": "0xB69DF10D",
+  "names": [
+   [
+    1070374087,
+    "SA-8 RAM"
+   ],
+   [
+    489706864,
+    "SA-8 Ram"
+   ]
+  ]
+ },
+ {
+  "off": "0x569c4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2030836577,
+  "id_hex": "0x790C1B61",
+  "names": [
+   [
+    1070374087,
+    "SA-8 RAM"
+   ],
+   [
+    489706864,
+    "SA-8 Ram"
+   ]
+  ]
+ },
+ {
+  "off": "0x56aa4",
+  "type": "0xd9a55aa0",
+  "size": 2264,
+  "id": 1924428455,
+  "id_hex": "0x72B472A7",
+  "names": [
+   [
+    425467206,
+    "PH-9 PREDATOR"
+   ],
+   [
+    1644828869,
+    "PH-9 Predator"
+   ]
+  ]
+ },
+ {
+  "off": "0x57394",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 456121928,
+  "id_hex": "0x1B2FDE48",
+  "names": [
+   [
+    425467206,
+    "PH-9 PREDATOR"
+   ],
+   [
+    1644828869,
+    "PH-9 Predator"
+   ]
+  ]
+ },
+ {
+  "off": "0x57474",
+  "type": "0xd9a55aa0",
+  "size": 2936,
+  "id": 3731036712,
+  "id_hex": "0xDE631A28",
+  "names": [
+   [
+    3819874910,
+    "PH-202 TWIGSNAPPER"
+   ],
+   [
+    2032014327,
+    "PH-202 Twigsnapper"
+   ]
+  ]
+ },
+ {
+  "off": "0x58004",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1470624541,
+  "id_hex": "0x57A7F31D",
+  "names": [
+   [
+    3819874910,
+    "PH-202 TWIGSNAPPER"
+   ],
+   [
+    2032014327,
+    "PH-202 Twigsnapper"
+   ]
+  ]
+ },
+ {
+  "off": "0x580e4",
+  "type": "0xd9a55aa0",
+  "size": 3160,
+  "id": 756930608,
+  "id_hex": "0x2D1DD830",
+  "names": [
+   [
+    1814943375,
+    "I-09 HEATSEEKER"
+   ],
+   [
+    737227869,
+    "I-09 Heatseeker"
+   ]
+  ]
+ },
+ {
+  "off": "0x58d54",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2983207423,
+  "id_hex": "0xB1D021FF",
+  "names": [
+   [
+    1814943375,
+    "I-09 HEATSEEKER"
+   ],
+   [
+    737227869,
+    "I-09 Heatseeker"
+   ]
+  ]
+ },
+ {
+  "off": "0x58e34",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 1449312627,
+  "id_hex": "0x5662C173",
+  "names": [
+   [
+    1254773855,
+    "I-102 DRACONAUGHT"
+   ],
+   [
+    3970966164,
+    "I-102 Draconaught"
+   ]
+  ]
+ },
+ {
+  "off": "0x598e4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1938372630,
+  "id_hex": "0x73893816",
+  "names": [
+   [
+    1254773855,
+    "I-102 DRACONAUGHT"
+   ],
+   [
+    3970966164,
+    "I-102 Draconaught"
+   ]
+  ]
+ },
+ {
+  "off": "0x599c4",
+  "type": "0xd9a55aa0",
+  "size": 2600,
+  "id": 505999640,
+  "id_hex": "0x1E28F118",
+  "names": [
+   [
+    2830999836,
+    "KDM-763 PACESETTER"
+   ],
+   [
+    2006721785,
+    "KDM-763 Pacesetter"
+   ]
+  ]
+ },
+ {
+  "off": "0x5a404",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1910769380,
+  "id_hex": "0x71E406E4",
+  "names": [
+   [
+    2830999836,
+    "KDM-763 PACESETTER"
+   ],
+   [
+    2006721785,
+    "KDM-763 Pacesetter"
+   ]
+  ]
+ },
+ {
+  "off": "0x5a4e4",
+  "type": "0xd9a55aa0",
+  "size": 3160,
+  "id": 461580715,
+  "id_hex": "0x1B8329AB",
+  "names": [
+   [
+    143843098,
+    "KDM-73 DRAGOON"
+   ],
+   [
+    2707764633,
+    "KDM-73 Dragoon"
+   ]
+  ]
+ },
+ {
+  "off": "0x5b154",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 4123751987,
+  "id_hex": "0xF5CB7633",
+  "names": [
+   [
+    143843098,
+    "KDM-73 DRAGOON"
+   ],
+   [
+    2707764633,
+    "KDM-73 Dragoon"
+   ]
+  ]
+ },
+ {
+  "off": "0x5b234",
+  "type": "0xd9a55aa0",
+  "size": 2488,
+  "id": 2890020275,
+  "id_hex": "0xAC4235B3",
+  "names": [
+   [
+    462478699,
+    "AC-1 DUTIFUL"
+   ],
+   [
+    3331509342,
+    "AC-1 Dutiful"
+   ]
+  ]
+ },
+ {
+  "off": "0x5bc04",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2928638796,
+  "id_hex": "0xAE8F7B4C",
+  "names": [
+   [
+    462478699,
+    "AC-1 DUTIFUL"
+   ],
+   [
+    3331509342,
+    "AC-1 Dutiful"
+   ]
+  ]
+ },
+ {
+  "off": "0x5bce4",
+  "type": "0xd9a55aa0",
+  "size": 2040,
+  "id": 1442671003,
+  "id_hex": "0x55FD699B",
+  "names": [
+   [
+    3633121216,
+    "AC-2 OBEDIENT"
+   ],
+   [
+    3898500608,
+    "AC-2 Obedient"
+   ]
+  ]
+ },
+ {
+  "off": "0x5c4f4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 681084148,
+  "id_hex": "0x289884F4",
+  "names": [
+   [
+    3633121216,
+    "AC-2 OBEDIENT"
+   ],
+   [
+    3898500608,
+    "AC-2 Obedient"
+   ]
+  ]
+ },
+ {
+  "off": "0x5c5d4",
+  "type": "0xd9a55aa0",
+  "size": 2040,
+  "id": 4159107367,
+  "id_hex": "0xF7E6F127",
+  "names": [
+   [
+    1995236842,
+    "O-3 FREE SPIRIT"
+   ],
+   [
+    2732014232,
+    "O-3 Free Spirit"
+   ]
+  ]
+ },
+ {
+  "off": "0x5cde4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2366040666,
+  "id_hex": "0x8D06EA5A",
+  "names": [
+   [
+    1995236842,
+    "O-3 FREE SPIRIT"
+   ],
+   [
+    2732014232,
+    "O-3 Free Spirit"
+   ]
+  ]
+ },
+ {
+  "off": "0x5cec4",
+  "type": "0xd9a55aa0",
+  "size": 2824,
+  "id": 779120056,
+  "id_hex": "0x2E706DB8",
+  "names": [
+   [
+    2958374193,
+    "O-2 HEAVY OPERATOR"
+   ],
+   [
+    1511917268,
+    "O-2 Heavy Operator"
+   ]
+  ]
+ },
+ {
+  "off": "0x5d9e4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3788138551,
+  "id_hex": "0xE1CA6837",
+  "names": [
+   [
+    2958374193,
+    "O-2 HEAVY OPERATOR"
+   ],
+   [
+    1511917268,
+    "O-2 Heavy Operator"
+   ]
+  ]
+ },
+ {
+  "off": "0x5dac4",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 1561165826,
+  "id_hex": "0x5D0D8002",
+  "names": [
+   [
+    571376114,
+    "TG-8 SHARPSHOOTER"
+   ],
+   [
+    165114243,
+    "TG-8 Sharpshooter"
+   ]
+  ]
+ },
+ {
+  "off": "0x5e574",
+  "type": "0xd9a55aa0",
+  "size": 312,
+  "id": 191298645,
+  "id_hex": "0x0B66FC55",
+  "names": [
+   [
+    571376114,
+    "TG-8 SHARPSHOOTER"
+   ],
+   [
+    165114243,
+    "TG-8 Sharpshooter"
+   ]
+  ]
+ },
+ {
+  "off": "0x5e6c4",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 2756937165,
+  "id_hex": "0xA45385CD",
+  "names": [
+   [
+    3684112822,
+    "TG-122 DEMO-TROOPER"
+   ],
+   [
+    3893766986,
+    "TG-122 Demo-Trooper"
+   ]
+  ]
+ },
+ {
+  "off": "0x5f174",
+  "type": "0xd9a55aa0",
+  "size": 312,
+  "id": 3244366537,
+  "id_hex": "0xC1611AC9",
+  "names": [
+   [
+    3684112822,
+    "TG-122 DEMO-TROOPER"
+   ],
+   [
+    3893766986,
+    "TG-122 Demo-Trooper"
+   ]
+  ]
+ },
+ {
+  "off": "0x5f2c4",
+  "type": "0xd9a55aa0",
+  "size": 4472,
+  "id": 2554075843,
+  "id_hex": "0x983C1AC3",
+  "names": [
+   [
+    1672951456,
+    "SS-33 MIMETIC MARSHAL"
+   ],
+   [
+    2497601417,
+    "SS-33 Mimetic Marshal"
+   ]
+  ]
+ },
+ {
+  "off": "0x60454",
+  "type": "0xd9a55aa0",
+  "size": 264,
+  "id": 2687829093,
+  "id_hex": "0xA0350465",
+  "names": [
+   [
+    1672951456,
+    "SS-33 MIMETIC MARSHAL"
+   ],
+   [
+    2497601417,
+    "SS-33 Mimetic Marshal"
+   ]
+  ]
+ },
+ {
+  "off": "0x60574",
+  "type": "0xd9a55aa0",
+  "size": 4120,
+  "id": 2722369635,
+  "id_hex": "0xA2441063",
+  "names": [
+   [
+    1235536510,
+    "SS-15 FOCAL POINT"
+   ],
+   [
+    1965275277,
+    "SS-15 Focal Point"
+   ]
+  ]
+ },
+ {
+  "off": "0x615a4",
+  "type": "0xd9a55aa0",
+  "size": 264,
+  "id": 2407633601,
+  "id_hex": "0x8F8192C1",
+  "names": [
+   [
+    1235536510,
+    "SS-15 FOCAL POINT"
+   ],
+   [
+    1965275277,
+    "SS-15 Focal Point"
+   ]
+  ]
+ },
+ {
+  "off": "0x616c4",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 2933292304,
+  "id_hex": "0xAED67D10",
+  "names": [
+   [
+    1002465957,
+    "RS-89 SHADOW PARAGON"
+   ]
+  ]
+ },
+ {
+  "off": "0x62174",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3495384269,
+  "id_hex": "0xD05754CD",
+  "names": [
+   [
+    1002465957,
+    "RS-89 SHADOW PARAGON"
+   ],
+   [
+    3949936246,
+    "RS-89 Shadow Paragon"
+   ]
+  ]
+ },
+ {
+  "off": "0x62254",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 3389596022,
+  "id_hex": "0xCA092176",
+  "names": [
+   [
+    1400346687,
+    "RS-67 NULL CIPHER"
+   ],
+   [
+    3578495106,
+    "RS-67 Null Cipher"
+   ]
+  ]
+ },
+ {
+  "off": "0x62d04",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1483828753,
+  "id_hex": "0x58716E11",
+  "names": [
+   [
+    1400346687,
+    "RS-67 NULL CIPHER"
+   ],
+   [
+    3578495106,
+    "RS-67 Null Cipher"
+   ]
+  ]
+ },
+ {
+  "off": "0x62de4",
+  "type": "0xd9a55aa0",
+  "size": 2600,
+  "id": 2355815292,
+  "id_hex": "0x8C6AE37C",
+  "names": [
+   [
+    1673011979,
+    "BFM-16 TANKER"
+   ]
+  ]
+ },
+ {
+  "off": "0x63824",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 761393401,
+  "id_hex": "0x2D61F0F9",
+  "names": [
+   [
+    1673011979,
+    "BFM-16 TANKER"
+   ],
+   [
+    2491825007,
+    "BFM-16 Tanker"
+   ]
+  ]
+ },
+ {
+  "off": "0x63904",
+  "type": "0xd9a55aa0",
+  "size": 2936,
+  "id": 4172861339,
+  "id_hex": "0xF8B8CF9B",
+  "names": [
+   [
+    3705477714,
+    "BFM-220 IRONCLAD"
+   ],
+   [
+    3897706997,
+    "BFM-220 Ironclad"
+   ]
+  ]
+ },
+ {
+  "off": "0x64494",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 935728706,
+  "id_hex": "0x37C61642",
+  "names": [
+   [
+    3705477714,
+    "BFM-220 IRONCLAD"
+   ],
+   [
+    3897706997,
+    "BFM-220 Ironclad"
+   ]
+  ]
+ },
+ {
+  "off": "0x64574",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 1594318277,
+  "id_hex": "0x5F075DC5",
+  "names": [
+   [
+    1950924479,
+    "CPG-48 SAPPER"
+   ]
+  ]
+ },
+ {
+  "off": "0x65024",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 4256773666,
+  "id_hex": "0xFDB93622",
+  "names": [
+   [
+    1950924479,
+    "CPG-48 SAPPER"
+   ],
+   [
+    2784934547,
+    "CPG-48 Sapper"
+   ]
+  ]
+ },
+ {
+  "off": "0x65104",
+  "type": "0xd9a55aa0",
+  "size": 2376,
+  "id": 606536357,
+  "id_hex": "0x242702A5",
+  "names": [
+   [
+    4122605483,
+    "CPH-26 COMMANDANT"
+   ]
+  ]
+ },
+ {
+  "off": "0x65a64",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 927211561,
+  "id_hex": "0x37442029",
+  "names": [
+   [
+    4122605483,
+    "CPH-26 COMMANDANT"
+   ],
+   [
+    3123365807,
+    "CPH-26 Commandant"
+   ]
+  ]
+ },
+ {
+  "off": "0x65b44",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 651522724,
+  "id_hex": "0x26D572A4",
+  "names": [
+   [
+    506680647,
+    "FS-23 BATTLE MASTER"
+   ],
+   [
+    1379640417,
+    "FS-23 Battle Master"
+   ]
+  ]
+ },
+ {
+  "off": "0x665f4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 513033465,
+  "id_hex": "0x1E9444F9",
+  "names": [
+   [
+    506680647,
+    "FS-23 BATTLE MASTER"
+   ],
+   [
+    1379640417,
+    "FS-23 Battle Master"
+   ]
+  ]
+ },
+ {
+  "off": "0x666d4",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 1934028230,
+  "id_hex": "0x7346EDC6",
+  "names": [
+   [
+    3891717296,
+    "TR-62 KNIGHT"
+   ],
+   [
+    1136470459,
+    "TR-62 Knight"
+   ],
+   [
+    552680240,
+    "Crafted to deliver Justice to the darkest crevices of the galaxy."
+   ]
+  ]
+ },
+ {
+  "off": "0x67184",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 856924396,
+  "id_hex": "0x3313A0EC",
+  "names": [
+   [
+    3891717296,
+    "TR-62 KNIGHT"
+   ],
+   [
+    1136470459,
+    "TR-62 Knight"
+   ],
+   [
+    552680240,
+    "Crafted to deliver Justice to the darkest crevices of the galaxy."
+   ]
+  ]
+ },
+ {
+  "off": "0x67264",
+  "type": "0xd9a55aa0",
+  "size": 2712,
+  "id": 190632838,
+  "id_hex": "0x0B5CD386",
+  "names": [
+   [
+    2141971169,
+    "CW-36 WINTER WARRIOR"
+   ],
+   [
+    1617048491,
+    "CW-36 Winter Warrior"
+   ]
+  ]
+ },
+ {
+  "off": "0x67d14",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3443335388,
+  "id_hex": "0xCD3D20DC",
+  "names": [
+   [
+    2141971169,
+    "CW-36 WINTER WARRIOR"
+   ],
+   [
+    1617048491,
+    "CW-36 Winter Warrior"
+   ]
+  ]
+ },
+ {
+  "off": "0x67df4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3690580532,
+  "id_hex": "0xDBF9CA34",
+  "names": [
+   [
+    2658005757,
+    "LIGHT OF ETERNAL LIBERTY"
+   ],
+   [
+    2592407121,
+    "Light of Eternal Liberty"
+   ]
+  ]
+ },
+ {
+  "off": "0x67ed4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1090563915,
+  "id_hex": "0x4100AF4B",
+  "names": [
+   [
+    3773599036,
+    "TYRANT HUNTER"
+   ]
+  ]
+ },
+ {
+  "off": "0x67fb4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2653547055,
+  "id_hex": "0x9E29EA2F",
+  "names": [
+   [
+    3514184557,
+    "BASTION OF INTEGRITY"
+   ],
+   [
+    3844548524,
+    "Bastion of Integrity"
+   ]
+  ]
+ },
+ {
+  "off": "0x68094",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3598091569,
+  "id_hex": "0xD6768531",
+  "names": [
+   [
+    2117352184,
+    "CLOAK OF POSTERITY'S GRATITUDE"
+   ]
+  ]
+ },
+ {
+  "off": "0x68174",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 734807139,
+  "id_hex": "0x2BCC4463",
+  "names": [
+   [
+    1565933151,
+    "BOTSLAYER"
+   ]
+  ]
+ },
+ {
+  "off": "0x68254",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3239075772,
+  "id_hex": "0xC1105FBC",
+  "names": [
+   [
+    1415121350,
+    "MARTYRIS REX"
+   ]
+  ]
+ },
+ {
+  "off": "0x68334",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 199989180,
+  "id_hex": "0x0BEB97BC",
+  "names": []
+ },
+ {
+  "off": "0x68414",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 4111053667,
+  "id_hex": "0xF509B363",
+  "names": [
+   [
+    3255323397,
+    "AGENT OF OBLIVION"
+   ],
+   [
+    3186597808,
+    "Agent of Oblivion"
+   ]
+  ]
+ },
+ {
+  "off": "0x684f4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1695626205,
+  "id_hex": "0x651133DD",
+  "names": [
+   [
+    3704058834,
+    "BEACON OF MERCY"
+   ],
+   [
+    1148083630,
+    "Beacon of Mercy"
+   ]
+  ]
+ },
+ {
+  "off": "0x685d4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2040543168,
+  "id_hex": "0x79A037C0",
+  "names": [
+   [
+    272085636,
+    "EAGLE'S FURY"
+   ]
+  ]
+ },
+ {
+  "off": "0x686b4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2592491111,
+  "id_hex": "0x9A864667",
+  "names": [
+   [
+    1834175889,
+    "DRAPE OF GLORY"
+   ],
+   [
+    572577241,
+    "Drape of Glory"
+   ]
+  ]
+ },
+ {
+  "off": "0x68794",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3259725045,
+  "id_hex": "0xC24B74F5",
+  "names": [
+   [
+    2731424545,
+    "JUDGMENT DAY"
+   ]
+  ]
+ },
+ {
+  "off": "0x68874",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 865246378,
+  "id_hex": "0x33929CAA",
+  "names": [
+   [
+    2740589457,
+    "FALLEN HERO'S VENGEANCE"
+   ]
+  ]
+ },
+ {
+  "off": "0x68954",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 4176085421,
+  "id_hex": "0xF8EA01AD",
+  "names": [
+   [
+    659728335,
+    "BLAZING SAMARITAN"
+   ]
+  ]
+ },
+ {
+  "off": "0x68a34",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 4000666917,
+  "id_hex": "0xEE755525",
+  "names": [
+   [
+    233472851,
+    "THE CAPE OF STARS AND SUFFRAGE"
+   ]
+  ]
+ },
+ {
+  "off": "0x68b14",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3616764107,
+  "id_hex": "0xD79370CB",
+  "names": [
+   [
+    2041808424,
+    "JUSTICE FOR ALL"
+   ]
+  ]
+ },
+ {
+  "off": "0x68bf4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2007907056,
+  "id_hex": "0x77AE3AF0",
+  "names": [
+   [
+    3054225665,
+    "WILL OF THE PEOPLE"
+   ],
+   [
+    2202550849,
+    "Will of the People"
+   ]
+  ]
+ },
+ {
+  "off": "0x68cd4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2457217350,
+  "id_hex": "0x92762946",
+  "names": [
+   [
+    2542093959,
+    "INFILTRATOR"
+   ]
+  ]
+ },
+ {
+  "off": "0x68db4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 843390517,
+  "id_hex": "0x32451E35",
+  "names": [
+   [
+    2265898986,
+    "MANTLE OF TRUE CITIZENSHIP"
+   ]
+  ]
+ },
+ {
+  "off": "0x68e94",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2098201552,
+  "id_hex": "0x7D1003D0",
+  "names": [
+   [
+    341101903,
+    "FREEDOM'S TAPESTRY"
+   ]
+  ]
+ },
+ {
+  "off": "0x68f74",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 308572558,
+  "id_hex": "0x1264718E",
+  "names": [
+   [
+    2450957594,
+    "HARBINGER OF TRUE EQUALITY"
+   ]
+  ]
+ },
+ {
+  "off": "0x69054",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3881932101,
+  "id_hex": "0xE7619545",
+  "names": [
+   [
+    2269430321,
+    "VETERAN'S BANNER"
+   ]
+  ]
+ },
+ {
+  "off": "0x69134",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2002245864,
+  "id_hex": "0x7757D8E8",
+  "names": [
+   [
+    34542068,
+    "PROTECTOR OF THE HEART"
+   ],
+   [
+    158732787,
+    "Protector of the Heart"
+   ]
+  ]
+ },
+ {
+  "off": "0x69214",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2688443218,
+  "id_hex": "0xA03E6352",
+  "names": [
+   [
+    3418368755,
+    "VOID VETERAN"
+   ],
+   [
+    3161274217,
+    "Void Veteran"
+   ],
+   [
+    2132290123,
+    "In memory of the brave souls that entered the Void and didn’t return. "
+   ]
+  ]
+ },
+ {
+  "off": "0x692f4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 463066946,
+  "id_hex": "0x1B99D742",
+  "names": [
+   [
+    1091321045,
+    "EMBLEM OF FREEDOM"
+   ]
+  ]
+ },
+ {
+  "off": "0x693d4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 462774884,
+  "id_hex": "0x1B956264",
+  "names": [
+   [
+    3469869269,
+    "HERO OF THE CHILDREN"
+   ],
+   [
+    2290050022,
+    "Hero of the Children"
+   ]
+  ]
+ },
+ {
+  "off": "0x694b4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1513263450,
+  "id_hex": "0x5A32915A",
+  "names": [
+   [
+    681969521,
+    "THUNDERING HOOVES OF LOYALTY"
+   ],
+   [
+    2012586173,
+    "Thundering Hooves of Loyalty"
+   ]
+  ]
+ },
+ {
+  "off": "0x69594",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3822047995,
+  "id_hex": "0xE3CFD2FB",
+  "names": [
+   [
+    1631623720,
+    "PROSPEROUS GREEN"
+   ],
+   [
+    3791433157,
+    "Prosperous Green"
+   ],
+   [
+    2372554040,
+    "All Hail the Helldivers, who bring untold abundance to Super Earth's citizens."
+   ]
+  ]
+ },
+ {
+  "off": "0x69674",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3076249017,
+  "id_hex": "0xB75BD5B9",
+  "names": [
+   [
+    3048987541,
+    "RECKONING'S CHEER"
+   ],
+   [
+    2267094068,
+    "Reckoning's Cheer"
+   ]
+  ]
+ },
+ {
+  "off": "0x69754",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3667835749,
+  "id_hex": "0xDA9EBB65",
+  "names": []
+ },
+ {
+  "off": "0x69834",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 534865247,
+  "id_hex": "0x1FE1655F",
+  "names": []
+ },
+ {
+  "off": "0x69914",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1838911009,
+  "id_hex": "0x6D9B8E21",
+  "names": [
+   [
+    3055483883,
+    "UNITED IN EQUALITY"
+   ],
+   [
+    1417553908,
+    "United in Equality"
+   ]
+  ]
+ },
+ {
+  "off": "0x699f4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1917397047,
+  "id_hex": "0x72492837",
+  "names": [
+   [
+    1416115244,
+    "AGAINST THE TYRANT CLOUD"
+   ],
+   [
+    905652168,
+    "Against the Tyrant Cloud"
+   ]
+  ]
+ },
+ {
+  "off": "0x69ad4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 4028901518,
+  "id_hex": "0xF024288E",
+  "names": [
+   [
+    1444669283,
+    "VERIDICAL IDEOLOGY"
+   ],
+   [
+    4040092621,
+    "Veridical Ideology"
+   ]
+  ]
+ },
+ {
+  "off": "0x69bb4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2632342951,
+  "id_hex": "0x9CE65DA7",
+  "names": [
+   [
+    477559844,
+    "RED PLANET'S MEMORY"
+   ],
+   [
+    220335740,
+    "Red Planet's Memory"
+   ]
+  ]
+ },
+ {
+  "off": "0x69c94",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 4112773733,
+  "id_hex": "0xF523F265",
+  "names": [
+   [
+    3135443249,
+    "PROUD GOLD"
+   ],
+   [
+    1277432473,
+    "Proud Gold"
+   ],
+   [
+    2368723721,
+    "All Hail the Helldivers, whose resplendent honor makes Tyrants tremble."
+   ]
+  ]
+ },
+ {
+  "off": "0x69d74",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 114199832,
+  "id_hex": "0x06CE8D18",
+  "names": [
+   [
+    1357287836,
+    "PATRIOT BLUE"
+   ],
+   [
+    3355982829,
+    "Patriot Blue"
+   ]
+  ]
+ },
+ {
+  "off": "0x69e54",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2901358327,
+  "id_hex": "0xACEF36F7",
+  "names": [
+   [
+    3334999697,
+    "DEFENDER OF THE WALL"
+   ]
+  ]
+ },
+ {
+  "off": "0x69f34",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3890208935,
+  "id_hex": "0xE7DFE0A7",
+  "names": [
+   [
+    2955730819,
+    "MESSAGE OF MORALE"
+   ]
+  ]
+ },
+ {
+  "off": "0x6a014",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2020619131,
+  "id_hex": "0x7870337B",
+  "names": [
+   [
+    3113764814,
+    "BUGSLAYER"
+   ],
+   [
+    3604350372,
+    "Bugslayer"
+   ]
+  ]
+ },
+ {
+  "off": "0x6a0f4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1902399433,
+  "id_hex": "0x71644FC9",
+  "names": [
+   [
+    278490209,
+    "INGRESS-81"
+   ],
+   [
+    3357769222,
+    "Ingress-81"
+   ]
+  ]
+ },
+ {
+  "off": "0x6a1d4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 66704491,
+  "id_hex": "0x03F9D46B",
+  "names": [
+   [
+    2046838101,
+    "COVER OF DARKNESS"
+   ],
+   [
+    1797186070,
+    "Cover of Darkness"
+   ]
+  ]
+ },
+ {
+  "off": "0x6a2b4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1123234369,
+  "id_hex": "0x42F33241",
+  "names": [
+   [
+    2474097758,
+    "STONE-WROUGHT PERSEVERANCE"
+   ],
+   [
+    580912811,
+    "Stone-Wrought Perseverance"
+   ]
+  ]
+ },
+ {
+  "off": "0x6a394",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1165305553,
+  "id_hex": "0x457526D1",
+  "names": [
+   [
+    1150283817,
+    "VISION OF FREEDOM"
+   ],
+   [
+    861012034,
+    "Vision of Freedom"
+   ]
+  ]
+ },
+ {
+  "off": "0x6a474",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 452377187,
+  "id_hex": "0x1AF6BA63",
+  "names": [
+   [
+    2063997701,
+    "VEIL OF THE VALOROUS VAGABOND"
+   ],
+   [
+    1376207881,
+    "Veil of the Valorous Vagabond"
+   ]
+  ]
+ },
+ {
+  "off": "0x6a554",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2679756720,
+  "id_hex": "0x9FB9D7B0",
+  "names": [
+   [
+    4015722465,
+    "SEAL OF GENERAL CONSENSUS"
+   ],
+   [
+    636846248,
+    "Seal of General Consensus"
+   ]
+  ]
+ },
+ {
+  "off": "0x6a634",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 4129649228,
+  "id_hex": "0xF625724C",
+  "names": [
+   [
+    2590487532,
+    "SCHEMA LAID BARE"
+   ],
+   [
+    4094305762,
+    "Schema Laid Bare"
+   ]
+  ]
+ },
+ {
+  "off": "0x6a714",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3041241535,
+  "id_hex": "0xB545A9BF",
+  "names": [
+   [
+    1727726490,
+    "BADGE OF ORDER"
+   ],
+   [
+    536959834,
+    "Badge of Order"
+   ]
+  ]
+ },
+ {
+  "off": "0x6a7f4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 4111578760,
+  "id_hex": "0xF511B688",
+  "names": [
+   [
+    447711244,
+    "ETERNAL CORONA"
+   ],
+   [
+    2197766385,
+    "Eternal Corona"
+   ]
+  ]
+ },
+ {
+  "off": "0x6a8d4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1588662851,
+  "id_hex": "0x5EB11243",
+  "names": []
+ },
+ {
+  "off": "0x6a9b4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 4014974242,
+  "id_hex": "0xEF4FA522",
+  "names": [
+   [
+    2414516585,
+    "SCRAPS OF SOVEREIGNTY"
+   ],
+   [
+    825679587,
+    "Scraps of Sovereignty"
+   ]
+  ]
+ },
+ {
+  "off": "0x6aa94",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 285054471,
+  "id_hex": "0x10FD9607",
+  "names": [
+   [
+    136228120,
+    "DE-FORESTER'S SAILCLOTH"
+   ],
+   [
+    2388777114,
+    "De-Forester's Sailcloth"
+   ]
+  ]
+ },
+ {
+  "off": "0x6ab74",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2811514902,
+  "id_hex": "0xA7945016",
+  "names": [
+   [
+    2467782030,
+    "DIAGRAM OF THE NOBLEST PAYLOAD"
+   ],
+   [
+    3969632957,
+    "Diagram of the Noblest Payload"
+   ]
+  ]
+ },
+ {
+  "off": "0x6ac54",
+  "type": "0xd9a55aa0",
+  "size": 264,
+  "id": 1808786641,
+  "id_hex": "0x6BCFE4D1",
+  "names": [
+   [
+    4207989923,
+    "ARCTIC DECREE"
+   ],
+   [
+    3200915213,
+    "Arctic Decree"
+   ]
+  ]
+ },
+ {
+  "off": "0x6ad74",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3555231182,
+  "id_hex": "0xD3E885CE",
+  "names": [
+   [
+    865901582,
+    "GILDED QUILL"
+   ],
+   [
+    1155728923,
+    "Gilded Quill"
+   ]
+  ]
+ },
+ {
+  "off": "0x6ae54",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 436377568,
+  "id_hex": "0x1A0297E0",
+  "names": [
+   [
+    1222153591,
+    "TREAD OF LIBERTY"
+   ],
+   [
+    997517569,
+    "Tread of Liberty"
+   ]
+  ]
+ },
+ {
+  "off": "0x6af34",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3026953460,
+  "id_hex": "0xB46BA4F4",
+  "names": [
+   [
+    432406798,
+    "TESTAMENT TO ATTRITION"
+   ],
+   [
+    4068334059,
+    "Testament to Attrition"
+   ]
+  ]
+ },
+ {
+  "off": "0x6b014",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 342959649,
+  "id_hex": "0x14712621",
+  "names": [
+   [
+    2830585278,
+    "STANDARD OF SAFE DISTANCE"
+   ],
+   [
+    640655993,
+    "Standard of Safe Distance"
+   ]
+  ]
+ },
+ {
+  "off": "0x6b0f4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 4237429476,
+  "id_hex": "0xFC920AE4",
+  "names": [
+   [
+    573660860,
+    "PATIENT ZERO'S REMEMBERANCE"
+   ],
+   [
+    2383411647,
+    "Patient Zero's Rememberance"
+   ]
+  ]
+ },
+ {
+  "off": "0x6b1d4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1126585234,
+  "id_hex": "0x43265392",
+  "names": [
+   [
+    3571107666,
+    "PRIDE OF THE WHISTLEBLOWER"
+   ],
+   [
+    2907397059,
+    "Pride of the Whistleblower"
+   ]
+  ]
+ },
+ {
+  "off": "0x6b2b4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3965478926,
+  "id_hex": "0xEC5C680E",
+  "names": [
+   [
+    471020248,
+    "PROOF OF FAULTLESS VIRTUE"
+   ],
+   [
+    557923138,
+    "Proof of Faultless Virtue"
+   ]
+  ]
+ },
+ {
+  "off": "0x6b394",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3519089118,
+  "id_hex": "0xD1C109DE",
+  "names": [
+   [
+    524662546,
+    "GREATCLOAK OF REBAR RESOLVE"
+   ],
+   [
+    3371210796,
+    "Greatcloak of Rebar Resolve"
+   ]
+  ]
+ },
+ {
+  "off": "0x6b474",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 4171120414,
+  "id_hex": "0xF89E3F1E",
+  "names": [
+   [
+    853769629,
+    "HOLDER OF THE YELLOW LINE"
+   ],
+   [
+    4027681874,
+    "Holder of the Yellow Line"
+   ]
+  ]
+ },
+ {
+  "off": "0x6b554",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 958121814,
+  "id_hex": "0x391BC756",
+  "names": [
+   [
+    681509815,
+    "FRE LIBERAM"
+   ],
+   [
+    330336451,
+    "Fre Liberam"
+   ]
+  ]
+ },
+ {
+  "off": "0x6b634",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 147568459,
+  "id_hex": "0x08CBB74B",
+  "names": [
+   [
+    1193620774,
+    "PER DEMOCRASUM"
+   ],
+   [
+    1045811468,
+    "Per Democrasum"
+   ]
+  ]
+ },
+ {
+  "off": "0x6b714",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3164866294,
+  "id_hex": "0xBCA406F6",
+  "names": [
+   [
+    3049468859,
+    "REAPER OF BOUNTIES"
+   ],
+   [
+    3153686785,
+    "Reaper of Bounties"
+   ]
+  ]
+ },
+ {
+  "off": "0x6b7f4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 975741671,
+  "id_hex": "0x3A28A2E7",
+  "names": [
+   [
+    3328664087,
+    "WAY OF THE BANDOLIER"
+   ],
+   [
+    1420091860,
+    "Way of the Bandolier"
+   ]
+  ]
+ },
+ {
+  "off": "0x6b8d4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 456906913,
+  "id_hex": "0x1B3BD8A1",
+  "names": [
+   [
+    3385070843,
+    "FEDERATION'S EMBRACE"
+   ],
+   [
+    3715890345,
+    "Federation's Embrace"
+   ]
+  ]
+ },
+ {
+  "off": "0x6b9b4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1440027723,
+  "id_hex": "0x55D5144B",
+  "names": [
+   [
+    3723444904,
+    "HUMBLE REGALIA"
+   ],
+   [
+    3182729352,
+    "Humble Regalia"
+   ]
+  ]
+ },
+ {
+  "off": "0x6ba94",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3954339443,
+  "id_hex": "0xEBB26E73",
+  "names": [
+   [
+    3498937342,
+    "CONDUCTOR OF BRILLIANCE"
+   ],
+   [
+    3383862050,
+    "Conductor of Brilliance"
+   ]
+  ]
+ },
+ {
+  "off": "0x6bb74",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 376718346,
+  "id_hex": "0x1674440A",
+  "names": [
+   [
+    2594253167,
+    "OVER ARTIFICE TRIUMPHANT"
+   ],
+   [
+    3149253905,
+    "Over Artifice Triumphant"
+   ]
+  ]
+ },
+ {
+  "off": "0x6bc54",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1148253951,
+  "id_hex": "0x4470F6FF",
+  "names": [
+   [
+    1401700439,
+    "MIRANDA'S LEGACY"
+   ],
+   [
+    2661829453,
+    "Miranda's Legacy"
+   ]
+  ]
+ },
+ {
+  "off": "0x6bd34",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1006046695,
+  "id_hex": "0x3BF70DE7",
+  "names": [
+   [
+    393895245,
+    "MOTHER EAGLE'S WINGS"
+   ],
+   [
+    572813769,
+    "Mother Eagle's Wings"
+   ]
+  ]
+ },
+ {
+  "off": "0x6be14",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 819008890,
+  "id_hex": "0x30D1157A",
+  "names": [
+   [
+    4071531620,
+    "RIGHTFUL OCCUPIER"
+   ],
+   [
+    947962593,
+    "Rightful Occupier"
+   ]
+  ]
+ },
+ {
+  "off": "0x6bef4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2129553675,
+  "id_hex": "0x7EEE690B",
+  "names": [
+   [
+    3753743289,
+    "WINDSWEPT WAYFINDER"
+   ],
+   [
+    783083856,
+    "Windswept Wayfinder"
+   ]
+  ]
+ },
+ {
+  "off": "0x6bfd4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 4282790522,
+  "id_hex": "0xFF46327A",
+  "names": [
+   [
+    3350164383,
+    "DISSIDENT'S NIGHTMARE"
+   ],
+   [
+    2842503075,
+    "Dissident's Nightmare"
+   ]
+  ]
+ },
+ {
+  "off": "0x6c0b4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2871629098,
+  "id_hex": "0xAB29952A",
+  "names": [
+   [
+    1615123798,
+    "PINIONS OF EVERLASTING GLORY"
+   ],
+   [
+    3232673780,
+    "Pinions of Everlasting Glory"
+   ]
+  ]
+ },
+ {
+  "off": "0x6c194",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3892781112,
+  "id_hex": "0xE8072038",
+  "names": [
+   [
+    2695637570,
+    "ORDER OF THE VENERATED BALLOT"
+   ],
+   [
+    2996293456,
+    "Order of the Venerated Ballot"
+   ]
+  ]
+ },
+ {
+  "off": "0x6c274",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2646411735,
+  "id_hex": "0x9DBD09D7",
+  "names": [
+   [
+    3075982115,
+    "MARK OF THE CRIMSON FANG"
+   ],
+   [
+    3075982115,
+    "MARK OF THE CRIMSON FANG"
+   ]
+  ]
+ },
+ {
+  "off": "0x6c354",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 291340630,
+  "id_hex": "0x115D8156",
+  "names": [
+   [
+    4237708973,
+    "EXECUTIONER'S CANOPY"
+   ],
+   [
+    4237708973,
+    "EXECUTIONER'S CANOPY"
+   ]
+  ]
+ },
+ {
+  "off": "0x6c434",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 160503527,
+  "id_hex": "0x099116E7",
+  "names": [
+   [
+    1259884059,
+    "PURIFYING ECLIPSE"
+   ]
+  ]
+ },
+ {
+  "off": "0x6c514",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3867039847,
+  "id_hex": "0xE67E5867",
+  "names": [
+   [
+    2680163087,
+    "THE BREACH"
+   ]
+  ]
+ },
+ {
+  "off": "0x6c5f4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3201849683,
+  "id_hex": "0xBED85953",
+  "names": [
+   [
+    3262991996,
+    "VECTOR OF VICTORY"
+   ],
+   [
+    3653323664,
+    "Vector of Victory"
+   ]
+  ]
+ },
+ {
+  "off": "0x6c6d4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 340532591,
+  "id_hex": "0x144C1D6F",
+  "names": [
+   [
+    1150774255,
+    "PODIUM OF PROSPERITY"
+   ]
+  ]
+ },
+ {
+  "off": "0x6c7b4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 939953131,
+  "id_hex": "0x38068BEB",
+  "names": [
+   [
+    2867428340,
+    "STRENGTH IN OUR ARMS"
+   ],
+   [
+    2553558215,
+    "Strength in Our Arms"
+   ]
+  ]
+ },
+ {
+  "off": "0x6c894",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1113633420,
+  "id_hex": "0x4260B28C",
+  "names": [
+   [
+    4275591293,
+    "DEFENDER OF OUR DREAM"
+   ],
+   [
+    3838249343,
+    "Defender of Our Dream"
+   ]
+  ]
+ },
+ {
+  "off": "0x6c974",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 4083075675,
+  "id_hex": "0xF35ECA5B",
+  "names": [
+   [
+    161726187,
+    "MARK OF THE CONSTRICTOR"
+   ],
+   [
+    3242356062,
+    "Mark of the Constrictor"
+   ]
+  ]
+ },
+ {
+  "off": "0x6ca54",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1691924999,
+  "id_hex": "0x64D8BA07",
+  "names": [
+   [
+    4281184185,
+    "FOE RENT ASUNDER"
+   ],
+   [
+    374686981,
+    "Foe Rent Asunder"
+   ]
+  ]
+ },
+ {
+  "off": "0x6cb34",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2261422476,
+  "id_hex": "0x86CA918C",
+  "names": [
+   [
+    419364955,
+    "FREE-SPIRITED SPANGLES"
+   ],
+   [
+    3506896603,
+    "Free-Spirited Spangles"
+   ]
+  ]
+ },
+ {
+  "off": "0x6cc14",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3130927131,
+  "id_hex": "0xBA9E281B",
+  "names": [
+   [
+    979608541,
+    "WATCHFUL COMPATRIOT"
+   ],
+   [
+    4270320858,
+    "Watchful Compatriot"
+   ]
+  ]
+ },
+ {
+  "off": "0x6ccf4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1392007336,
+  "id_hex": "0x52F858A8",
+  "names": [
+   [
+    1591164199,
+    "HONORED HEIRLOOM"
+   ],
+   [
+    1782107463,
+    "Honored Heirloom"
+   ]
+  ]
+ },
+ {
+  "off": "0x6cdd4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3837863752,
+  "id_hex": "0xE4C12748",
+  "names": [
+   [
+    285228234,
+    "EYE OF THE CLANDESTINE"
+   ],
+   [
+    3291450179,
+    "Eye of the Clandestine"
+   ]
+  ]
+ },
+ {
+  "off": "0x6ceb4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1917125054,
+  "id_hex": "0x724501BE",
+  "names": [
+   [
+    3846689033,
+    "CAMO CLOAK"
+   ],
+   [
+    635354976,
+    "Camo Cloak"
+   ]
+  ]
+ },
+ {
+  "off": "0x6cf94",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2588059193,
+  "id_hex": "0x9A42A639",
+  "names": [
+   [
+    3888364102,
+    "CITY FIGHTER'S RESOLVE"
+   ],
+   [
+    637079656,
+    "City Fighter's Resolve"
+   ]
+  ]
+ },
+ {
+  "off": "0x6d074",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2491991003,
+  "id_hex": "0x9488C3DB",
+  "names": [
+   [
+    4005155989,
+    "RAGS OF THE FASHIONABLE"
+   ],
+   [
+    1720300639,
+    "Rags of the Fashionable"
+   ]
+  ]
+ },
+ {
+  "off": "0x6d154",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 585941262,
+  "id_hex": "0x22ECC10E",
+  "names": [
+   [
+    1754694292,
+    "WEDGEFUL TRICORN"
+   ],
+   [
+    2036289419,
+    "Wedgeful Tricorn"
+   ]
+  ]
+ },
+ {
+  "off": "0x6d234",
+  "type": "0xd9a55aa0",
+  "size": 264,
+  "id": 2272511873,
+  "id_hex": "0x8773C781",
+  "names": [
+   [
+    3543072495,
+    "MIMETIC MESH"
+   ],
+   [
+    3414611380,
+    "Mimetic Mesh"
+   ]
+  ]
+ },
+ {
+  "off": "0x6d354",
+  "type": "0xd9a55aa0",
+  "size": 264,
+  "id": 533071556,
+  "id_hex": "0x1FC606C4",
+  "names": [
+   [
+    3189846034,
+    "BOUNDARY BANNER"
+   ],
+   [
+    30937403,
+    "Boundary Banner"
+   ]
+  ]
+ },
+ {
+  "off": "0x6d474",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1325899013,
+  "id_hex": "0x4F079D05",
+  "names": [
+   [
+    2860078854,
+    "PILLAR OF THE ABYSS"
+   ],
+   [
+    1880424678,
+    "Pillar of the Abyss"
+   ]
+  ]
+ },
+ {
+  "off": "0x6d554",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 114520195,
+  "id_hex": "0x06D37083",
+  "names": [
+   [
+    2077736904,
+    "TRIANGULATION VEIL"
+   ],
+   [
+    146591054,
+    "Triangulation Veil"
+   ]
+  ]
+ },
+ {
+  "off": "0x6d634",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1305396035,
+  "id_hex": "0x4DCEC343",
+  "names": [
+   [
+    2653685031,
+    "STANDARD OF RAPID EVACUATION"
+   ],
+   [
+    3295638196,
+    "Standard of Rapid Evacuation"
+   ]
+  ]
+ },
+ {
+  "off": "0x6d714",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2317175836,
+  "id_hex": "0x8A1D4C1C",
+  "names": [
+   [
+    2427979536,
+    "SHROUD OF THE JUGGERNAUT"
+   ],
+   [
+    120104945,
+    "Shroud of the Juggernaut"
+   ]
+  ]
+ },
+ {
+  "off": "0x6d7f4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2630208565,
+  "id_hex": "0x9CC5CC35",
+  "names": [
+   [
+    1543354589,
+    "DIGNITY OF TOIL"
+   ],
+   [
+    2241013697,
+    "Dignity of Toil"
+   ]
+  ]
+ },
+ {
+  "off": "0x6d8d4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1031686855,
+  "id_hex": "0x3D7E4AC7",
+  "names": [
+   [
+    1554469453,
+    "CREST OF THE UNSULLIED"
+   ],
+   [
+    613454310,
+    "Crest of the Unsullied"
+   ]
+  ]
+ },
+ {
+  "off": "0x6d9b4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2321467216,
+  "id_hex": "0x8A5EC750",
+  "names": [
+   [
+    2644250342,
+    "TIDETURNER"
+   ],
+   [
+    1764903446,
+    "Tideturner"
+   ]
+  ]
+ },
+ {
+  "off": "0x6da94",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 582381095,
+  "id_hex": "0x22B66E27",
+  "names": [
+   [
+    3459911301,
+    "EYE OF FREEDOM"
+   ]
+  ]
+ },
+ {
+  "off": "0x6db74",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 453241154,
+  "id_hex": "0x1B03E942",
+  "names": [
+   [
+    419729660,
+    "EYE OF LIBERTY"
+   ]
+  ]
+ },
+ {
+  "off": "0x6dc54",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3058055083,
+  "id_hex": "0xB64637AB",
+  "names": [
+   [
+    1840564097,
+    "TYRANNY'S BANE"
+   ],
+   [
+    3657693272,
+    "Tyranny's Bane"
+   ]
+  ]
+ },
+ {
+  "off": "0x6dd34",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 391288265,
+  "id_hex": "0x175295C9",
+  "names": [
+   [
+    3255323397,
+    "AGENT OF OBLIVION"
+   ],
+   [
+    3186597808,
+    "Agent of Oblivion"
+   ]
+  ]
+ },
+ {
+  "off": "0x6de14",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3180731004,
+  "id_hex": "0xBD961A7C",
+  "names": [
+   [
+    2506982198,
+    "PILLARS OF FREEDOM"
+   ]
+  ]
+ },
+ {
+  "off": "0x6def4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 4124916847,
+  "id_hex": "0xF5DD3C6F",
+  "names": [
+   [
+    4257722516,
+    "UNBLEMISHED ALLEGIANCE"
+   ],
+   [
+    3370951090,
+    "Unblemished Allegiance"
+   ]
+  ]
+ },
+ {
+  "off": "0x6dfd4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1853027475,
+  "id_hex": "0x6E72F493",
+  "names": [
+   [
+    2658005757,
+    "LIGHT OF ETERNAL LIBERTY"
+   ],
+   [
+    2592407121,
+    "Light of Eternal Liberty"
+   ]
+  ]
+ },
+ {
+  "off": "0x6e0b4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1675418984,
+  "id_hex": "0x63DCDD68",
+  "names": [
+   [
+    3054225665,
+    "WILL OF THE PEOPLE"
+   ],
+   [
+    2202550849,
+    "Will of the People"
+   ]
+  ]
+ },
+ {
+  "off": "0x6e194",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1404455928,
+  "id_hex": "0x53B64BF8",
+  "names": [
+   [
+    4065232286,
+    "CRESTING HONOR"
+   ],
+   [
+    1518177291,
+    "Cresting Honor"
+   ]
+  ]
+ },
+ {
+  "off": "0x6e274",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3562998132,
+  "id_hex": "0xD45F0974",
+  "names": [
+   [
+    3376553025,
+    "LIBERTY'S HERALD"
+   ],
+   [
+    364791758,
+    "Liberty's Herald"
+   ]
+  ]
+ },
+ {
+  "off": "0x6e354",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1180159923,
+  "id_hex": "0x4657CFB3",
+  "names": [
+   [
+    2449160969,
+    "FOESMASHER"
+   ],
+   [
+    1762386601,
+    "Foesmasher"
+   ]
+  ]
+ },
+ {
+  "off": "0x6e434",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 752209840,
+  "id_hex": "0x2CD5CFB0",
+  "names": [
+   [
+    1498594868,
+    "INDEPENDENCE BRINGER"
+   ],
+   [
+    1923407081,
+    "Independence Bringer"
+   ]
+  ]
+ },
+ {
+  "off": "0x6e514",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 3359335006,
+  "id_hex": "0xC83B625E",
+  "names": [
+   [
+    1834175889,
+    "DRAPE OF GLORY"
+   ],
+   [
+    572577241,
+    "Drape of Glory"
+   ]
+  ]
+ },
+ {
+  "off": "0x6e5f4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 1790198010,
+  "id_hex": "0x6AB440FA",
+  "names": [
+   [
+    1168428838,
+    "WINGS OF VALOR"
+   ],
+   [
+    297881557,
+    "Wings of Valor"
+   ]
+  ]
+ },
+ {
+  "off": "0x6e6d4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 285943304,
+  "id_hex": "0x110B2608",
+  "names": [
+   [
+    3704058834,
+    "BEACON OF MERCY"
+   ],
+   [
+    1148083630,
+    "Beacon of Mercy"
+   ]
+  ]
+ },
+ {
+  "off": "0x6e7b4",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 2779185355,
+  "id_hex": "0xA5A700CB",
+  "names": [
+   [
+    4257722516,
+    "UNBLEMISHED ALLEGIANCE"
+   ],
+   [
+    3370951090,
+    "Unblemished Allegiance"
+   ]
+  ]
+ },
+ {
+  "off": "0x6e894",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 112836163,
+  "id_hex": "0x06B9BE43",
+  "names": [
+   [
+    1834175889,
+    "DRAPE OF GLORY"
+   ],
+   [
+    572577241,
+    "Drape of Glory"
+   ]
+  ]
+ },
+ {
+  "off": "0x6e974",
+  "type": "0xd9a55aa0",
+  "size": 200,
+  "id": 193259933,
+  "id_hex": "0x0B84E99D",
+  "names": []
+ }
+]

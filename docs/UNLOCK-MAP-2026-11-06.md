@@ -283,3 +283,35 @@ customization 注册一致），服务器侧伪造补不到。要它可编辑只
 
 ⇒ 外观与武器/附件共用同一个"拥有层"，一次注入同时作用于**军械库 + 超级商店**两个界面。
 ⇒ 同时也再次印证注入不写回：同一会话的服务端真值是 `965 → 968`（正好是三次真实购买的 +3），注入的三件一件都没进去。
+
+### 8.2 找"未发布外观"：判据与候选（2026-11-06）
+
+**id 语义（先钉死，否则注入必然错）**：解 `generated_customization_armor_sets.dl_bin`（422 组）后逐行对表——
+
+| 事实 | 读数 |
+|---|---|
+| 外观表行 id = 服务器目录的 **`itemId`**（内容定义）| 385/422 行能在 `items` 里按 `itemId` 命中 |
+| **拥有判定用的是目录 `mixId`**（每件实例键）| 命中目录的 385 行里，**253 行 `itemId != mixId`**；"已拥有"的判定 `mixId` 命中 **239** 行、`itemId` 只命中 65 行 |
+| `itemId == mixId` 的 132 行 | 多为披风/简单件（如 ARCTIC DECREE）|
+
+⇒ **给外观注入不能只塞外观表的 id**：要么用目录行里真实的 `mixId`（已发布件），要么**连目录行一起伪造**
+（`{itemId: 外观表id, mixId: 自造, progressionCategory: 3}` + inventory 行）。
+
+**"未发布"判据的坑**：拿 `Progression/items` 当已发布清单对 422 行 → 37 行不在目录，
+但其中 **22 行有名字且是明确的战团护甲/披风**（B-16 Battle-Scarred Veteran、CM-09 Bonesnapper、
+SC-30 Trailblazer Scout、FS-05 Marksman、KDM-73 Dragoon、Beacon of Mercy、Drape of Glory…）
+⇒ **`Progression/items` 只覆盖可单独购买的物品，不含战团外观**，不能用它判"未发布"。
+
+**当前最强候选**（三条同时成立：外观表里**没有名字** + 不在目录 + 未拥有）共 **15 行**：
+
+| id | 行大小 | 推测类型 |
+|---|---|---|
+| `0x135C4274` `0x6B619174` `0x732693A1` `0x9F212504` | 2712 | 护甲（大行）|
+| `0x8C6B78E3` `0x0FB65A0E` `0xF6AE9439` `0xFE3437E9` `0xA57E78BA` `0x9B5BC520` `0x0BEB97BC` `0xDA9EBB65` `0x1FE1655F` `0x5EB11243` `0x0B84E99D` | 200 | 头盔/披风（小行）|
+
+> ⚠ 保留项：本地字符串表是 **build 26088801**，而游戏是 `26251122`。所以"没名字"可能是**名字较新**而非"未发布"。
+> 这一层不用去提取当前 build 的字符串也能判——**注入一次看军械库**：显示名字 ⇒ 是"名字较新"（已发布），
+> 显示空名/占位 ⇒ 真未发布。
+
+产物：`out/armor-names/armor_rows_parsed.json`（422 行解析）、`unreleased_candidates.json`（15 行候选）、
+`store-cosmetics-20261106.json`（已解名字）。
