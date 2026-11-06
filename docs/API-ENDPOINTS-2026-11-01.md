@@ -143,3 +143,38 @@
 python tools/api_inventory.py     # 重新统计日志 → CSV + 本文档
 ```
 
+
+## 7. 战备解锁：59 个端点里没有载体（2026-11-05 排查）
+
+有人会自然想到"既然武器能靠 inventory 注入上架，战备也一样"。**不行，原因在接口层**。
+
+### 7.1 两个否证
+
+| 检查 | 结果 |
+|---|---|
+| 951 条拥有清单里有几个 id 与 `generated_stratagem_settings` 的战备 id 相交 | **只有 2 个** ⇒ inventory 不是战备的拥有表 |
+| 59 个已抓端点里有"已解锁战备数组 / 解锁位 / 领取记录"吗 | **没有**（`stratagem` 相关端点零命中）|
+
+### 7.2 唯一真实存在的授予通道
+
+`GET /api/WarSeason/801/Status` 的 `planetActiveEffects[]` → 指向 `effectType = 32` 的 GWE 效果
+（`values[0]` = 战备 hash）。特性：
+
+- **星球级 / 全局**（后者走 `globalEvents[].effectIds`），不是账号级；
+- **临时**（跟星球/事件走），**最多同时 3 个**；
+- **不进拥有列表**，也不改配装面板的永久可选集。
+
+type32 全表 88 条、84/88 能解出战备名、官方发放实例见 `docs/TYPE32-STRATAGEMS.md`。
+
+### 7.3 永久解锁的可能载体（未验证）
+
+抓到的响应里唯一沾"进度/领取"的字段是 `/api/Progression` 的
+`packageProgress.claimedLevels` 与 `purchasedSeasonPassItems`（战令页已领等级）。
+战备解锁状态可能在这里、也可能根本不在服务端 —— 与"配件解锁"同形态（客户端本地/内存登记表）。
+
+### 7.4 结论
+
+- 代理**发不了**永久战备，只能做星球/全局的临时配发（type32）；
+- 要真正"永久解锁 + 配装面板可选"，现有唯一可行路线是数据表 `generated_stratagem_settings +0xC8`
+  的额外战备（[RECON-SHODAN-EXTRA-STRATAGEM](https://github.com/deepseekv41flash/hd2-datamined/blob/master/docs/cases/RECON-SHODAN-EXTRA-STRATAGEM-26088801.md)，7 条实机）；
+- 若要走代理，下一步得先抓**改装/战令页按需请求**，确认 `claimedLevels` 是否真是载体。
