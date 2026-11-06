@@ -90,3 +90,34 @@ MSYS_NO_PATHCONV=1 HD2_GWE_PATHS=/api/  # ✓ 关掉转换
 
 > 若游戏在代理起之前就已在运行，只能抓到轮询尾巴（`Status`/`timeSinceStart` 的重复），
 > `Account/Login` 与 `inventory` 都会缺 —— **必须完全退出游戏再起代理**。
+
+## 5. 全量抓包与"解锁前后对表"
+
+要让一次**真实操作**（如护甲解锁）留下可分析的证据，光抓响应不够，请求体也得抓：
+
+```bash
+HD2_GWE_DUMP="D:/mod/out/gwe/<session>"   # 独立目录，别和旧会话混在一起
+HD2_GWE_PATHS="api/"                       # 所有 /api/* 响应
+HD2_GWE_REQ_PATHS="api/"                   # 所有请求体（默认只抓 Operation/lobby/Progression）
+HD2_GWE_MAX="33554432"                     # 32 MB
+```
+
+启动日志会打印实际生效值：`抓包 dump=… paths=api/ req=api/`（2026-11-06 起不再是写死的"不落盘请求体"）。
+
+对表工具 `tools/capture_diff.py`（两个会话比 / 同一会话按时间切前后）：
+
+```bash
+# 两次会话对比（旧会话 vs 新会话）
+python tools/capture_diff.py --old D:/mod/out/gwe --new D:/mod/out/gwe/armor-20261106 --only inventory,Progression
+
+# 同一目录内按 UTC 时间切分：登录时抓的当基线，解锁后的当变化
+python tools/capture_diff.py --old <dir> --new <dir> --split 20261106T111500Z
+
+# 只看 id 增删（列表里的 mixId/mixId32/itemId 等）
+python tools/capture_diff.py ... --ids
+```
+
+它会按 `index.txt` 的 UTC 时间戳把捕获分成"前/后"，直接列出：新出现的端点与请求体、
+内容变化的响应、以及**列表里新增/移除的 id**（例如 `items 963 -> 965` 后跟着两条新 `mixId`）。
+
+> 抓包目录里的请求体含登录凭据与大厅 `connectionString` —— `out/` 已在 `.gitignore`，任何抓包文件都不入库。
