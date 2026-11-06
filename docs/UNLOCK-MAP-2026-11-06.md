@@ -290,16 +290,20 @@ customization 注册一致），服务器侧伪造补不到。要它可编辑只
 
 | 战备 | 在配装面板 | 怎么来的 |
 |---|---|---|
-| **M-104 Incinerator FRV** | ✓ | **官方全服发放**（`globalEvents[1501108].effectIds=[1393]`，type32；不需要我们解锁）|
+| **M-104 Incinerator FRV** | ✓ | **`cat 11` 许可注入**（本次 30 条之一）——用户 23:10 更正：官方的 `globalEvents[1501108].effectIds=[1393]` 只是**额外战备式发放**（局内可用、不进配装面板），**可选择状态来自我们的注入** |
 | **ORBITAL CONFETTI** | ✓ | **`cat 11` 许可注入**（本次 30 条之一）|
 | **ORBITAL WALKING BARRAGE SMOKE** | ✓ | **`cat 11` 许可注入**（本次 30 条之一）|
+
+> **重要区分（用户更正）**：GWE `effectType=32`（`planetActiveEffects` / `globalEvents[].effectIds`）给的是**"额外战备"**——
+> 局内能用、但不进配装面板、不在"已解锁"列表里；**只有 `cat 11` 许可才会让战备变成可选**。
+> 所以 M-104 在 11-03~11-06 期间"能叫但选不了"，直到注入许可后才可选。
 | Eagle Air-to-Air Missiles | ✗ | **没有 `cat 11` 许可行** ⇒ 代理解锁不了 |
 | 医疗补给 80 / 93、MEDIC BACKPACK 20 | ✗ | 同上 |
 | 额外扫射 36、飞鹰掠过 50、照明弹 5 | ✗ | 同上 |
 | SEAF Squad 119 | ✗ | 同上（且此前已判定数据层不可修）|
 
 ⇒ **判定规则**：一个未发布战备能否用代理解锁，取决于**服务端目录里有没有它的 `cat 11` 许可行**。
-本次 108 条许可里，未发布部分只覆盖 CONFETTI 与 WALKING BARRAGE SMOKE 两个。
+本次 108 条许可里，未发布部分覆盖 **M-104 / CONFETTI / WALKING BARRAGE SMOKE 三个**。
 ⇒ 其余没有许可的未发布战备，**唯一路线仍是 `generated_stratagem_settings +0xC8` 额外战备链**（dl_bin），
 与代理无关；`+0xC8` 那 10 条当时的实机验证仍然成立（它们走的是数据表侧的"链进现有战备"）。
 
