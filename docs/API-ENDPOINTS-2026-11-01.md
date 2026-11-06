@@ -305,3 +305,60 @@ preferenceGroup / regionIndex`。
 
 **边界**：未发布武器（如 LAS-22 `0x7DE53646`）在目录里**没有任何附件行**（0 条），
 所以它们的改装页仍是 CANNOT EDIT —— 这条要靠"伪造目录行 + 库存行"另行尝试，与本次能力不冲突。
+
+## 9. 超级商店（StoreFront）：外观类解锁（2026-11-06 真实购买抓包）
+
+用户在 19:02:52 登录后，于 **19:04:09 / 19:04:38 / 19:05:01** 连买三件外观（护甲 / 头盔 / 披风），全量抓包完整记录。
+
+### 9.1 端点族
+
+| 端点 | 作用 | 本次大小 |
+|---|---|---|
+| `GET /api/StoreFront/rotation` | 当期轮换：`{expireTime, salesPage:{id32, layoutType, layoutSize, sections:[{id32,bannerId32,items:[{salesId, mixId, position, size}]}]}}` | 617 B |
+| `GET /api/StoreFront/<pageId32>` | 某个商店页（同上结构，含 banner 分组）| 14,652 B（`page=2776696735`）|
+| **`POST /api/StoreFront/buy`** | **购买** | 请求 129 B / 响应 99–133 B |
+
+### 9.2 购买报文
+
+```jsonc
+// 请求（129 B）
+{"expectedCost": [{"mixId": 3481751602, "amount": 250}],
+ "salesId": "38125272-1f68-4637-9fff-eeb23eb39a39", "warId": 801}
+
+// 响应（133 B）
+{"items": [{"mixId": 2556497905, "amount": 1},      // ← 授予的物品
+           {"mixId": 2254107389, "amount": -200},    // ← 实扣货币 A
+           {"mixId": 3422537285, "amount": -50}],    // ← 实扣货币 B
+ "packageProgress": []}
+```
+
+要点：
+
+- **`salesId` 是购买凭据**（UUID），由商店页下发；`mixId` 由页面给出 → `page[salesId].mixId == 授予的 mixId`（三次全部一致）。
+- `expectedCost.mixId = 3481751602` 是**组合价 id**，不是实际扣费货币；响应里扣的是 `3422537285` / `2254107389`（均 `progressionCategory: 18`、`isConsumable`）。
+- **授予方式 = `items[]` 里给该 `mixId` +1** —— 与武器上架、附件解锁**同一条 inventory 机制**。
+
+### 9.3 三次真实购买（19:04–19:05）
+
+| 时刻 | salesId | 售价 | 授予 mixId | 目录属性 |
+|---|---|---:|---|---|
+| 19:04:09 | `38125272…` | 250 | **2556497905** | `cat 3`，`itemId 2846302183`，`parentId 3622341476`（DP-8 套装）|
+| 19:04:38 | `ee979cd3…` | 100 | **1233248044** | `cat 3`，`itemId 2979884042`，`parentId 3622341476`（同套装 = 头盔）|
+| 19:05:01 | `add6aac6…` | 125 | **1513263450** | `cat 3`，`itemId == mixId`，无 `parentId`（披风）|
+
+购买前那份 inventory（19:03:11，**965 条服务端真值**）里三件**都不在** ⇒ 三件都是本次新获得的拥有权。
+
+> ⚠ 目录里的 `buyPrice`（250 / 125 / 100）与实际扣费（250 / 100 / 125）**顺序不一致**，
+> 说明目录价不等于当期售价（或页面/目录的对应被我们读反）——**不要拿 `buyPrice` 当售价**。
+
+### 9.4 由此得到的结论
+
+**外观（护甲 / 头盔 / 披风 / 横幅……）在服务端就是 inventory 里的一行**，`progressionCategory: 3`
+（横幅等为 9）。所以"解锁护甲"完全可以走和武器一样的注入路线，不需要伪造购买请求。
+
+规模：目录 `cat 3` 共 **427 条**，本账号已拥有 **236**，**未拥有 191** ⇒ 都是可注入候选。
+
+**注意别混两个 id 空间**：`inventory.avatarCustomization` 里的 `armor_set` / `helmet_set`
+（本次为 `1773940042` / `2547476111`）是**外观变体 key**（对应 `generated_customization_armor_sets.dl_bin`），
+**不是**物品 id，也永远不该出现在 `inventory.items[]` 里。
+

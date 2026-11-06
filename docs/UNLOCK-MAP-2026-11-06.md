@@ -244,3 +244,28 @@ customization 注册一致），服务器侧伪造补不到。要它可编辑只
 | 文件版（dl_bin）身份互换 / 借组 | [RECON-LAS22-FILETOOL](https://github.com/deepseekv41flash/hd2-datamined/blob/master/docs/cases/RECON-LAS22-FILETOOL-26251122.md) |
 | 战备为什么不在代理线 | 本仓库 API-ENDPOINTS §7 |
 | 抓包/证书/白名单运维坑 | 本仓库 [OPS-PITFALLS](OPS-PITFALLS.md) |
+
+---
+
+## 8. 外观（护甲 / 头盔 / 披风 / 横幅）：**可以，走同一条 inventory 机制**
+
+2026-11-06 19:04–19:05 的三次**真实超级商店购买**（全量抓包）把这个分支也钉死了：
+
+| 购买 | 端点 | 授予方式 |
+|---|---|---|
+| 护甲 `2556497905` / 头盔 `1233248044` / 披风 `1513263450` | `POST /api/StoreFront/buy`（`salesId` + `expectedCost`）| 响应 `items[]` 里给该 `mixId` **+1** ⇒ **inventory 加一行** |
+
+- 购买前那份 inventory（965 条服务端真值）里三件**都不在**，购买后由响应授予 ⇒ 拥有权就是 inventory 行；
+- 三件在目录里都是 `progressionCategory: 3`（横幅/其它外观为 9）；`cat 3` 共 **427 条**，本账号已拥有 **236**、未拥有 **191**；
+- ⇒ **未拥有的外观可以直接注入**，不需要伪造购买（伪造购买反而要过服务端扣费校验）。
+
+**两个 id 空间别混**：`avatarCustomization.armor_set / helmet_set` 是**外观变体 key**
+（对应 `generated_customization_armor_sets.dl_bin`），不是物品 id，也不会出现在 `items[]` 里。
+抓包与报文细节见 [API-ENDPOINTS](API-ENDPOINTS-2026-11-01.md) §9。
+
+**仍未验证的角落**：
+
+| 问题 | 现状 |
+|---|---|
+| **未发布护甲**能否注入 | 该护甲若不在 `/api/Progression/items` 目录里 ⇒ 与未发布武器同形，需要**双层注入**（inventory + 目录克隆）；而 `itemId`/`parentId` 语义只能从目录行反推，未发布件没有真实行可参考 ⇒ 需要构造，风险更高 |
+| 注入外观后**能否在军械库显示/装备** | 机制上判"拥有"看 inventory，但外观还要在本地 `customization_armor_sets` 里找得到对应行并解析出模型 ⇒ **待实机**（已备好 3 件轮换页未拥有外观的单变量实验，`runtime/inventory_cosmetic_inject.json`）|

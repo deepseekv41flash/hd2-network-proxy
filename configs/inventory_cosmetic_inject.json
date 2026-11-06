@@ -1,0 +1,21 @@
+{
+  "_note": "外观注入（护甲/头盔/披风）：商店轮换页里未拥有的 3 件 cat=3 物品；服务端拥有权 = inventory 一行，与武器同路（2026-11-06 由 StoreFront/buy 实证）",
+  "enabled": false,
+  "items": [
+    {
+      "mixId": 1808786641,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 209171707,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 351568294,
+      "amount": 1,
+      "isDiscovered": false
+    }
+  ]
+}

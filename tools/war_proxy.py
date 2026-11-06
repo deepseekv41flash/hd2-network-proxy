@@ -87,6 +87,8 @@ INV_STATE = RUNTIME / "inventory_inject.json"
 # 行内容见 /api/Progression/items 里 progressionCategory==2 且带 parentId 的记录
 # （itemId = 附件 optionId，parentId = 武器 mixId）。两者可分别开关，便于做单变量实验。
 ATTACH_STATE = RUNTIME / "inventory_attach_inject.json"
+# 外观（护甲/头盔/披风/横幅等 progressionCategory=3/9 的商店物品）注入：同样是 inventory 一行
+COSMETIC_STATE = RUNTIME / "inventory_cosmetic_inject.json"
 ITEMS_PATH = "/api/Progression/items"        # 服务端物品目录（3020 条：itemId/mixId/category/tags/prices）
 ITEMS_STATE = RUNTIME / "items_inject.json"
 
@@ -1049,7 +1051,11 @@ def main():
         log("WARN: 还没有选中任何词条或战备 —— 现在等于纯转发"
             "（面板里选变种或战备试用后，再点启动代理）",
             audit=True)
-    log("绑定 %s 单一域名；只改写 %s；不落盘请求体" % (mod.listen_ip, STATUS_MARK))
+    log("绑定 %s 单一域名；只改写 %s；抓包 dump=%s paths=%s req=%s"
+        % (mod.listen_ip, STATUS_MARK,
+           os.environ.get("HD2_GWE_DUMP", "") or "(off)",
+           os.environ.get("HD2_GWE_PATHS", "") or "(default GWE only)",
+           os.environ.get("HD2_GWE_REQ_PATHS", "") or "(default operation only)"))
     try:
         LOGDIR.mkdir(parents=True, exist_ok=True)
         PROXY_PID.write_text(str(os.getpid()), encoding="utf-8")
@@ -1188,25 +1194,21 @@ def _gwe_inventory_rewrite(plain):
     返回 (new_body, added, removed)；没有改动时返回 (None, 0, 0)。
     只动 items / customization 两个数组，其余字段原样保留。
     """
-    try:
-        cfg = json.loads(INV_STATE.read_text(encoding="utf-8"))
-    except Exception:
-        cfg = {}
-    try:
-        cfg2 = json.loads(ATTACH_STATE.read_text(encoding="utf-8"))
-    except Exception:
-        cfg2 = {}
-    if not (cfg.get("enabled") or cfg2.get("enabled")):
+    states = []
+    for _p in (INV_STATE, ATTACH_STATE, COSMETIC_STATE):
+        try:
+            states.append(json.loads(_p.read_text(encoding="utf-8")))
+        except Exception:
+            states.append({})
+    if not any(s.get("enabled") for s in states):
         return None, 0, 0
-    if cfg2.get("enabled"):
-        # 两个文件各自开关：只有 enabled 的那份会被合并进来
-        def _pack(c):
-            return (c.get("items") or [], c.get("remove") or [], c.get("customization") or [])
-        parts = [_pack(c) for c in (cfg, cfg2) if c.get("enabled")]
-        cfg = {"enabled": True,
-               "items": [x for p in parts for x in p[0]],
-               "remove": [x for p in parts for x in p[1]],
-               "customization": [x for p in parts for x in p[2]]}
+    def _pack(c):
+        return (c.get("items") or [], c.get("remove") or [], c.get("customization") or [])
+    parts = [_pack(c) for c in states if c.get("enabled")]
+    cfg = {"enabled": True,
+           "items": [x for p in parts for x in p[0]],
+           "remove": [x for p in parts for x in p[1]],
+           "customization": [x for p in parts for x in p[2]]}
     try:
         doc = json.loads(plain)
     except Exception:
