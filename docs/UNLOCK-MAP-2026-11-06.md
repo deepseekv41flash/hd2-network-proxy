@@ -227,7 +227,7 @@ customization 注册一致），服务器侧伪造补不到。要它可编辑只
 | 未发布武器上架 | **✓✓** | 2 层注入；LAS-22 / P-41 / SG-8F |
 | 解锁任意武器的**已有**配件 | **✓✓** | 配方 C；AR-23A 28 个、5 把 140 行 |
 | 让「无附件行」武器可改装（类别②） | **✗ 否证** | R/40-K 两轮伪造均 CANNOT EDIT |
-| 永久解锁战备（代理） | **✓ 载体已找到（2026-11-06 20:30）** | `cat 11` 物品 = inventory 行；注入了 30 条待实机 |
+| 永久解锁战备（代理，含**未发布**战备） | **✓✓ 实机（2026-11-06 20:44）** | 注入 30 条 `cat 11`：多出约 30 个全部可用，含 ORBITAL CONFETTI / ORBITAL WALKING BARRAGE SMOKE |
 | 注入写回账号 | **✗ 不会** | 24/24 未命中服务端 inventory |
 
 ---
@@ -246,6 +246,45 @@ customization 注册一致），服务器侧伪造补不到。要它可编辑只
 | 文件版（dl_bin）身份互换 / 借组 | [RECON-LAS22-FILETOOL](https://github.com/deepseekv41flash/hd2-datamined/blob/master/docs/cases/RECON-LAS22-FILETOOL-26251122.md) |
 | 战备为什么不在代理线 | 本仓库 API-ENDPOINTS §7 |
 | 抓包/证书/白名单运维坑 | 本仓库 [OPS-PITFALLS](OPS-PITFALLS.md) |
+
+---
+
+## 9. 战备解锁：**✓✓ 实机（2026-11-06 20:44）**
+
+### 9.1 机制
+
+战备拥有权 = **inventory 里一行 `progressionCategory: 11` 的物品**（正式名：战备许可 / permit）。
+真实解锁走 `POST /api/SeasonPass/item/buy`，响应 `items[]` 给它 **+1**；该物品的 `mixId` 来自
+`GET /api/SeasonPass/<warbondId32>` 的 `seasonPassPages[].seasonPassItems[].itemMixId`。
+报文与 id 模型见 [API-ENDPOINTS §10](API-ENDPOINTS-2026-11-01.md)。
+
+⇒ 与武器（`cat 1`）/ 附件（`cat 2`）/ 商店外观（`cat 3`）**完全同一条机制**，一行 inventory 即可解锁。
+
+### 9.2 实机结果（注入 30 条未拥有的 `cat 11` 物品）
+
+用户回报：**多出约 30 个战备、都能用**，并且**多出 2 个未发布战备**。
+
+| 未发布战备 | 数据（用户截图读数）|
+|---|---|
+| **ORBITAL CONFETTI** | OFFENSIVE STRATAGEM PERMIT · CALL-IN **4.45 s** · USES **UNLIMITED** · COOLDOWN **68 s** · 特性 `ORBITAL` · 描述 "A display of brightly colored confetti. Good for Democratic morale, but provides no strategic value."（name locid `1912361092`，描述 `826650508`）|
+| **ORBITAL WALKING BARRAGE SMOKE** | CALL-IN **5.45 s** · USES **UNLIMITED** · COOLDOWN **103 s** · 特性 `EXPLOSIVE` / `ORBITAL` · 描述 "A linear artillery barrage which moves at intervals while firing smoke bombs to obscure enemy visibility."（name locid `852413008`，描述 `1772996316`）|
+
+### 9.3 这解开了两个老结论
+
+| 旧结论（2026-11-05）| 现在 |
+|---|---|
+| "59 个端点无战备解锁载体，永久解锁只能走 `+0xC8` 数据表" | **✗ 作废**：载体是 `SeasonPass/item/buy` + `cat 11` inventory 行 |
+| "未发布战备（如 Orbital Walking Barrage Smoke、Orbital Confetti）在代理线拿不到" | **✗ 作废**：它们的**解锁物品本就在服务端目录里**（只是从未在任何战团/商店出售），注入 `cat 11` 行即可在军械库出现、可装备、可用 |
+
+⇒ **"未发布"在战备上的含义是"从未上架出售"，不是"服务端不认识"** —— 所以能注入；
+这与外观的边界（`cat 3` 伪造目录行不被接受）不冲突：这里**目录行是真实存在的**，我们只补 inventory。
+
+### 9.4 仍待解
+
+- **`cat 11` 物品 id ↔ 战备名字的对应表还没解**：30 条一次性注入所以不知道哪一条对应哪个战备。
+  若要做定向解锁（只解锁某几个），需要按小批量注入反推，或在本地表里找到链接字段。
+- `cat 11` 共 **108** 条，本次登录时已拥有 77、未拥有 31（其中 1 条刚真买）⇒ 我们已注入其余 30 条，
+  等于**该账号的战备解锁已全覆盖**（含未发布）。
 
 ---
 
