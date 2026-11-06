@@ -89,6 +89,11 @@ INV_STATE = RUNTIME / "inventory_inject.json"
 ATTACH_STATE = RUNTIME / "inventory_attach_inject.json"
 # 外观（护甲/头盔/披风/横幅等 progressionCategory=3/9 的商店物品）注入：同样是 inventory 一行
 COSMETIC_STATE = RUNTIME / "inventory_cosmetic_inject.json"
+# 战备解锁物品（progressionCategory=11）：来自战团详情 GET /api/SeasonPass/<id> 的 itemMixId，
+# 真实解锁 = POST /api/SeasonPass/item/buy → 响应 items[] 里 +1（2026-11-06 实证）
+STRATAGEM_STATE = RUNTIME / "inventory_stratagem_inject.json"
+# 类别探针（B 实验）：每个未知 progressionCategory 各取 1 件，观察客户端在哪个界面认它
+PROBE_STATE = RUNTIME / "inventory_probe_inject.json"
 ITEMS_PATH = "/api/Progression/items"        # 服务端物品目录（3020 条：itemId/mixId/category/tags/prices）
 ITEMS_STATE = RUNTIME / "items_inject.json"
 
@@ -1195,7 +1200,7 @@ def _gwe_inventory_rewrite(plain):
     只动 items / customization 两个数组，其余字段原样保留。
     """
     states = []
-    for _p in (INV_STATE, ATTACH_STATE, COSMETIC_STATE):
+    for _p in (INV_STATE, ATTACH_STATE, COSMETIC_STATE, STRATAGEM_STATE, PROBE_STATE):
         try:
             states.append(json.loads(_p.read_text(encoding="utf-8")))
         except Exception:
