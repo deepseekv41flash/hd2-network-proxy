@@ -362,6 +362,17 @@ preferenceGroup / regionIndex`。
 （本次为 `1773940042` / `2547476111`）是**外观变体 key**（对应 `generated_customization_armor_sets.dl_bin`），
 **不是**物品 id，也永远不该出现在 `inventory.items[]` 里。
 
+### 9.4.1 商店 UI 的"已拥有"也读 inventory（2026-11-06 19:20 实机）
+
+把三件**尚未购买**的商店外观注入 `inventory.items[]` 后（`INV REWRITE +167`），用户回报：
+军械库出现三件、可装备、模型正常，**并且商店页对这三件直接显示"已拥有"**。
+
+⇒ 商店的"我买过没有"判定**不是**查购买记录/`salesId`，而是与军械库共享同一份
+`/api/Progression/inventory` 响应。一次注入同时影响**军械库 + 超级商店**两个界面。
+
+⇒ 反过来也说明：真买与注入的差别只在服务端记录；界面上两者无法区分
+（本次同一会话服务端真值 `965 → 968`，正好是三次真实购买的 +3，注入的三件 0 命中）。
+
 ### 9.5 商店物品的**名字**从哪来（抓包里没有名字）
 
 `StoreFront/*` 与 `Progression/items` 里**只有 id**（`mixId` / `itemId` / `salesId`），没有任何名称字段。
