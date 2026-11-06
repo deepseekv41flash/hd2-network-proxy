@@ -1124,28 +1124,49 @@ def _gwe_items_rewrite(plain):
                 by_id[int(r.get("itemId", 0))] = r
             except (TypeError, ValueError):
                 pass
+    have_mix = set()
+    for r in doc:
+        if isinstance(r, dict):
+            try:
+                have_mix.add(int(r.get("mixId", 0)))
+            except (TypeError, ValueError):
+                pass
+    # 允许的整行覆盖字段（附件行必须带 parentId / progressionCategory，且 itemId 与 mixId 不同）
+    _OVERRIDES = ("itemId", "mixId", "parentId", "progressionCategory", "isConsumable",
+                  "requiredLevel", "tags", "requiredItems", "buyPrice", "sellPrice", "maxCap")
     added = 0
     for spec in cfg.get("add") or []:
+        overrides = {}
         if isinstance(spec, dict):
             try:
-                mid = int(spec.get("id", 0))
-                src = int(spec.get("template", 0) or 0)
+                mid = int(spec.get("id", 0) or spec.get("mixId", 0))
             except (TypeError, ValueError):
                 continue
-            base = by_id.get(src) or tmpl
+            try:
+                src = int(spec.get("template", 0) or 0)
+            except (TypeError, ValueError):
+                src = 0
+            for k in _OVERRIDES:
+                if k in spec:
+                    overrides[k] = spec[k]
+            base = by_id.get(src) if src else tmpl
         else:
             try:
                 mid = int(spec)
             except (TypeError, ValueError):
                 continue
             base = tmpl
-        if not mid or mid in have or base is None:
+        if not mid or mid in have_mix or mid in have:
+            continue
+        if base is None:
             continue
         rec = json.loads(json.dumps(base))
         rec["itemId"] = mid
         rec["mixId"] = mid
+        rec.update(overrides)
         doc.append(rec)
         have.add(mid)
+        have_mix.add(mid)
         added += 1
     if not added:
         return None, 0
