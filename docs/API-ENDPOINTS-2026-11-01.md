@@ -362,3 +362,31 @@ preferenceGroup / regionIndex`。
 （本次为 `1773940042` / `2547476111`）是**外观变体 key**（对应 `generated_customization_armor_sets.dl_bin`），
 **不是**物品 id，也永远不该出现在 `inventory.items[]` 里。
 
+### 9.5 商店物品的**名字**从哪来（抓包里没有名字）
+
+`StoreFront/*` 与 `Progression/items` 里**只有 id**（`mixId` / `itemId` / `salesId`），没有任何名称字段。
+名字要回本地数据解：
+
+```bash
+# ① 解封护甲/外观表（422 组、453,204 B 明文）
+python tools/dlbin_seal.py open-key --key refs/dlbin/keys/recipient.sk \
+    --out armor_sets.plain "<game>/data/game/generated_customization_armor_sets.dl_bin"
+
+# ② 在行内找 itemId / mixId / parentId（套装），行内有两个名称 locid（全大写 + 标题式），
+#    用 refs/strings-en-26088801.json（24,834 条）解出
+```
+
+实测（2026-11-06，两次反向验证）：
+
+| id | 在表里的键 | 解出名字 |
+|---|---|---|
+| `3622341476`（套装）| parentId | **DP-8 MOUNTAIN-SCALED** ✓ 与用户刚买的一致 |
+| `1513263450`（披风 mixId）| mixId | **THUNDERING HOOVES OF LOYALTY** ✓ 与用户口述一致 |
+| `3710087385`（套装）| parentId | **SS-500 PALE PROSECUTOR** |
+| `1808786641`（披风 mixId=itemId）| mixId | **ARCTIC DECREE** |
+| `186664391` / `1952614298`（两件的 itemId）| itemId | 同属 `SS-500 PALE PROSECUTOR`（护甲与头盔**共用套装名**）|
+
+⇒ 经验：**护甲行与头盔行共用同一套名称 locid**（同套装同名），披风/横幅各自单独一行；
+名字永远在本地表里，抓包只给 id，写文档/回答问题时不要凭 id 猜名字。
+
+

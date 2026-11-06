@@ -1,0 +1,58 @@
+{
+  "1808786641": {
+    "label": "注入·披风",
+    "offset": "0x6ac6c",
+    "name": "ARCTIC DECREE",
+    "locids": [
+      [
+        4207989923,
+        "ARCTIC DECREE"
+      ]
+    ]
+  },
+  "209171707": {
+    "label": "注入·护甲(250)",
+    "offset": null,
+    "name": null,
+    "locids": []
+  },
+  "351568294": {
+    "label": "注入·头盔(125)",
+    "offset": null,
+    "name": null,
+    "locids": []
+  },
+  "1513263450": {
+    "label": "已购·披风",
+    "offset": "0x694cc",
+    "name": "THUNDERING HOOVES OF LOYALTY",
+    "locids": [
+      [
+        681969521,
+        "THUNDERING HOOVES OF LOYALTY"
+      ]
+    ]
+  },
+  "3622341476": {
+    "label": "已购·DP-8 套装",
+    "offset": "0x1cdd0",
+    "name": "DP-8 MOUNTAIN-SCALED",
+    "locids": [
+      [
+        4124027049,
+        "DP-8 MOUNTAIN-SCALED"
+      ]
+    ]
+  },
+  "3710087385": {
+    "label": "注入·SS-500 套装",
+    "offset": "0x42290",
+    "name": "SS-500 PALE PROSECUTOR",
+    "locids": [
+      [
+        171885009,
+        "SS-500 PALE PROSECUTOR"
+      ]
+    ]
+  }
+}
