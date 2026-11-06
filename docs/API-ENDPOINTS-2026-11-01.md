@@ -208,3 +208,85 @@ type32 全表 88 条、84/88 能解出战备名、官方发放实例见 `docs/TY
 
 下次再解锁任意一个配件，就能拿到 body 与 119 B 响应，从而确认：
 ① 解锁项用什么 id 空间（是不是 optionId `0xB7303DA1`）；② 响应里是否回传剩余货币/已解锁集合。
+
+## 8.1 完整报文（2026-11-06 17:25 抓到 AR-23A 的 ANGLED FOREGRIP 解锁）
+
+**解锁请求** `POST /api/Progression/ProgressionPackage/AcquireUnlockableItem`（135 B）：
+
+```json
+{ "expectedCost" : [ { "mixId" : 3608481516, "amount" : 5000}],
+  "itemMixId" : 718265621, "targetLevel" : 7, "packageId32" : 2221505542}
+```
+
+**响应**（114 B）：
+
+```json
+{"packageId32":2221505542,
+ "inventoryChanges":[{"mixId":3608481516,"amount":-5000},{"mixId":718265621,"amount":1}]}
+```
+
+**随后装备** `PUT /api/Progression/Items/Customize/v2`（186 B）：
+
+```json
+{ "mixId" : 1160920394, "modes" : [0,0,0,0], "activeIndex" : 0,
+  "customizations" : [ { "index" : 0, "slots" : [3207983096, 3073392033, 3171207820, 209531742, 3072203841, 0,0,0]} ] }
+```
+
+## 8.2 id 模型（关键：附件的"拥有"是 inventory 里的一行）
+
+`/api/Progression/items` 里 `progressionCategory == 2` 且带 `parentId` 的记录就是**附件解锁行**：
+
+```json
+{"itemId":3207983096, "parentId":1160920394, "mixId":718265621,
+ "progressionCategory":2, "isConsumable":false, "buyPrice":[], "sellPrice":[]}
+```
+
+| 概念 | 值 | 说明 |
+|---|---|---|
+| 附件 optionId | `3207983096` = `0xBF35EFF8` | 写进 `customization.slots[]` 的那个 id；**就是目录行的 `itemId`** |
+| 武器 mixId | `1160920394` = `0x45323D4A` | 目录行的 `parentId`（AR-23A Liberator Carbine）|
+| 附件库存键 | `718265621` | 目录行的 `mixId`；**「这把枪 + 这个附件」独享的一个 id** |
+| 武器包 | `2221505542` = `0x84697C06` | 请求里的 `packageId32` |
+| 货币 | `3608481516` | Requisition（`isConsumable`、`progressionCategory 18`、`maxCap 50000`）|
+| 等级门槛 | `targetLevel: 7` | 该枪等级要求，对应改装页的 LUL |
+
+目录全量统计（3020 条里）：**1455 条附件行 / 57 把武器 / 247 种附件**，本账号当时已拥有 **279** 条。
+
+### 8.2.1 为什么之前误判成"没有拥有层"
+
+2026-11-05 那次排查是拿 **optionId（`0x…`）** 去比 inventory 的 **`mixId`** 字段 —— 但附件行的
+`itemId` 才是 optionId，`mixId` 是另一套库存键。字段比错，于是得到"0 命中"。
+
+### 8.2.2 持久化实证
+
+| 证据 | 内容 |
+|---|---|
+| 17:12 解锁 CB-9 的 REFLEX SIGHT（当时没抓到 body） | — |
+| 17:19 重新拉 `Progression/inventory` | **963 → 964 条**，新增 `2828694410` |
+| 该行内容 | `{itemId: 3073392033 (0xB7303DA1 REFLEX SIGHT), parentId: 1942567317 (0x73C93995 CB-9), progressionCategory: 2}` |
+
+⇒ **附件解锁会写进服务端 inventory 并持久化**；客户端按"这一行在不在"判断配件是否已解锁。
+
+### 8.2.3 由此得到的能力（待实机验证）
+
+"送附件" = 往 `inventory.items[]` 里塞 `{mixId: <附件库存键>, amount: 1}`，与武器上架同一条路。
+代理已支持**独立的附件注入开关** `runtime/inventory_attach_inject.json`
+（`_gwe_inventory_rewrite` 会与 `inventory_inject.json` 分别开关、同时开启则合并），
+生成器 `tools/attach_items.py`：
+
+```bash
+python tools/attach_items.py --catalog <items抓包>.json     --weapon 0x45323D4A --inventory <inventory抓包>.json     --out runtime/inventory_attach_inject.json [--enable] [--list]
+```
+
+> ⚠ 抓包目录里 `PUT /api/lobby` 的 body **含 `connectionString`（大厅连接串）与 `memberAccountId`**，
+> 属敏感数据：`out/` 必须在 `.gitignore` 里（当前已忽略），任何文档/提交都不得粘贴原值。
+
+## 8.3 `PUT /api/lobby` 的 body 形状（已加入白名单）
+
+1350 B，字段：`startTime / lobbyId / players[4]（sourcePlatform、memberAccountId、isHost、playerName、
+playerRank、experience、hasInfo、commendRank）/ connectionString / operationProgress / gameModeProgress /
+memberAccountIds / inLoadout / buildGameHash / warId / state / difficulty / hostability / privacyMode /
+onboardingState / numLobbyMembers / sosBeacons / planetId / territoryId / race / crossplayMode /
+preferenceGroup / regionIndex`。
+
+进星球前 `warId = -1`、`planetId = -1`；`players[0]` 是房主，其余为占位（`sourcePlatform: 5`）。

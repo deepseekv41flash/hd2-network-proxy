@@ -83,6 +83,10 @@ STATUS_MARK = "/api/WarSeason/801/Status"
 ALLOWED_PATH = STATUS_MARK
 INV_PATH = "/api/Progression/inventory"      # 拥有的物品清单（items.mixId）+ 玩家改装状态（customization）
 INV_STATE = RUNTIME / "inventory_inject.json"
+# 附件解锁注入（独立开关）：附件在服务端是 inventory 里的一行，mixId = 附件在该武器上的库存键，
+# 行内容见 /api/Progression/items 里 progressionCategory==2 且带 parentId 的记录
+# （itemId = 附件 optionId，parentId = 武器 mixId）。两者可分别开关，便于做单变量实验。
+ATTACH_STATE = RUNTIME / "inventory_attach_inject.json"
 ITEMS_PATH = "/api/Progression/items"        # 服务端物品目录（3020 条：itemId/mixId/category/tags/prices）
 ITEMS_STATE = RUNTIME / "items_inject.json"
 
@@ -1166,9 +1170,22 @@ def _gwe_inventory_rewrite(plain):
     try:
         cfg = json.loads(INV_STATE.read_text(encoding="utf-8"))
     except Exception:
+        cfg = {}
+    try:
+        cfg2 = json.loads(ATTACH_STATE.read_text(encoding="utf-8"))
+    except Exception:
+        cfg2 = {}
+    if not (cfg.get("enabled") or cfg2.get("enabled")):
         return None, 0, 0
-    if not cfg.get("enabled"):
-        return None, 0, 0
+    if cfg2.get("enabled"):
+        # 两个文件各自开关：只有 enabled 的那份会被合并进来
+        def _pack(c):
+            return (c.get("items") or [], c.get("remove") or [], c.get("customization") or [])
+        parts = [_pack(c) for c in (cfg, cfg2) if c.get("enabled")]
+        cfg = {"enabled": True,
+               "items": [x for p in parts for x in p[0]],
+               "remove": [x for p in parts for x in p[1]],
+               "customization": [x for p in parts for x in p[2]]}
     try:
         doc = json.loads(plain)
     except Exception:
