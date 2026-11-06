@@ -1,0 +1,128 @@
+{
+  "enabled": true,
+  "_note": "拥有注入：目录内且未拥有的 21 件（已发布未购买）+ 未发布三件（LAS-22/P-41/SG-8F）。2026-11-06 刷新：按最新服务端 inventory(963) 剔除已拥有的 G-48 0B4761B8 / SMG-FLAM-34 77E1231D / CQC-72 818A2931。items 目录双注入见 items_inject.json。",
+  "items": [
+    {
+      "mixId": 131945085,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 358989959,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 539671360,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 1030888251,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 1246313930,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 1312773632,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 1339288659,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 1639574879,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 1934208922,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 2018836169,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 2112173638,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 2161995568,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 2232169940,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 2564789309,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 2870692210,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 3271863995,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 3286567865,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 3388344762,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 3414013062,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 3466282658,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 3800614722,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 3806884545,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 3859022603,
+      "amount": 1,
+      "isDiscovered": false
+    },
+    {
+      "mixId": 4050324431,
+      "amount": 1,
+      "isDiscovered": false
+    }
+  ],
+  "remove": [],
+  "customization": []
+}

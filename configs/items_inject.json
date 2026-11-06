@@ -1,0 +1,10 @@
+{
+  "enabled": true,
+  "_note": "往服务端物品目录补记录：add 每项可写 {id, template}（按类克隆：副武器/主武器/激光）。LAS-22=2112173638(Scythe clone), P-41=3388344762(Peacemaker clone), SG-8F=1934208922(Liberator clone), LAS-13=2870692210(Scythe clone)",
+  "add": [
+    {"id": 2112173638, "template": 3866352840},
+    {"id": 3388344762, "template": 2811723672},
+    {"id": 1934208922, "template": 2852344585},
+    {"id": 2870692210, "template": 3866352840}
+  ]
+}
