@@ -315,3 +315,32 @@ SC-30 Trailblazer Scout、FS-05 Marksman、KDM-73 Dragoon、Beacon of Mercy、Dr
 
 产物：`out/armor-names/armor_rows_parsed.json`（422 行解析）、`unreleased_candidates.json`（15 行候选）、
 `store-cosmetics-20261106.json`（已解名字）。
+
+### 8.3 未发布外观的"双层伪造"→ **否证**（2026-11-06 19:41 实机）
+
+目标 `0x135C4274`，`armor_kit_weight.py` 解出的特征：
+
+| 项 | 值 |
+|---|---|
+| 名字 | **无本地化名字**（locid `832682045` / `750446850` 不在 strings-26088801）|
+| 重量档 / 三围 | **medium**，档位 `111111111`；**rating 100 · speed 500 · stamina 100** |
+| 被动 | **0 = STANDARD ISSUE（无被动）** |
+| itemId / 套装 id | `0x135C4274` / `0xACAEFB2E`（2897148718）|
+
+伪造了两层：
+
+| 层 | 内容 |
+|---|---|
+| 目录 `items` | `{itemId: 0x135C4274, parentId: 0xACAEFB2E, mixId: 0xF1420000, progressionCategory: 3, buyPrice: [], sellPrice: []}`（模板 = DP-8 护甲行 `2846302183`）|
+| 库存 `inventory` | `{mixId: 0xF1420000, amount: 1}`（**同时保留**已验证的 3 件作对照）|
+
+送达确认：`ITEMS REWRITE +4 entries` / `INV REWRITE +168 -0 items`（19:41:28 / 19:41:35）。
+
+**结果：对照组 3 件照常出现，新件不出现。** 两种解释待区分：
+
+| 假设 | 含义 | 如何区分 |
+|---|---|---|
+| **A. 无名 → 不显示** | 这件是真未发布（没有本地化名字），客户端把无名外观过滤掉 | 换成**有名字但目录里没有**的护甲（如 SC-30 Trailblazer Scout `0x756159E4`）做同样的双层伪造：出现 ⇒ A 成立 |
+| **B. 伪造目录行不被接受** | 客户端只认服务端真实下发的目录行（与 R/40-K 附件伪造的失败一致）| 同上：不出现 ⇒ B 成立 |
+
+⇒ 结论边界（当前）：**已发布但账号未拥有的外观 = 一层注入（✓✓ 已实机）；未发布外观 = 双层伪造，未通过（✗ 2026-11-06）**。
