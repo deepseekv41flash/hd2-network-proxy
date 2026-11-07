@@ -161,3 +161,28 @@ if rewrite_added:              # ← 0 就发原始 body
 D:\Downloads\variant_mod\stop.ps1          # 停代理，恢复纯转发
 # 配置备份：D:\mod\work\variant-net\rollback\config.json.before-campaign
 ```
+
+## 8. 延伸到「休眠星」：不在 `planetStatus` 里的 165 颗（2026-11-07 追加，⚠ 未验证）
+
+E8 的实验对象 139 属于「**在 Status 里、但没有战役**」这一类。本季还多一层：
+本地 `planet_data` 有 438 颗，而最新 `Status` 只返回 **273** 条 `planetStatus`（`index` 0–273，
+缺 263）⇒ **165 颗根本没有节点**（`index` 263、274–437）。对它们，可达性要过两道：
+
+| 层 | 数据在哪 | 伪造内容 |
+|---|---|---|
+| 星图节点存在性 + 坐标 | `planetStatus[i]`：`{index, owner, health, regenPerSecond, players, position{x,y}}` | 先造一条 `planetStatus`（`position` 可从邻近星抄）|
+| 可部署性 | `campaigns[]`：`{id, planetIndex, type, count, race}`（本季 43 条，全在 Status 内）| 再追加一条 `campaigns`（E8 已验证这一层）|
+
+补充口径（同一次 Status 抓包实测）：
+
+- 本季 `planetStatus` 273 / `campaigns` 覆盖 43 颗 / `planetAttacks` 45 条（`{source, target}`）/ `planetEvents` 1 条；
+- 只伪造 `campaigns` 而不造 `planetStatus` ⇒ 客户端连节点都没有（星图按 Status 渲染，坐标也来自 Status）；
+- 只造 `planetStatus` 不造 `campaigns` ⇒ 节点会出现但大概率点不进去（E8 的对照组正是"无战役"）；
+- **服务器侧未测**：`Operation/Create` 用的 `planetIndex` 若落在本季未启用的号段（≥274），服务器是否接受未知。
+  E8 的 200 是"战役结束后未完成作战可继续"的合法路径（§0.1），不能直接外推到号段外的星球；
+- **presence 缺失风险**：敌人组成（含变种）由服务端下发的 presence 决定，本地表没有"某星有哪些 presence"。
+  进入一颗本季未启用的星，可能出现**没有敌军 presence → 空图 / 只有地形**；
+- 客户端只在登录时拉 `Status`（改完必须完全退出游戏重登）。
+
+**最小实验建议**：拿本地有定义、本季却没节点的 **263** 或 **300**（`index` 274–437 之一）做一发：
+先只加 `planetStatus` 看节点是否出现 → 再加 `campaigns` 看能否部署 → 最后看 `Operation/Create` 与进局敌军。
