@@ -121,3 +121,14 @@ python tools/capture_diff.py ... --ids
 内容变化的响应、以及**列表里新增/移除的 id**（例如 `items 963 -> 965` 后跟着两条新 `mixId`）。
 
 > 抓包目录里的请求体含登录凭据与大厅 `connectionString` —— `out/` 已在 `.gitignore`，任何抓包文件都不入库。
+
+## 停代理 = 断网（hosts 仍然指向本机）——2026-11-07 再犯一次
+
+做纯数据表（dl_bin）实验时把代理 `stop.ps1` 停掉了，但 `hosts` 第 16 行仍把
+`api.live.prod.thehelldiversgame.com` 指向 `100.67.169.17`，443 无人监听 ⇒ 游戏登录报
+**`Request 649,790,637 / Error 7 / Status -1`**（注意：**Error 7 = 传输层没连上**，
+和 `Error 35 = TLS 握手失败（证书过期）`、`Error 0 / Status -2 = 服务器回了但客户端拒绝数据` 是三类不同故障）。
+
+**规矩**：只要 hosts 劫持还在，代理就必须以某种模式常驻 —— 做文件侧实验时用
+`.\run.ps1 -Passthrough`（纯转发、零改写），不要 `stop.ps1`。要真停就先跑 `teardown.ps1`（管理员）回收 hosts。
+恢复手法：`.\run.ps1 -Passthrough` → 验证 `443 可达=True`、`CRL=200`、经代理拉一次 Status 得 200。
