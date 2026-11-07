@@ -258,3 +258,19 @@ python tools/planet_eco_swap.py --list                              # 17 个生�
 python tools/planet_eco_swap.py --eco deciduous --targets 100 7 93   # 生成 HD2_GWE_EXTRA
 python tools/planet_eco_swap.py --row 386 --targets 100             # 指定来源行
 ```
+
+### 11.2 ✓✓ 局内也同步；敌军是**独立的一层**
+
+用户在 crimson 落叶林那局回报：**局内地貌与天气同步变了**（说明 settingsHash 覆盖到关卡生成，不只是星图/卡片），
+但**敌人仍是原 TRANDOR 的 Terminids**。
+
+⇒ 至此两层边界定死：
+
+| 层 | 由谁决定 | 我们能否改 |
+|---|---|---|
+| 行星内容：名字 / 地形 / 天气 / 环境条件 | **warinfo `planetInfos[].settingsHash`** | ✓ 代理改写（已两次实机：oasis、deciduous/crimson）|
+| 敌军：阵营与 presence（变种） | **`campaigns[].race`（阵营）+ presence（变种，服务端下发）** | 阵营：可注入 `campaigns`（已有通道，10-29 验过"敌人只由 race 决定"）；变种：`planetActiveEffects` type71 挂 presence 哈希（11-01 CAUSTIC STRAIN 验过）|
+
+所以"换生态"和"换敌人"是两条互不影响的开关：
+**换环境 = settings_hash；换敌人 = campaigns[].race / presence effect**。
+（注意：对**已存在战役**的星球，现有 `campaigns` 注入会因"已有战役"而跳过，要改阵营得加一个 race 覆盖项。）
