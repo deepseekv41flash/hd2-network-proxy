@@ -81,6 +81,11 @@ def owner_faction(value):
 
 STATUS_MARK = "/api/WarSeason/801/Status"
 ALLOWED_PATH = STATUS_MARK
+# DSH-WARINFO-SETTINGS-V1
+# 行星的关卡生成"设置"由服务器 warinfo 的 planetInfos[].settingsHash 指定（不是本地 planet_data 的
+# setup 串）。本地 planet_data 尾部 438×8 B 的每项高 4 字节就是该行的 settingsHash，与 warinfo 的
+# index 一一对应 ⇒ 改写 settingsHash 就能把 A 星的生态/地形借给 B 星。
+WARINFO_MARK = "/api/WarSeason/801/warinfo"
 INV_PATH = "/api/Progression/inventory"      # 拥有的物品清单（items.mixId）+ 玩家改装状态（customization）
 INV_STATE = RUNTIME / "inventory_inject.json"
 # 附件解锁注入（独立开关）：附件在服务端是 inventory 里的一行，mixId = 附件在该武器上的库存键，
@@ -702,6 +707,20 @@ class Proxy:
                 out_body = rbody
                 rewrite_added = 0
                 dropped_encoding = False
+                # DSH-WARINFO-SETTINGS-V1：生态借用的实际落点
+                if (not self.mod.passthrough) and WARINFO_MARK in path and rbody:
+                    plain, was_gz = maybe_gunzip(rbody, rhdrs)
+                    try:
+                        wi_body, wi_n = _warinfo_apply_extra(plain)
+                    except Exception as e:
+                        log("warinfo rewrite skipped: %r" % e)
+                        wi_body, wi_n = plain, 0
+                    if wi_n:
+                        self.stats["rewrite"] = self.stats.get("rewrite", 0) + 1
+                        out_body = wi_body
+                        dropped_encoding = was_gz
+                        log("REWRITE-WARINFO %d planet(s) settingsHash 已改%s"
+                            % (wi_n, " [from gzip]" if was_gz else ""), audit=True)
                 if (not self.mod.passthrough) and ALLOWED_PATH in path and rbody:
                     plain, was_gz = maybe_gunzip(rbody, rhdrs)
                     plan = {}
@@ -1387,6 +1406,53 @@ def _gwe_capture_req(path, body, hdrs, method=""):
 # ---- /DSH_GWE_CAPTURE_V1_END ----
 
 # DSH-DEFENSE-INJECT-V1
+def _warinfo_apply_extra(body):
+    """改写 warinfo 的 planetInfos[].settingsHash（生态/地形借用）。
+
+    HD2_GWE_EXTRA 里的 "settings_hash": {"<planetIndex>": <settingsHash>}
+    本地 bridge：planet_data 尾部每行高 4 字节 = 该行 settingsHash。
+    返回 (body_bytes, changed)。
+    """
+    import json as _json, os
+    spec = (os.environ.get("HD2_GWE_EXTRA") or "").strip()
+    if not spec:
+        return body, 0
+    try:
+        cfg = _json.loads(spec)
+    except Exception:
+        return body, 0
+    m = cfg.get("settings_hash") or {}
+    if not isinstance(m, dict) or not m:
+        return body, 0
+    try:
+        doc = _json.loads(body)
+    except Exception:
+        return body, 0
+    infos = doc.get("planetInfos")
+    if not isinstance(infos, list):
+        return body, 0
+    want = {}
+    for k, v in m.items():
+        try:
+            want[int(k)] = int(v) & 0xFFFFFFFF
+        except (TypeError, ValueError):
+            continue
+    n = 0
+    for row in infos:
+        if not isinstance(row, dict):
+            continue
+        idx = row.get("index")
+        if idx in want and row.get("settingsHash") != want[idx]:
+            old = row.get("settingsHash")
+            row["settingsHash"] = want[idx]
+            n += 1
+            log("REWRITE-WARINFO planet %s settingsHash %s -> %s (0x%08X)"
+                % (idx, old, want[idx], want[idx]))
+    if not n:
+        return body, 0
+    return _json.dumps(doc, ensure_ascii=False).encode("utf-8"), n
+
+
 def _gwe_apply_extra(doc):
     """按环境变量 HD2_GWE_EXTRA 对 Status 做额外改写：追加战役 / 改星球归属。
 

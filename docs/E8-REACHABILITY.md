@@ -204,3 +204,20 @@ E8 的实验对象 139 属于「**在 Status 里、但没有战役**」这一类
   ④ 进局有没有敌军 presence（休眠星可能没有刷怪数据）。
 - **回滚**：`stop.ps1`；`HD2_GWE_EXTRA` 只存在于启动它的会话，`config.json` 未改（备份
   `config.json.bak-planetnode-20261107-115317`）。
+
+## 10. 生态/地形的真正开关：warinfo `settingsHash`（2026-11-07）
+
+**否证**：改本地 `planet_data`（`PlanetType` + `Inherits` setup 串 + `RegionLowland.Name`）**视觉上没有任何变化**（TRANDOR 实测两轮）。
+原因：客户端还有 `GET /api/WarSeason/801/warinfo`，`planetInfos[].settingsHash` 才是每颗星的关卡生成"设置"；
+本地 `planet_data` 的 setup 串只是描述性字段。
+
+**桥（已自证）**：`planet_data` 尾部 `438 × 8 B` 每项 **高 4 字节 = 该行 settingsHash**。
+`warinfo.index 0 → 897386910 = 行 0`、`index 100 → 3515299681 = 行 103`（TRANDOR）——两条都对上，
+**行号 ≠ 游戏索引**在这里第二次被证实。
+
+**实现**：代理新增 `WARINFO_MARK` + `_warinfo_apply_extra`，由 `HD2_GWE_EXTRA.settings_hash = {"<index>": <hash>}`
+改写 warinfo 响应。实测（经代理拉 warinfo）：`index 100: 3515299681 → 2807946366`（= 表行 274，真实
+`oasis` 星的 settingsHash），邻居 99/101 未动，日志 `REWRITE-WARINFO ...`。
+
+⇒ 换生态的正确配方从「改本地表」变成「**改 warinfo 的 settingsHash**」。待验：进 TRANDOR 是否变成绿洲；
+若仍不变，下一层是 warinfo 的 `planetRegions`（211 条）与 `planetBiomeId32`。
