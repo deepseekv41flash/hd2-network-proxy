@@ -1547,6 +1547,37 @@ def _gwe_apply_extra(doc):
             have.add((pidx, ridx))
             changed += 1
             log("REWRITE-EXTRA 补分区状态 %s" % _json.dumps(entry))
+    # DSH-PLANET-NODE-V1
+    # 追加星球节点：休眠星（本地 planet_data 有、Status 里没有）星图上连节点都不会画，
+    # 必须先补一条 planetStatus（坐标 position 只能由 Status 提供），再追加 campaigns。
+    # 格式：{"planet_nodes": [{"index":300,"owner":1,"health":1000000,
+    #                          "regenPerSecond":4.1666665,"players":0,"position":{"x":0.3,"y":-0.55}}]}
+    ps = doc.get("planetStatus")
+    if isinstance(ps, list):
+        have_ix = {r.get("index") for r in ps if isinstance(r, dict)}
+        for n in cfg.get("planet_nodes") or []:
+            try:
+                nidx = int(n.get("index"))
+            except (TypeError, ValueError):
+                continue
+            if nidx in have_ix:
+                log_throttled("extra-node-dup",
+                              "gwe-extra: 星球 %d 已有节点，跳过" % nidx, every=3600)
+                continue
+            pos = n.get("position") or {}
+            entry = {
+                "index": nidx,
+                "owner": int(n.get("owner") if n.get("owner") is not None else 1),
+                "health": int(n.get("health") or 1000000),
+                "regenPerSecond": float(n.get("regenPerSecond")
+                                        if n.get("regenPerSecond") is not None else 4.1666665),
+                "players": int(n.get("players") or 0),
+                "position": {"x": float(pos.get("x") or 0.0), "y": float(pos.get("y") or 0.0)},
+            }
+            ps.append(entry)
+            have_ix.add(nidx)
+            changed += 1
+            log("REWRITE-EXTRA 追加星球节点 %s" % _json.dumps(entry))
     for k, v in (cfg.get("owner") or {}).items():
         for r in doc.get("planetStatus") or []:
             if not isinstance(r, dict):
