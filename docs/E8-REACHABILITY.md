@@ -186,3 +186,21 @@ E8 的实验对象 139 属于「**在 Status 里、但没有战役**」这一类
 
 **最小实验建议**：拿本地有定义、本季却没节点的 **263** 或 **300**（`index` 274–437 之一）做一发：
 先只加 `planetStatus` 看节点是否出现 → 再加 `campaigns` 看能否部署 → 最后看 `Operation/Create` 与进局敌军。
+
+## 9. 2026-11-07 落地：两层伪造已实现并起代理（目标 planet 300）
+
+- **代理改动**：`tools/war_proxy.py` 的 `_gwe_apply_extra` 新增 `planet_nodes`（标记 `DSH-PLANET-NODE-V1`）——
+  按 `{index, owner, health, regenPerSecond, players, position{x,y}}` 往 `planetStatus` 追加节点（已存在则跳过）。
+  提交 `876d3e4`。
+- **启动器**：`D:\Downloads\variant_mod\run-planetnode.ps1`（设 `HD2_GWE_EXTRA` 后调 `run.ps1`；
+  规格同时落 `runtime\planet_node.json`）。
+- **本次注入**：planet **300**（本地 `planet_data` 有、本季 Status 无，PlanetType 12 = magma），
+  `owner=1`、`position=(0.30, -0.55)`、`campaigns[{id:51999, planetIndex:300, type:0, count:1, race:1}]`。
+- **离线单测**：`_gwe_apply_extra` 返回 `changed=2`，新节点/新战役按预期追加，已有节点未被改动。
+- **链路实测**（经代理 `curl --cacert certs\anchor.pem --resolve ...:100.67.169.17`）：
+  `HTTP 200`（需带 `Accept-Language`，否则上游 400 `Accept-Language HTTP header missing`）；
+  `planetStatus` **273 → 274**、`campaigns` **43 → 44**，目标条目逐字段正确。
+- **待验（需重登游戏）**：① 星图是否出现新节点 ② 能否点选/部署 ③ `Operation/Create` 是否 200
+  ④ 进局有没有敌军 presence（休眠星可能没有刷怪数据）。
+- **回滚**：`stop.ps1`；`HD2_GWE_EXTRA` 只存在于启动它的会话，`config.json` 未改（备份
+  `config.json.bak-planetnode-20261107-115317`）。
