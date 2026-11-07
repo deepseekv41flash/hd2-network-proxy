@@ -221,3 +221,26 @@ E8 的实验对象 139 属于「**在 Status 里、但没有战役**」这一类
 
 ⇒ 换生态的正确配方从「改本地表」变成「**改 warinfo 的 settingsHash**」。待验：进 TRANDOR 是否变成绿洲；
 若仍不变，下一层是 warinfo 的 `planetRegions`（211 条）与 `planetBiomeId32`。
+
+## 11. ✓✓ 实机：settingsHash 就是「行星内容身份」（2026-11-07 12:3x）
+
+把 TRANDOR（游戏索引 100）的 `settingsHash` 改成表行 274 的值 `2807946366` 后，用户实机回报：
+
+| 观察 | 说明 |
+|---|---|
+| 地形变成**绿洲** | `settingsHash` 决定关卡生成内容 ✓（本地 `planet_data` 改三件套两轮都没反应，已否证）|
+| 星球**名字变成 `FRONTERIA`** | 客户端把 settingsHash 解析到**本地 `planet_data` 行 274**，名字 locid、生态、天气、修饰符**整套**跟着换 ⇒ settingsHash = **行星内容身份**，不只是地形 |
+| 出现 **INTENSE HEAT** 效果 | 同一套内容里的环境/天气条件也一并带过来了 |
+
+⇒ 换生态的正确配方（纯网络层、一行配置）：
+
+```
+HD2_GWE_EXTRA = {"settings_hash": {"<游戏索引>": <目标行星行的 settingsHash>}}
+# settingsHash = planet_data 尾部 438×8 每项高 4 字节；行号 ≠ 游戏索引，桥就是它
+```
+
+**副作用与对策**：名字会变成被借用内容的行星名（本次 FRONTERIA）。若想保名，改**本地**被借用行
+（274）的 `+0x008` name locid 为目标星的名字 locid（本地表编辑），或接受"换了一颗星"。
+
+**待验**：① 进任务看局内地貌/天气是否同步；② 换 `deciduous`/`coniferous` 行验证通用性；
+③ 批量把多颗战役星映射到不同生态（一季换装）。
