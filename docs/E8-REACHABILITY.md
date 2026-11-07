@@ -244,3 +244,17 @@ HD2_GWE_EXTRA = {"settings_hash": {"<游戏索引>": <目标行星行的 setting
 
 **待验**：① 进任务看局内地貌/天气是否同步；② 换 `deciduous`/`coniferous` 行验证通用性；
 ③ 批量把多颗战役星映射到不同生态（一季换装）。
+
+### 11.1 ✓✓ 通用性验证：deciduous 也成立
+
+同一颗槽位（游戏索引 100）第二次换成 **deciduous / crimson**：`settingsHash 3515299681 → 721718208`
+（= 表行 386 `UVP ALPHA` / `planet_forest_deciduous_crimson`）。用户实机回报：**名字变 UVP ALPHA、环境变落叶林**。
+
+⇒ 换生态与具体生态无关，任何行星行都能借；两种生态（oasis / deciduous）各验一次，配方稳定。
+
+**工具**：`tools/planet_eco_swap.py`
+```bash
+python tools/planet_eco_swap.py --list                              # 17 个生态各给一个代表行 + settingsHash
+python tools/planet_eco_swap.py --eco deciduous --targets 100 7 93   # 生成 HD2_GWE_EXTRA
+python tools/planet_eco_swap.py --row 386 --targets 100             # 指定来源行
+```
