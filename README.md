@@ -34,6 +34,7 @@
 
 | 文件 | 内容 |
 |---|---|
+| **`docs/HANDOFF-2026-11-15.md`** | **★ 交接档（先读这个）**：现状快照、路径地图（代码/文档/抓包/工具）、`war_proxy.py` 七个钩子与 `HD2_GWE_EXTRA` 全 schema、已验证能力、三条硬边界、未测 backlog、runbook、坑清单 |
 | `docs/EXPERIMENTS-2026-10-27.md` | 9 组实验的完整记录：设计、判据、证据、否证、踩坑 |
 | `docs/GWECAPTURE.md` | GWE（GalacticWarEffects）抓包与对表方法、effectType 解释器、实测结果 |
 | `docs/EFFECT-MENU-801.md` | 310 条效果目录 × presence 种类/阵营/显示名 × 在线战况 × 证据等级 |
