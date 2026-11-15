@@ -101,6 +101,13 @@ STRATAGEM_STATE = RUNTIME / "inventory_stratagem_inject.json"
 PROBE_STATE = RUNTIME / "inventory_probe_inject.json"
 ITEMS_PATH = "/api/Progression/items"        # 服务端物品目录（3020 条：itemId/mixId/category/tags/prices）
 ITEMS_STATE = RUNTIME / "items_inject.json"
+# DSH-GWE-CUSTOMIZE-V1：L2（玩家当前改装槽快照）
+#   GET /api/Progression/Items/Customize/v2
+#   -> {items:[{mixId32, modes[4], activeIndex, customizations:[{index, slots[8]}]}]}
+#   slots[i] = 附件 optionId（与 L0 同一 id 空间）；槽下标 = 槽号-1，实测 0=下挂 1=光学 4=弹匣/散热。
+#   2026-11-11 从抓包确证：LAS-22 的条目里 slots[4]=0x53120A73（Rapid Heatsink），slots[1]=0x322A9233（红点）。
+CUSTOMIZE_PATH = "/api/Progression/Items/Customize/v2"
+CUSTOMIZE_STATE = RUNTIME / "customize_inject.json"
 
 _lock = threading.Lock()
 
@@ -799,6 +806,22 @@ class Proxy:
                         log("ITEMS REWRITE +%d entries%s"
                             % (items_added, " [from gzip]" if was_gz else ""), audit=True)
 
+                elif (not self.mod.passthrough) and CUSTOMIZE_PATH in path and rbody:
+                    # DSH-GWE-CUSTOMIZE-V1：L2 改装槽快照改写（见 _gwe_customize_rewrite）
+                    plain, was_gz = maybe_gunzip(rbody, rhdrs)
+                    try:
+                        new_body, cz_hits = _gwe_customize_rewrite(plain)
+                    except Exception as e:
+                        log("customize rewrite failed: %r" % e)
+                        new_body, cz_hits = None, 0
+                    if new_body is not None and cz_hits:
+                        out_body = new_body
+                        rewrite_added = cz_hits
+                        dropped_encoding = was_gz
+                        self.stats["rewrite"] += 1
+                        log("CUSTOMIZE REWRITE %d slot(s)%s"
+                            % (cz_hits, " [from gzip]" if was_gz else ""), audit=True)
+
                 # 只要动过 body（去 chunk / 解 gzip / 改写）就必须重写响应头，
                 # 否则客户端仍按 chunked 或旧长度解析 → 直接失败
                 # （curl 表现为 HTTP 200 + 0 字节 + exit 56）。
@@ -1204,6 +1227,102 @@ def _gwe_items_rewrite(plain):
 
 
 # ---- DSH_GWE_INV_V1 : 拥有的物品清单改写（/api/Progression/inventory） ----
+def _gwe_customize_rewrite(plain):
+    """按 runtime/customize_inject.json 改写 L2（每把武器的改装槽快照）。
+
+    配置示例：
+        {"enabled": true,
+         "edits": [
+           {"mixId": 2112173638,
+            "slots": {"1": 3905063732},          # 槽下标 -> optionId
+            "allIndexes": true,                  # true=改全部 3 组预设；false=只改 activeIndex
+            "createIfMissing": false,
+            "baseSlots": [0, 0, 0, 0, 0, 0, 0, 0]  # createIfMissing 时新建条目用的 8 槽
+           }]}
+
+    返回 (new_body, 改动槽数)；无改动时 (None, 0)。
+    """
+    try:
+        cfg = json.loads(CUSTOMIZE_STATE.read_text(encoding="utf-8"))
+    except Exception:
+        return None, 0
+    if not cfg.get("enabled"):
+        return None, 0
+    try:
+        doc = json.loads(plain)
+    except Exception:
+        return None, 0
+    if not isinstance(doc, dict) or not isinstance(doc.get("items"), list):
+        return None, 0
+
+    items = doc["items"]
+    by_mix = {}
+    for it in items:
+        if isinstance(it, dict):
+            try:
+                by_mix[int(it.get("mixId32", 0))] = it
+            except (TypeError, ValueError):
+                pass
+
+    changed = 0
+    touched = []
+    for edit in (cfg.get("edits") or []):
+        if not isinstance(edit, dict):
+            continue
+        try:
+            mix = int(edit.get("mixId", 0))
+        except (TypeError, ValueError):
+            continue
+        slots_spec = edit.get("slots") or {}
+        if not slots_spec:
+            continue
+        it = by_mix.get(mix)
+        if it is None:
+            if not edit.get("createIfMissing"):
+                continue
+            base = edit.get("baseSlots") or [0] * 8
+            it = {"mixId32": mix, "modes": [], "activeIndex": 0,
+                  "customizations": [{"index": i, "slots": list(base[:8]) + [0] * max(0, 8 - len(base))}
+                                     for i in range(3)]}
+            items.append(it)
+            by_mix[mix] = it
+        customs = it.get("customizations") or []
+        try:
+            active = int(it.get("activeIndex", 0))
+        except (TypeError, ValueError):
+            active = 0
+        for c in customs:
+            if not isinstance(c, dict):
+                continue
+            if not edit.get("allIndexes"):
+                try:
+                    if int(c.get("index", 0)) != active:
+                        continue
+                except (TypeError, ValueError):
+                    continue
+            slots = c.get("slots")
+            if not isinstance(slots, list) or len(slots) < 8:
+                continue
+            for key, val in slots_spec.items():
+                try:
+                    idx = int(key)
+                    oid = int(val)
+                except (TypeError, ValueError):
+                    continue
+                if not (0 <= idx < len(slots)):
+                    continue
+                if slots[idx] != oid:
+                    slots[idx] = oid
+                    changed += 1
+        touched.append(mix)
+
+    if not changed:
+        return None, 0
+    if cfg.get("logEdits", True):
+        log("CUSTOMIZE plan applied to mixId(s) %s" % ",".join(str(m) for m in touched))
+    return json.dumps(doc, separators=(",", ":")).encode("utf-8"), changed
+
+
 def _gwe_inventory_rewrite(plain):
     """按 runtime/inventory_inject.json 改写 inventory 响应。
 
@@ -1407,9 +1526,13 @@ def _gwe_capture_req(path, body, hdrs, method=""):
 
 # DSH-DEFENSE-INJECT-V1
 def _warinfo_apply_extra(body):
-    """改写 warinfo 的 planetInfos[].settingsHash（生态/地形借用）。
+    """改写 warinfo：planetInfos[].settingsHash（生态/地形借用）+ 追加 planetInfo（给伪造节点补身份）。
 
-    HD2_GWE_EXTRA 里的 "settings_hash": {"<planetIndex>": <settingsHash>}
+    HD2_GWE_EXTRA 里：
+        "settings_hash": {"<planetIndex>": <settingsHash>}        # 改已存在的条目
+        "planet_infos": [{"index":300, "settingsHash":694418289,  # 追加新条目（休眠星伪造）
+                          "position":{"x":0.3,"y":-0.55}, "maxHealth":1000000,
+                          "initialOwner":1, "sector":20, "waypoints":[76]}]
     本地 bridge：planet_data 尾部每行高 4 字节 = 该行 settingsHash。
     返回 (body_bytes, changed)。
     """
@@ -1421,8 +1544,9 @@ def _warinfo_apply_extra(body):
         cfg = _json.loads(spec)
     except Exception:
         return body, 0
-    m = cfg.get("settings_hash") or {}
-    if not isinstance(m, dict) or not m:
+    want = cfg.get("settings_hash") or {}
+    adds = cfg.get("planet_infos") or []
+    if not (isinstance(want, dict) and want) and not (isinstance(adds, list) and adds):
         return body, 0
     try:
         doc = _json.loads(body)
@@ -1431,23 +1555,56 @@ def _warinfo_apply_extra(body):
     infos = doc.get("planetInfos")
     if not isinstance(infos, list):
         return body, 0
-    want = {}
-    for k, v in m.items():
-        try:
-            want[int(k)] = int(v) & 0xFFFFFFFF
-        except (TypeError, ValueError):
-            continue
     n = 0
-    for row in infos:
-        if not isinstance(row, dict):
-            continue
-        idx = row.get("index")
-        if idx in want and row.get("settingsHash") != want[idx]:
-            old = row.get("settingsHash")
-            row["settingsHash"] = want[idx]
+    # 1) 改已有条目的 settingsHash
+    if isinstance(want, dict) and want:
+        m = {}
+        for k, v in want.items():
+            try:
+                m[int(k)] = int(v) & 0xFFFFFFFF
+            except (TypeError, ValueError):
+                continue
+        for row in infos:
+            if not isinstance(row, dict):
+                continue
+            idx = row.get("index")
+            if idx in m and row.get("settingsHash") != m[idx]:
+                old = row.get("settingsHash")
+                row["settingsHash"] = m[idx]
+                n += 1
+                log("REWRITE-WARINFO planet %s settingsHash %s -> %s (0x%08X)"
+                    % (idx, old, m[idx], m[idx]))
+    # 2) 追加 planetInfo（DSH-WARINFO-NODE-V1）
+    if isinstance(adds, list) and adds:
+        have = {r.get("index") for r in infos if isinstance(r, dict)}
+        tpl = next((r for r in infos if isinstance(r, dict)), {})
+        for a in adds:
+            if not isinstance(a, dict):
+                continue
+            try:
+                nidx = int(a.get("index"))
+            except (TypeError, ValueError):
+                continue
+            if nidx in have:
+                log_throttled("wi-node-dup", "warinfo: planetInfo %d 已存在，跳过" % nidx, every=3600)
+                continue
+            pos = a.get("position") or {}
+            entry = {
+                "index": nidx,
+                "settingsHash": int(a.get("settingsHash") or 0) & 0xFFFFFFFF,
+                "planetNameId32": int(a.get("planetNameId32") or 0),
+                "planetBiomeId32": int(a.get("planetBiomeId32") or 0),
+                "position": {"x": float(pos.get("x") or 0.0), "y": float(pos.get("y") or 0.0)},
+                "waypoints": [int(x) for x in (a.get("waypoints") or [])],
+                "sector": int(a.get("sector") if a.get("sector") is not None else tpl.get("sector") or 0),
+                "maxHealth": int(a.get("maxHealth") or 1000000),
+                "disabled": bool(a.get("disabled") or False),
+                "initialOwner": int(a.get("initialOwner") or 1),
+            }
+            infos.append(entry)
+            have.add(nidx)
             n += 1
-            log("REWRITE-WARINFO planet %s settingsHash %s -> %s (0x%08X)"
-                % (idx, old, want[idx], want[idx]))
+            log("REWRITE-WARINFO 追加 planetInfo %s" % _json.dumps(entry, ensure_ascii=False))
     if not n:
         return body, 0
     return _json.dumps(doc, ensure_ascii=False).encode("utf-8"), n
@@ -1644,6 +1801,30 @@ def _gwe_apply_extra(doc):
             have_ix.add(nidx)
             changed += 1
             log("REWRITE-EXTRA 追加星球节点 %s" % _json.dumps(entry))
+    # DS H-PLANET-EFFECTS-V1：直接往 planetActiveEffects 追加（绕过阵营过滤）。
+    # 用途：把 terminid 词条挂到人类星（如 TERREK = 76，正被虫族防守事件 5743 攻击）上做实验。
+    # 格式：{"planet_effects": [{"index": 76, "ids": [1243, 1245]}]}
+    pe = doc.get("planetActiveEffects")
+    if isinstance(pe, list):
+        have_pe = {(e.get("index"), e.get("galacticEffectId")) for e in pe if isinstance(e, dict)}
+        for item in cfg.get("planet_effects") or []:
+            if not isinstance(item, dict):
+                continue
+            try:
+                pidx = int(item.get("index"))
+            except (TypeError, ValueError):
+                continue
+            for raw_eid in item.get("ids") or []:
+                try:
+                    eid = int(raw_eid)
+                except (TypeError, ValueError):
+                    continue
+                if (pidx, eid) in have_pe:
+                    continue
+                pe.append({"index": pidx, "galacticEffectId": eid})
+                have_pe.add((pidx, eid))
+                changed += 1
+                log("REWRITE-EXTRA 星球 %d += effect %d（raw，绕阵营过滤）" % (pidx, eid))
     for k, v in (cfg.get("owner") or {}).items():
         for r in doc.get("planetStatus") or []:
             if not isinstance(r, dict):
